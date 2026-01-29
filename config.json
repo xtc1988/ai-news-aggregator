@@ -1,0 +1,31 @@
+{
+  "interests": {
+    "high": ["Claude", "Anthropic", "Claude Code", "cursor", "AI agent", "LLM", "MCP"],
+    "medium": ["GPT", "OpenAI", "Gemini", "RAG", "embedding", "prompt engineering"],
+    "low": ["machine learning", "deep learning", "open source", "startup"]
+  },
+  "score_weights": {
+    "high": 10,
+    "medium": 5,
+    "low": 2
+  },
+  "sources": {
+    "hackernews": {
+      "enabled": true,
+      "top_stories_count": 100
+    },
+    "reddit": {
+      "enabled": true,
+      "subreddits": ["MachineLearning", "LocalLLaMA", "SideProject", "artificial", "ClaudeAI"],
+      "posts_per_subreddit": 25
+    },
+    "github_trending": {
+      "enabled": true
+    }
+  },
+  "gemini": {
+    "model": "gemini-1.5-flash",
+    "max_articles_per_run": 50
+  },
+  "retention_days": 7
+}

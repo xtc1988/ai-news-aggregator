@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AI News Aggregator</h1>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="キーワード検索...">
+        </div>
+    </header>
+
+    <main>
+        <div class="filters">
+            <div class="filter-group">
+                <label>ソース:</label>
+                <button class="filter-btn active" data-source="all">All</button>
+                <button class="filter-btn" data-source="Hacker News">HN</button>
+                <button class="filter-btn" data-source="Reddit">Reddit</button>
+                <button class="filter-btn" data-source="GitHub">GitHub</button>
+            </div>
+            <div class="filter-group">
+                <label>期間:</label>
+                <button class="filter-btn active" data-date="all">全期間</button>
+                <button class="filter-btn" data-date="today">今日</button>
+                <button class="filter-btn" data-date="week">今週</button>
+            </div>
+            <div class="filter-group">
+                <label>並び替え:</label>
+                <select id="sort-select">
+                    <option value="interest_score">スコア順</option>
+                    <option value="created_at">日時順</option>
+                    <option value="comments_count">コメント数順</option>
+                    <option value="source_score">ソーススコア順</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="tags-filter" id="tags-filter">
+            <label>タグ:</label>
+            <div class="tags-container" id="tags-container"></div>
+        </div>
+
+        <div class="status-bar">
+            <span id="article-count">0件の記事</span>
+            <span id="last-updated">最終更新: --</span>
+        </div>
+
+        <div class="articles" id="articles-container">
+            <div class="loading">読み込み中...</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by GitHub Pages | Data updated automatically via GitHub Actions</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
