@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - Modern HN Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #F6F6EF;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+        .hn-orange { color: #FF6600; }
+        .hn-bg { background-color: #FF6600; }
+        .hn-link:visited { color: #828282; }
+        .hn-subtext { color: #828282; font-size: 8pt; }
+        .rank { color: #828282; font-size: 10pt; min-width: 25px; text-align: right; }
+        .score-badge {
+            background: linear-gradient(135deg, #FF6600 0%, #FF8533 100%);
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 9pt;
+            color: white;
+        }
+        .article-row:hover { background-color: #F0F0E6; }
+        .source-hn { color: #FF6600; }
+        .source-reddit { color: #FF4500; }
+        .source-github { color: #333; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="hn-bg px-2 py-1">
+        <div class="max-w-5xl mx-auto flex items-center gap-2">
+            <div class="flex items-center gap-2">
+                <div class="w-5 h-5 border-2 border-white flex items-center justify-center text-white text-xs font-bold">Y</div>
+                <span class="font-bold text-white">AI News Aggregator</span>
+            </div>
+            <nav class="flex gap-3 text-sm text-white/90">
+                <a href="#" class="hover:text-white">new</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">past</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">comments</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">ask</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">show</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search & Filters -->
+    <div class="max-w-5xl mx-auto px-2 py-3 border-b border-orange-200">
+        <div class="flex flex-wrap items-center gap-3">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search..."
+                class="px-2 py-1 border border-gray-300 rounded text-sm w-48 focus:outline-none focus:border-orange-400"
+            >
+            <div class="flex gap-2 text-xs">
+                <span class="text-gray-600">source:</span>
+                <button class="filter-btn active px-2 py-0.5 rounded hover:bg-orange-100" data-source="all">all</button>
+                <button class="filter-btn px-2 py-0.5 rounded hover:bg-orange-100" data-source="Hacker News">HN</button>
+                <button class="filter-btn px-2 py-0.5 rounded hover:bg-orange-100" data-source="Reddit">Reddit</button>
+                <button class="filter-btn px-2 py-0.5 rounded hover:bg-orange-100" data-source="GitHub">GitHub</button>
+            </div>
+            <div class="flex gap-2 text-xs ml-auto">
+                <span class="text-gray-600">sort:</span>
+                <select id="sort-select" class="border border-gray-300 rounded px-1 py-0.5 text-xs">
+                    <option value="interest_score">score</option>
+                    <option value="created_at">date</option>
+                    <option value="comments_count">comments</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status -->
+    <div class="max-w-5xl mx-auto px-2 py-1 text-xs text-gray-500 flex justify-between">
+        <span id="article-count">0 articles</span>
+        <span id="last-updated"></span>
+    </div>
+
+    <!-- Article List -->
+    <main class="max-w-5xl mx-auto">
+        <table class="w-full" id="articles-container">
+            <tbody id="articles-tbody">
+                <tr><td colspan="4" class="text-center py-4 text-gray-500">Loading...</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto px-2 py-4 mt-8 border-t border-orange-200">
+        <div class="text-center text-xs text-gray-500">
+            <p>Powered by GitHub Pages | Modern HN Style Design Mock</p>
+        </div>
+    </footer>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentFilters = { source: 'all', search: '', sort: 'interest_score' };
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadArticles();
+            setupEventListeners();
+        });
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles || [];
+
+                if (data.last_updated) {
+                    document.getElementById('last-updated').textContent =
+                        `Updated: ${new Date(data.last_updated).toLocaleString('ja-JP')}`;
+                }
+
+                applyFilters();
+            } catch (error) {
+                document.getElementById('articles-tbody').innerHTML =
+                    '<tr><td colspan="4" class="text-center py-4 text-red-500">Failed to load articles</td></tr>';
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', debounce(e => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'hn-orange', 'font-bold'));
+                    btn.classList.add('active', 'hn-orange', 'font-bold');
+                    currentFilters.source = btn.dataset.source;
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('sort-select').addEventListener('change', e => {
+                currentFilters.sort = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            filteredArticles = articles.filter(article => {
+                if (currentFilters.source !== 'all' && !article.source.includes(currentFilters.source)) return false;
+                if (currentFilters.search) {
+                    const text = [article.title, article.summary, ...(article.tags || [])].join(' ').toLowerCase();
+                    if (!text.includes(currentFilters.search)) return false;
+                }
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentFilters.sort) {
+                    case 'interest_score': return (b.interest_score || 0) - (a.interest_score || 0);
+                    case 'created_at': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments_count': return (b.comments_count || 0) - (a.comments_count || 0);
+                    default: return 0;
+                }
+            });
+
+            document.getElementById('article-count').textContent = `${filteredArticles.length} articles`;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const tbody = document.getElementById('articles-tbody');
+
+            if (filteredArticles.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center py-4 text-gray-500">No articles found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = filteredArticles.map((article, index) => {
+                const score = article.interest_score || 0;
+                const domain = getDomain(article.url);
+                const timeAgo = getTimeAgo(article.created_at);
+                const sourceClass = getSourceClass(article.source);
+
+                return `
+                    <tr class="article-row align-top">
+                        <td class="rank py-1 pr-1">${index + 1}.</td>
+                        <td class="py-1 pr-2">
+                            <div class="w-3 h-3 hn-bg rounded-sm opacity-70"></div>
+                        </td>
+                        <td class="py-1">
+                            <div>
+                                <a href="${escapeHtml(article.url)}" target="_blank" class="hn-link text-sm hover:underline">
+                                    ${escapeHtml(article.title)}
+                                </a>
+                                <span class="text-xs text-gray-500">(${domain})</span>
+                                <span class="score-badge ml-1">${score}</span>
+                            </div>
+                            <div class="hn-subtext mt-0.5">
+                                ${article.source_score || 0} points |
+                                <span class="${sourceClass}">${escapeHtml(article.source)}</span> |
+                                ${timeAgo} |
+                                <a href="${escapeHtml(article.comments_url || '#')}" target="_blank" class="hover:underline">
+                                    ${article.comments_count || 0} comments
+                                </a>
+                                ${article.matched_keywords?.length ? `
+                                    <span class="ml-2 text-gray-400">
+                                        [${article.matched_keywords.slice(0, 3).join(', ')}]
+                                    </span>
+                                ` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function getDomain(url) {
+            try {
+                return new URL(url).hostname.replace('www.', '');
+            } catch {
+                return '';
+            }
+        }
+
+        function getSourceClass(source) {
+            if (source.includes('Hacker News')) return 'source-hn';
+            if (source.includes('Reddit')) return 'source-reddit';
+            if (source.includes('GitHub')) return 'source-github';
+            return '';
+        }
+
+        function getTimeAgo(dateString) {
+            if (!dateString) return '';
+            const diff = Date.now() - new Date(dateString).getTime();
+            const mins = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            if (mins < 60) return `${mins} minutes ago`;
+            if (hours < 24) return `${hours} hours ago`;
+            return `${days} days ago`;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+    </script>
+</body>
+</html>

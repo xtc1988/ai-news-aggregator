@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator - Bento Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #121212; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+
+        .card-large { grid-column: span 2; grid-row: span 2; }
+        .card-wide { grid-column: span 2; }
+        .card-tall { grid-row: span 2; }
+
+        .card-bg-1 { background: linear-gradient(135deg, #1E3A5F 0%, #0F2942 100%); }
+        .card-bg-2 { background: linear-gradient(135deg, #2D1B4E 0%, #1A0F2E 100%); }
+        .card-bg-3 { background: linear-gradient(135deg, #1E4D3D 0%, #0F2E24 100%); }
+        .card-bg-4 { background: linear-gradient(135deg, #4A1E1E 0%, #2E0F0F 100%); }
+        .card-bg-5 { background: linear-gradient(135deg, #3D3D1E 0%, #24240F 100%); }
+        .card-bg-6 { background: #1E1E1E; }
+
+        .source-filter.active {
+            background: #3B82F6;
+            color: white;
+        }
+
+        .score-ring {
+            background: conic-gradient(from 0deg, #3B82F6 var(--progress), transparent var(--progress));
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen p-4 md:p-6">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">
+                        <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            AI News
+                        </span>
+                    </h1>
+                    <p id="lastUpdated" class="text-gray-500 text-sm mt-1"></p>
+                </div>
+                <div class="bg-white/5 rounded-2xl px-6 py-3 flex items-center gap-4">
+                    <div class="text-center">
+                        <div id="articleCount" class="text-2xl font-bold text-white">0</div>
+                        <div class="text-xs text-gray-500">Articles</div>
+                    </div>
+                    <div class="w-px h-10 bg-white/10"></div>
+                    <div class="text-center">
+                        <div id="avgScore" class="text-2xl font-bold text-blue-400">0</div>
+                        <div class="text-xs text-gray-500">Avg Score</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search & Filter Bar -->
+        <div class="bg-white/5 rounded-2xl p-4 mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1 relative">
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search..."
+                        class="w-full bg-white/5 pl-12 pr-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white/10"
+                    >
+                </div>
+
+                <!-- Source Filters -->
+                <div class="flex gap-2 flex-wrap">
+                    <button class="source-filter active px-4 py-2 rounded-xl text-sm bg-white/10 transition-all" data-source="all">All</button>
+                    <button class="source-filter px-4 py-2 rounded-xl text-sm bg-white/10 transition-all" data-source="GitHub Trending">GitHub</button>
+                    <button class="source-filter px-4 py-2 rounded-xl text-sm bg-white/10 transition-all" data-source="Hacker News">HN</button>
+                    <button class="source-filter px-4 py-2 rounded-xl text-sm bg-white/10 transition-all" data-source="Reddit">Reddit</button>
+                </div>
+
+                <!-- Sort -->
+                <select id="sortSelect" class="bg-white/10 px-4 py-2 rounded-xl text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="score" class="bg-gray-900">Score</option>
+                    <option value="date" class="bg-gray-900">Date</option>
+                    <option value="comments" class="bg-gray-900">Comments</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Bento Grid -->
+        <div id="bentoGrid" class="bento-grid">
+            <!-- Articles will be inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-20 bg-white/5 rounded-3xl">
+            <div class="text-6xl mb-4">:(</div>
+            <p class="text-gray-400 text-xl">No articles found</p>
+        </div>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentSource = 'all';
+        let currentSort = 'score';
+        let searchQuery = '';
+
+        const cardBackgrounds = ['card-bg-1', 'card-bg-2', 'card-bg-3', 'card-bg-4', 'card-bg-5', 'card-bg-6'];
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles;
+
+                const lastUpdated = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent = lastUpdated.toLocaleString('ja-JP');
+
+                filterAndRender();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        function filterAndRender() {
+            filteredArticles = articles.filter(article => {
+                if (currentSource !== 'all') {
+                    if (currentSource === 'Reddit') {
+                        if (!article.source.includes('Reddit')) return false;
+                    } else if (article.source !== currentSource) {
+                        return false;
+                    }
+                }
+
+                if (searchQuery) {
+                    const searchLower = searchQuery.toLowerCase();
+                    const titleMatch = article.title.toLowerCase().includes(searchLower);
+                    const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchLower);
+                    const keywordMatch = article.matched_keywords.some(k => k.toLowerCase().includes(searchLower));
+                    if (!titleMatch && !summaryMatch && !keywordMatch) return false;
+                }
+
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentSort) {
+                    case 'score': return b.interest_score - a.interest_score;
+                    case 'date': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments': return b.comments_count - a.comments_count;
+                    default: return 0;
+                }
+            });
+
+            renderArticles();
+        }
+
+        function getCardSize(index, score) {
+            // High score articles get larger cards
+            if (index === 0 && score >= 40) return 'card-large';
+            if (index < 3 && score >= 35) return 'card-wide';
+            if (index < 5 && score >= 30) return Math.random() > 0.5 ? 'card-tall' : 'card-wide';
+            return '';
+        }
+
+        function renderArticles() {
+            const grid = document.getElementById('bentoGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            document.getElementById('articleCount').textContent = filteredArticles.length;
+
+            const avgScore = filteredArticles.length > 0
+                ? Math.round(filteredArticles.reduce((sum, a) => sum + a.interest_score, 0) / filteredArticles.length)
+                : 0;
+            document.getElementById('avgScore').textContent = avgScore;
+
+            if (filteredArticles.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filteredArticles.slice(0, 20).map((article, index) => {
+                const sizeClass = getCardSize(index, article.interest_score);
+                const bgClass = cardBackgrounds[index % cardBackgrounds.length];
+                const isLarge = sizeClass.includes('large') || sizeClass.includes('wide');
+                const scorePercent = (article.interest_score / 50) * 100;
+
+                return `
+                <article class="${bgClass} ${sizeClass} rounded-3xl p-6 flex flex-col hover:scale-[1.02] transition-transform cursor-pointer group" onclick="window.open('${article.url}', '_blank')">
+                    <!-- Header -->
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs font-medium px-3 py-1 bg-white/10 rounded-full text-gray-300">
+                            ${article.source}
+                        </span>
+                        <div class="relative w-12 h-12 flex items-center justify-center">
+                            <div class="absolute inset-0 rounded-full score-ring opacity-30" style="--progress: ${scorePercent}%"></div>
+                            <span class="text-lg font-bold">${article.interest_score}</span>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="text-${isLarge ? '2xl' : 'lg'} font-bold text-white mb-3 flex-1 group-hover:text-blue-300 transition-colors line-clamp-${isLarge ? '4' : '2'}">
+                        ${escapeHtml(article.title)}
+                    </h2>
+
+                    ${isLarge && article.summary ? `
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${escapeHtml(article.summary)}</p>
+                    ` : ''}
+
+                    <!-- Keywords -->
+                    ${article.matched_keywords.length > 0 && isLarge ? `
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${article.matched_keywords.slice(0, 4).map(keyword => `
+                                <span class="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded-lg">${escapeHtml(keyword)}</span>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-white/10 mt-auto">
+                        <span>${formatDate(article.created_at)}</span>
+                        <div class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            ${article.comments_count}
+                        </div>
+                    </div>
+                </article>
+            `}).join('');
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+
+            if (hours < 1) return 'Now';
+            if (hours < 24) return `${hours}h`;
+            const days = Math.floor(hours / 24);
+            return `${days}d`;
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRender();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            filterAndRender();
+        });
+
+        document.querySelectorAll('.source-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSource = btn.dataset.source;
+                filterAndRender();
+            });
+        });
+
+        loadArticles();
+    </script>
+</body>
+</html>

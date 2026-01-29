@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator - Newspaper Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            background: #FDF6E3;
+            color: #2C2C2C;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Playfair Display', serif;
+        }
+        .newspaper-border {
+            border: 2px solid #2C2C2C;
+        }
+        .double-border {
+            border-top: 3px double #2C2C2C;
+            border-bottom: 3px double #2C2C2C;
+        }
+        .column-divider {
+            border-right: 1px solid #D4C4A8;
+        }
+        .headline-main {
+            font-size: 3rem;
+            line-height: 1.1;
+        }
+        .dateline {
+            font-style: italic;
+            color: #666;
+        }
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding-right: 0.5rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+        }
+        .source-filter.active {
+            background: #2C2C2C;
+            color: #FDF6E3;
+        }
+        .article-column {
+            column-count: 1;
+        }
+        @media (min-width: 768px) {
+            .multi-column {
+                column-count: 2;
+                column-gap: 2rem;
+                column-rule: 1px solid #D4C4A8;
+            }
+        }
+        @media (min-width: 1024px) {
+            .multi-column-3 {
+                column-count: 3;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Masthead -->
+        <header class="text-center mb-6">
+            <div class="double-border py-4 mb-4">
+                <h1 class="headline-main font-black tracking-tight">THE AI CHRONICLE</h1>
+                <p class="text-sm tracking-widest uppercase mt-2">Your Daily Source for Artificial Intelligence News</p>
+            </div>
+            <div class="flex justify-between items-center text-sm border-b-2 border-current pb-2">
+                <span id="lastUpdated" class="dateline"></span>
+                <span id="articleCount" class="font-semibold">0 Articles</span>
+                <span>Est. 2026</span>
+            </div>
+        </header>
+
+        <!-- Search & Filter -->
+        <div class="mb-8 py-4 border-y border-gray-400">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <!-- Search -->
+                <div class="flex-1 w-full">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search the archives..."
+                        class="w-full px-4 py-2 bg-transparent border border-gray-600 focus:outline-none focus:border-gray-900"
+                    >
+                </div>
+
+                <!-- Source Filters -->
+                <div class="flex gap-2 flex-wrap justify-center">
+                    <button class="source-filter active px-4 py-1 text-sm border border-gray-800 transition-all" data-source="all">All</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all" data-source="GitHub Trending">GitHub</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all" data-source="Hacker News">Hacker News</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all" data-source="Reddit">Reddit</button>
+                </div>
+
+                <!-- Sort -->
+                <select id="sortSelect" class="bg-transparent border border-gray-600 px-4 py-2 focus:outline-none cursor-pointer">
+                    <option value="score">By Relevance</option>
+                    <option value="date">By Date</option>
+                    <option value="comments">By Discussion</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Featured Article -->
+            <div id="featuredArticle" class="mb-8 pb-8 border-b-2 border-gray-800">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <!-- Article Grid -->
+            <div id="articlesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Articles will be inserted here -->
+            </div>
+        </main>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <p class="text-2xl font-serif italic text-gray-500">No articles match your search criteria</p>
+            <p class="text-sm text-gray-400 mt-2">Please adjust your filters and try again</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t-2 border-current text-center text-sm">
+            <p class="italic">"All the AI News That's Fit to Print"</p>
+            <p class="mt-2 text-gray-600">The AI Chronicle - Newspaper Design Mock</p>
+        </footer>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentSource = 'all';
+        let currentSort = 'score';
+        let searchQuery = '';
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles;
+
+                const lastUpdated = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent = formatNewspaperDate(lastUpdated);
+
+                filterAndRender();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        function filterAndRender() {
+            filteredArticles = articles.filter(article => {
+                if (currentSource !== 'all') {
+                    if (currentSource === 'Reddit') {
+                        if (!article.source.includes('Reddit')) return false;
+                    } else if (article.source !== currentSource) {
+                        return false;
+                    }
+                }
+
+                if (searchQuery) {
+                    const searchLower = searchQuery.toLowerCase();
+                    const titleMatch = article.title.toLowerCase().includes(searchLower);
+                    const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchLower);
+                    const keywordMatch = article.matched_keywords.some(k => k.toLowerCase().includes(searchLower));
+                    if (!titleMatch && !summaryMatch && !keywordMatch) return false;
+                }
+
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentSort) {
+                    case 'score': return b.interest_score - a.interest_score;
+                    case 'date': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments': return b.comments_count - a.comments_count;
+                    default: return 0;
+                }
+            });
+
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const featuredContainer = document.getElementById('featuredArticle');
+            const grid = document.getElementById('articlesGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            document.getElementById('articleCount').textContent = `${filteredArticles.length} Articles`;
+
+            if (filteredArticles.length === 0) {
+                featuredContainer.classList.add('hidden');
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            featuredContainer.classList.remove('hidden');
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            // Featured article (first one)
+            const featured = filteredArticles[0];
+            featuredContainer.innerHTML = `
+                <article>
+                    <div class="flex items-center gap-4 mb-4 text-sm">
+                        <span class="uppercase tracking-wider font-semibold">${featured.source}</span>
+                        <span class="text-gray-500">|</span>
+                        <span class="dateline">${formatArticleDate(featured.created_at)}</span>
+                        <span class="text-gray-500">|</span>
+                        <span>Score: ${featured.interest_score}</span>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+                        <a href="${featured.url}" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-2">
+                            ${escapeHtml(featured.title)}
+                        </a>
+                    </h2>
+
+                    ${featured.summary ? `
+                        <div class="multi-column">
+                            <p class="drop-cap text-lg leading-relaxed">${escapeHtml(featured.summary)}</p>
+                        </div>
+                    ` : ''}
+
+                    <div class="flex flex-wrap gap-4 mt-6 text-sm">
+                        ${featured.matched_keywords.map(keyword => `
+                            <span class="uppercase tracking-wider text-gray-600">${escapeHtml(keyword)}</span>
+                        `).join('<span class="text-gray-400">|</span>')}
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="${featured.comments_url}" target="_blank" rel="noopener noreferrer" class="text-sm italic hover:underline">
+                            Join the discussion (${featured.comments_count} comments) &rarr;
+                        </a>
+                    </div>
+                </article>
+            `;
+
+            // Remaining articles
+            const remaining = filteredArticles.slice(1, 16);
+            grid.innerHTML = remaining.map((article, index) => `
+                <article class="${index < 2 ? 'md:col-span-1' : ''} pb-6 mb-6 border-b border-gray-300">
+                    <div class="text-xs uppercase tracking-wider text-gray-600 mb-2">
+                        ${article.source}
+                    </div>
+
+                    <h3 class="text-xl font-bold leading-snug mb-3">
+                        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                            ${escapeHtml(article.title)}
+                        </a>
+                    </h3>
+
+                    ${article.summary ? `
+                        <p class="text-sm text-gray-700 leading-relaxed mb-3 line-clamp-3">${escapeHtml(article.summary)}</p>
+                    ` : ''}
+
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span class="dateline">${formatArticleDate(article.created_at)}</span>
+                        <div class="flex items-center gap-3">
+                            <span class="font-semibold">Score: ${article.interest_score}</span>
+                            <a href="${article.comments_url}" target="_blank" class="hover:underline">${article.comments_count} comments</a>
+                        </div>
+                    </div>
+
+                    ${article.matched_keywords.length > 0 ? `
+                        <div class="mt-3 text-xs text-gray-600">
+                            ${article.matched_keywords.slice(0, 3).map(k => `<span class="italic">${escapeHtml(k)}</span>`).join(', ')}
+                        </div>
+                    ` : ''}
+                </article>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatNewspaperDate(date) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function formatArticleDate(dateString) {
+            const date = new Date(dateString);
+            const options = { month: 'short', day: 'numeric', year: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRender();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            filterAndRender();
+        });
+
+        document.querySelectorAll('.source-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSource = btn.dataset.source;
+                filterAndRender();
+            });
+        });
+
+        loadArticles();
+    </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - Card Masonry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #18181B;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 16px;
+        }
+
+        @media (max-width: 1280px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 480px) { .masonry-grid { column-count: 1; } }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(180deg, #27272A 0%, #1F1F23 100%);
+            border-radius: 16px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        .card-content {
+            position: relative;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .score-glow {
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .source-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .search-input {
+            background: linear-gradient(135deg, rgba(39, 39, 42, 0.8) 0%, rgba(31, 31, 35, 0.8) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .search-input:focus {
+            border-color: #8B5CF6;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .filter-pill {
+            background: rgba(39, 39, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s;
+        }
+
+        .filter-pill:hover, .filter-pill.active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .keyword-tag {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-zinc-900/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    AI News
+                </h1>
+
+                <div class="flex-1 max-w-md">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search articles..."
+                        class="search-input w-full px-4 py-2 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none"
+                    >
+                </div>
+
+                <div class="flex gap-2">
+                    <button class="filter-pill active px-4 py-2 rounded-xl text-sm" data-source="all">All</button>
+                    <button class="filter-pill px-4 py-2 rounded-xl text-sm" data-source="Hacker News">HN</button>
+                    <button class="filter-pill px-4 py-2 rounded-xl text-sm" data-source="Reddit">Reddit</button>
+                    <button class="filter-pill px-4 py-2 rounded-xl text-sm" data-source="GitHub">GitHub</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Status Bar -->
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-sm text-zinc-500">
+        <span id="article-count">0 articles</span>
+        <div class="flex items-center gap-4">
+            <select id="sort-select" class="bg-transparent border border-zinc-700 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-purple-500">
+                <option value="interest_score" class="bg-zinc-800">Score</option>
+                <option value="created_at" class="bg-zinc-800">Date</option>
+                <option value="comments_count" class="bg-zinc-800">Comments</option>
+            </select>
+            <span id="last-updated"></span>
+        </div>
+    </div>
+
+    <!-- Masonry Grid -->
+    <main class="max-w-7xl mx-auto px-4 pb-8">
+        <div class="masonry-grid" id="articles-container">
+            <div class="masonry-item">
+                <div class="gradient-border">
+                    <div class="card-content text-center text-zinc-500">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentFilters = { source: 'all', search: '', sort: 'interest_score' };
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadArticles();
+            setupEventListeners();
+        });
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles || [];
+
+                if (data.last_updated) {
+                    document.getElementById('last-updated').textContent =
+                        new Date(data.last_updated).toLocaleString('ja-JP');
+                }
+
+                applyFilters();
+            } catch (error) {
+                document.getElementById('articles-container').innerHTML =
+                    '<div class="masonry-item"><div class="gradient-border"><div class="card-content text-center text-red-400">Failed to load</div></div></div>';
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', debounce(e => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+
+            document.querySelectorAll('.filter-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilters.source = btn.dataset.source;
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('sort-select').addEventListener('change', e => {
+                currentFilters.sort = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            filteredArticles = articles.filter(article => {
+                if (currentFilters.source !== 'all' && !article.source.includes(currentFilters.source)) return false;
+                if (currentFilters.search) {
+                    const text = [article.title, article.summary, ...(article.tags || [])].join(' ').toLowerCase();
+                    if (!text.includes(currentFilters.search)) return false;
+                }
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentFilters.sort) {
+                    case 'interest_score': return (b.interest_score || 0) - (a.interest_score || 0);
+                    case 'created_at': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments_count': return (b.comments_count || 0) - (a.comments_count || 0);
+                    default: return 0;
+                }
+            });
+
+            document.getElementById('article-count').textContent = `${filteredArticles.length} articles`;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const container = document.getElementById('articles-container');
+
+            if (filteredArticles.length === 0) {
+                container.innerHTML = `
+                    <div class="masonry-item">
+                        <div class="gradient-border">
+                            <div class="card-content text-center text-zinc-500">No articles found</div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filteredArticles.map((article, index) => {
+                const score = article.interest_score || 0;
+                const hasSummary = article.summary && article.summary.length > 0;
+                const hasKeywords = article.matched_keywords?.length > 0;
+                const timeAgo = getTimeAgo(article.created_at);
+
+                // Vary card heights based on content
+                const extraContent = hasSummary || hasKeywords;
+
+                return `
+                    <div class="masonry-item">
+                        <div class="gradient-border group cursor-pointer" onclick="window.open('${escapeHtml(article.url)}', '_blank')">
+                            <div class="card-content">
+                                <!-- Score Badge -->
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="source-badge px-3 py-1 rounded-full text-xs text-purple-300">
+                                        ${escapeHtml(article.source)}
+                                    </span>
+                                    <span class="text-2xl font-bold score-glow text-purple-400">${score}</span>
+                                </div>
+
+                                <!-- Title -->
+                                <h3 class="text-white font-medium mb-2 group-hover:text-purple-300 transition-colors line-clamp-3">
+                                    ${escapeHtml(article.title)}
+                                </h3>
+
+                                ${hasSummary ? `
+                                    <p class="text-zinc-400 text-sm mb-3 line-clamp-4">${escapeHtml(article.summary)}</p>
+                                ` : ''}
+
+                                ${hasKeywords ? `
+                                    <div class="flex flex-wrap gap-1.5 mb-3">
+                                        ${article.matched_keywords.slice(0, 4).map(kw => `
+                                            <span class="keyword-tag px-2 py-0.5 rounded-full text-xs text-pink-300">${escapeHtml(kw)}</span>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+
+                                <!-- Meta -->
+                                <div class="flex items-center justify-between text-xs text-zinc-500 pt-2 border-t border-white/5">
+                                    <span>${timeAgo}</span>
+                                    <a href="${escapeHtml(article.comments_url || '#')}" target="_blank" class="hover:text-purple-400" onclick="event.stopPropagation()">
+                                        ${article.comments_count || 0} comments
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getTimeAgo(dateString) {
+            if (!dateString) return '';
+            const diff = Date.now() - new Date(dateString).getTime();
+            const mins = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            if (mins < 60) return `${mins}m ago`;
+            if (hours < 24) return `${hours}h ago`;
+            return `${days}d ago`;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+    </script>
+</body>
+</html>

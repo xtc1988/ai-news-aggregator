@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - Terminal Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        body {
+            background-color: #1E1E1E;
+            color: #00FF00;
+        }
+        .terminal-green { color: #00FF00; }
+        .terminal-dim { color: #4A9C4A; }
+        .terminal-yellow { color: #FFFF00; }
+        .terminal-cyan { color: #00FFFF; }
+        .terminal-magenta { color: #FF00FF; }
+        .terminal-red { color: #FF6B6B; }
+        .terminal-orange { color: #FFA500; }
+        .terminal-white { color: #E0E0E0; }
+
+        .prompt::before {
+            content: '>';
+            color: #00FF00;
+            margin-right: 8px;
+        }
+
+        .cursor {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            z-index: 1000;
+        }
+
+        .crt-effect {
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        .article-row:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        input, select {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #1E1E1E;
+            border: 1px solid #00FF00;
+            color: #00FF00;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .filter-btn {
+            border: 1px solid #4A9C4A;
+            color: #4A9C4A;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: #00FF00;
+            color: #00FF00;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        .score-high { color: #00FF00; }
+        .score-medium { color: #FFFF00; }
+        .score-low { color: #FF6B6B; }
+
+        ::selection {
+            background: #00FF00;
+            color: #1E1E1E;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 crt-effect">
+    <div class="scanline"></div>
+
+    <!-- Terminal Header -->
+    <header class="mb-4">
+        <div class="border border-green-500 p-2 mb-2">
+            <pre class="text-xs terminal-dim">
+ █████╗ ██╗    ███╗   ██╗███████╗██╗    ██╗███████╗
+██╔══██╗██║    ████╗  ██║██╔════╝██║    ██║██╔════╝
+███████║██║    ██╔██╗ ██║█████╗  ██║ █╗ ██║███████╗
+██╔══██║██║    ██║╚██╗██║██╔══╝  ██║███╗██║╚════██║
+██║  ██║██║    ██║ ╚████║███████╗╚███╔███╔╝███████║
+╚═╝  ╚═╝╚═╝    ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ ╚══════╝
+            </pre>
+        </div>
+        <p class="text-sm">
+            <span class="terminal-cyan">[SYSTEM]</span>
+            AI News Aggregator Terminal v1.0.0
+            <span class="terminal-dim">|</span>
+            <span class="terminal-yellow">PID: 31337</span>
+        </p>
+    </header>
+
+    <!-- Command Input -->
+    <div class="mb-4">
+        <div class="flex items-center gap-2 mb-2">
+            <span class="terminal-cyan">user@ainews:~$</span>
+            <input
+                type="text"
+                id="search-input"
+                placeholder="grep -i 'keyword'"
+                class="flex-1 px-2 py-1 text-sm"
+            >
+            <span class="cursor">_</span>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-sm mb-2">
+            <span class="terminal-dim">--filter:</span>
+            <button class="filter-btn active px-2 py-0.5" data-source="all">[ALL]</button>
+            <button class="filter-btn px-2 py-0.5" data-source="Hacker News">[HN]</button>
+            <button class="filter-btn px-2 py-0.5" data-source="Reddit">[REDDIT]</button>
+            <button class="filter-btn px-2 py-0.5" data-source="GitHub">[GITHUB]</button>
+            <span class="terminal-dim ml-4">--sort:</span>
+            <select id="sort-select" class="px-2 py-0.5 text-sm">
+                <option value="interest_score">score</option>
+                <option value="created_at">date</option>
+                <option value="comments_count">comments</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Status Line -->
+    <div class="border-t border-b border-green-900 py-1 mb-4 text-sm flex justify-between">
+        <span>
+            <span class="terminal-cyan">[INFO]</span>
+            <span id="article-count">0</span> records found
+        </span>
+        <span class="terminal-dim">
+            Last sync: <span id="last-updated">--</span>
+        </span>
+    </div>
+
+    <!-- Article List -->
+    <main id="articles-container" class="text-sm">
+        <p class="terminal-yellow">Loading data...</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-8 pt-4 border-t border-green-900 text-xs terminal-dim">
+        <p>
+            <span class="terminal-cyan">[EOF]</span>
+            End of feed | Press Ctrl+C to exit |
+            <span class="terminal-green">Connection: OK</span>
+        </p>
+    </footer>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentFilters = { source: 'all', search: '', sort: 'interest_score' };
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadArticles();
+            setupEventListeners();
+        });
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles || [];
+
+                if (data.last_updated) {
+                    document.getElementById('last-updated').textContent =
+                        new Date(data.last_updated).toISOString();
+                }
+
+                applyFilters();
+            } catch (error) {
+                document.getElementById('articles-container').innerHTML =
+                    '<p class="terminal-red">[ERROR] Failed to fetch data from source</p>';
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', debounce(e => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilters.source = btn.dataset.source;
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('sort-select').addEventListener('change', e => {
+                currentFilters.sort = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            filteredArticles = articles.filter(article => {
+                if (currentFilters.source !== 'all' && !article.source.includes(currentFilters.source)) return false;
+                if (currentFilters.search) {
+                    const text = [article.title, article.summary, ...(article.tags || [])].join(' ').toLowerCase();
+                    if (!text.includes(currentFilters.search)) return false;
+                }
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentFilters.sort) {
+                    case 'interest_score': return (b.interest_score || 0) - (a.interest_score || 0);
+                    case 'created_at': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments_count': return (b.comments_count || 0) - (a.comments_count || 0);
+                    default: return 0;
+                }
+            });
+
+            document.getElementById('article-count').textContent = filteredArticles.length;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const container = document.getElementById('articles-container');
+
+            if (filteredArticles.length === 0) {
+                container.innerHTML = '<p class="terminal-yellow">[WARN] No matching records</p>';
+                return;
+            }
+
+            container.innerHTML = filteredArticles.map((article, index) => {
+                const score = article.interest_score || 0;
+                const scoreClass = score >= 30 ? 'score-high' : score >= 15 ? 'score-medium' : 'score-low';
+                const timestamp = article.created_at ? new Date(article.created_at).toISOString().slice(0, 19) : '--';
+                const sourceTag = getSourceTag(article.source);
+                const keywords = article.matched_keywords?.slice(0, 3).join(', ') || '--';
+
+                return `
+                    <div class="article-row py-2 border-b border-green-900/30">
+                        <div class="flex items-start gap-2">
+                            <span class="terminal-dim">${String(index + 1).padStart(3, '0')}</span>
+                            <span class="${scoreClass}">[${String(score).padStart(3, '0')}]</span>
+                            <span class="terminal-cyan">${sourceTag}</span>
+                            <a href="${escapeHtml(article.url)}" target="_blank" class="terminal-white hover:terminal-green hover:underline flex-1">
+                                ${escapeHtml(article.title)}
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-4 ml-24 mt-1">
+                            <span class="terminal-dim">ts: ${timestamp}</span>
+                            <span class="terminal-dim">|</span>
+                            <span class="terminal-magenta">pts: ${article.source_score || 0}</span>
+                            <span class="terminal-dim">|</span>
+                            <a href="${escapeHtml(article.comments_url || '#')}" target="_blank" class="terminal-orange hover:underline">
+                                comments: ${article.comments_count || 0}
+                            </a>
+                            <span class="terminal-dim">|</span>
+                            <span class="terminal-cyan">tags: [${keywords}]</span>
+                        </div>
+                        ${article.summary ? `
+                            <div class="ml-24 mt-1 terminal-dim text-xs">
+                                > ${escapeHtml(article.summary.slice(0, 150))}${article.summary.length > 150 ? '...' : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getSourceTag(source) {
+            if (source.includes('Hacker News')) return '[HN]';
+            if (source.includes('Reddit')) return '[RD]';
+            if (source.includes('GitHub')) return '[GH]';
+            return '[--]';
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator - Minimal Light</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #FAFAFA; }
+        .card-hover:hover { transform: translateY(-2px); }
+        .source-filter.active {
+            background-color: #2563EB;
+            color: white;
+            border-color: #2563EB;
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-light text-slate-900 mb-2">
+                AI News
+            </h1>
+            <p class="text-slate-500 text-lg">Curated tech news from across the web</p>
+            <p id="lastUpdated" class="text-slate-400 text-sm mt-4"></p>
+        </header>
+
+        <!-- Search & Filter -->
+        <div class="mb-12">
+            <div class="flex flex-col md:flex-row gap-4 mb-6">
+                <!-- Search Input -->
+                <div class="flex-1 relative">
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search articles..."
+                        class="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    >
+                </div>
+                <!-- Sort Select -->
+                <select id="sortSelect" class="bg-white border border-slate-200 px-6 py-4 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+                    <option value="score">Score</option>
+                    <option value="date">Date</option>
+                    <option value="comments">Comments</option>
+                </select>
+            </div>
+
+            <!-- Source Filters -->
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="source-filter active px-6 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white transition-all hover:border-blue-500" data-source="all">
+                    All
+                </button>
+                <button class="source-filter px-6 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white transition-all hover:border-blue-500" data-source="GitHub Trending">
+                    GitHub
+                </button>
+                <button class="source-filter px-6 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white transition-all hover:border-blue-500" data-source="Hacker News">
+                    Hacker News
+                </button>
+                <button class="source-filter px-6 py-2 rounded-full text-sm font-medium border border-slate-200 bg-white transition-all hover:border-blue-500" data-source="Reddit">
+                    Reddit
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex justify-center gap-12 mb-12 pb-12 border-b border-slate-200">
+            <div class="text-center">
+                <div id="articleCount" class="text-3xl font-light text-blue-600">0</div>
+                <div class="text-sm text-slate-500 mt-1">Articles</div>
+            </div>
+            <div class="text-center">
+                <div id="sourceCount" class="text-3xl font-light text-blue-600">0</div>
+                <div class="text-sm text-slate-500 mt-1">Sources</div>
+            </div>
+        </div>
+
+        <!-- Articles List -->
+        <div id="articlesList" class="space-y-6">
+            <!-- Articles will be inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <svg class="w-16 h-16 mx-auto text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+            </svg>
+            <p class="text-slate-500 text-lg">No articles found</p>
+            <p class="text-slate-400 text-sm mt-2">Try adjusting your search criteria</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+            AI News Aggregator - Minimal Design
+        </footer>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentSource = 'all';
+        let currentSort = 'score';
+        let searchQuery = '';
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles;
+
+                const lastUpdated = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent = `Updated ${formatRelativeDate(lastUpdated)}`;
+
+                const sources = new Set(articles.map(a => a.source.split('/')[0]));
+                document.getElementById('sourceCount').textContent = sources.size;
+
+                filterAndRender();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        function filterAndRender() {
+            filteredArticles = articles.filter(article => {
+                if (currentSource !== 'all') {
+                    if (currentSource === 'Reddit') {
+                        if (!article.source.includes('Reddit')) return false;
+                    } else if (article.source !== currentSource) {
+                        return false;
+                    }
+                }
+
+                if (searchQuery) {
+                    const searchLower = searchQuery.toLowerCase();
+                    const titleMatch = article.title.toLowerCase().includes(searchLower);
+                    const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchLower);
+                    const keywordMatch = article.matched_keywords.some(k => k.toLowerCase().includes(searchLower));
+                    if (!titleMatch && !summaryMatch && !keywordMatch) return false;
+                }
+
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentSort) {
+                    case 'score': return b.interest_score - a.interest_score;
+                    case 'date': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments': return b.comments_count - a.comments_count;
+                    default: return 0;
+                }
+            });
+
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const list = document.getElementById('articlesList');
+            const emptyState = document.getElementById('emptyState');
+
+            document.getElementById('articleCount').textContent = filteredArticles.length;
+
+            if (filteredArticles.length === 0) {
+                list.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            list.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            list.innerHTML = filteredArticles.map(article => `
+                <article class="bg-white rounded-lg shadow-sm p-8 card-hover transition-all duration-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <!-- Score -->
+                        <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center">
+                            <span class="text-2xl font-light text-blue-600">${article.interest_score}</span>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-sm font-medium text-blue-600">${article.source}</span>
+                                <span class="text-slate-300">|</span>
+                                <span class="text-sm text-slate-400">${formatDate(article.created_at)}</span>
+                            </div>
+
+                            <h2 class="text-xl font-medium text-slate-900 mb-3 leading-relaxed">
+                                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
+                                    ${escapeHtml(article.title)}
+                                </a>
+                            </h2>
+
+                            ${article.summary ? `
+                                <p class="text-slate-600 text-base leading-relaxed mb-4">${escapeHtml(article.summary)}</p>
+                            ` : ''}
+
+                            <div class="flex flex-wrap items-center gap-4">
+                                ${article.matched_keywords.length > 0 ? `
+                                    <div class="flex flex-wrap gap-2">
+                                        ${article.matched_keywords.slice(0, 5).map(keyword => `
+                                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full">${escapeHtml(keyword)}</span>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+
+                                <a href="${article.comments_url}" target="_blank" rel="noopener noreferrer" class="text-sm text-slate-400 hover:text-blue-600 transition-colors flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                    </svg>
+                                    ${article.comments_count} comments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        function formatRelativeDate(date) {
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+
+            if (hours < 1) return 'just now';
+            if (hours < 24) return `${hours} hours ago`;
+            const days = Math.floor(hours / 24);
+            return `${days} days ago`;
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRender();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            filterAndRender();
+        });
+
+        document.querySelectorAll('.source-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSource = btn.dataset.source;
+                filterAndRender();
+            });
+        });
+
+        loadArticles();
+    </script>
+</body>
+</html>

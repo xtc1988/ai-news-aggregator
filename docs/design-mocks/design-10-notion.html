@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - Notion Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+        }
+        body {
+            background-color: #191919;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .notion-page {
+            max-width: 900px;
+        }
+
+        .notion-header {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .notion-row {
+            border-radius: 4px;
+            transition: background-color 0.1s ease;
+        }
+
+        .notion-row:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .notion-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .notion-toggle-icon {
+            transition: transform 0.2s ease;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .notion-toggle.open .notion-toggle-icon {
+            transform: rotate(90deg);
+        }
+
+        .notion-toggle-content {
+            display: none;
+            padding-left: 24px;
+        }
+
+        .notion-toggle.open .notion-toggle-content {
+            display: block;
+        }
+
+        .notion-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            height: 20px;
+        }
+
+        .tag-blue { background: rgba(46, 170, 220, 0.2); color: rgb(46, 170, 220); }
+        .tag-green { background: rgba(77, 171, 154, 0.2); color: rgb(77, 171, 154); }
+        .tag-orange { background: rgba(255, 163, 68, 0.2); color: rgb(255, 163, 68); }
+        .tag-pink { background: rgba(226, 85, 161, 0.2); color: rgb(226, 85, 161); }
+        .tag-purple { background: rgba(144, 101, 176, 0.2); color: rgb(144, 101, 176); }
+        .tag-red { background: rgba(255, 115, 105, 0.2); color: rgb(255, 115, 105); }
+        .tag-gray { background: rgba(155, 154, 151, 0.2); color: rgb(155, 154, 151); }
+
+        .notion-search {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .notion-search:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.075);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .notion-select {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .notion-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            border-radius: 4px;
+            transition: background-color 0.1s;
+        }
+
+        .notion-btn:hover {
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .notion-btn.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .notion-icon {
+            font-size: 14px;
+            margin-right: 4px;
+        }
+
+        .notion-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .score-badge {
+            min-width: 28px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .score-high { background: rgba(77, 171, 154, 0.2); color: rgb(77, 171, 154); }
+        .score-medium { background: rgba(255, 163, 68, 0.2); color: rgb(255, 163, 68); }
+        .score-low { background: rgba(155, 154, 151, 0.2); color: rgb(155, 154, 151); }
+
+        /* Notion-style checkbox */
+        .notion-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+
+        .notion-checkbox:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Subtle gradient header */
+        .page-header {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="notion-page mx-auto px-6 py-12">
+        <!-- Page Header -->
+        <header class="page-header mb-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-4xl">🤖</span>
+                <h1 class="notion-header">AI News</h1>
+            </div>
+            <p class="text-base text-white/50 mb-6">
+                AI・ML関連の最新ニュースをキュレーション
+            </p>
+
+            <!-- Controls -->
+            <div class="flex items-center gap-3 flex-wrap">
+                <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/40">🔍</span>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search..."
+                        class="notion-search pl-9 pr-4 py-1.5 text-sm w-64"
+                    >
+                </div>
+
+                <div class="flex gap-1">
+                    <button class="notion-btn active px-3 py-1.5 text-sm" data-source="all">All</button>
+                    <button class="notion-btn px-3 py-1.5 text-sm" data-source="Hacker News">📰 HN</button>
+                    <button class="notion-btn px-3 py-1.5 text-sm" data-source="Reddit">💬 Reddit</button>
+                    <button class="notion-btn px-3 py-1.5 text-sm" data-source="GitHub">💻 GitHub</button>
+                </div>
+
+                <select id="sort-select" class="notion-select px-3 py-1.5 text-sm">
+                    <option value="interest_score">Sort: Score</option>
+                    <option value="created_at">Sort: Date</option>
+                    <option value="comments_count">Sort: Comments</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Status -->
+        <div class="flex items-center justify-between text-sm text-white/40 mb-4">
+            <span id="article-count">0 items</span>
+            <span id="last-updated"></span>
+        </div>
+
+        <!-- Divider -->
+        <div class="notion-divider mb-4"></div>
+
+        <!-- Database Table Header -->
+        <div class="grid grid-cols-12 gap-2 px-2 py-2 text-xs text-white/50 uppercase tracking-wider border-b border-white/10">
+            <div class="col-span-6">Title</div>
+            <div class="col-span-2">Source</div>
+            <div class="col-span-1 text-center">Score</div>
+            <div class="col-span-1 text-center">💬</div>
+            <div class="col-span-2 text-right">Date</div>
+        </div>
+
+        <!-- Articles Container -->
+        <main id="articles-container">
+            <div class="py-8 text-center text-white/40">
+                <span class="text-2xl">⏳</span>
+                <p class="mt-2">Loading...</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-white/10">
+            <p class="text-center text-sm text-white/30">
+                Built with Notion-style design
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentFilters = { source: 'all', search: '', sort: 'interest_score' };
+        const tagColors = ['tag-blue', 'tag-green', 'tag-orange', 'tag-pink', 'tag-purple', 'tag-red'];
+        const keywordColorMap = {};
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadArticles();
+            setupEventListeners();
+        });
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles || [];
+
+                // Build keyword color map
+                const allKeywords = [...new Set(articles.flatMap(a => a.matched_keywords || []))];
+                allKeywords.forEach((kw, i) => {
+                    keywordColorMap[kw] = tagColors[i % tagColors.length];
+                });
+
+                if (data.last_updated) {
+                    document.getElementById('last-updated').textContent =
+                        `Last updated: ${new Date(data.last_updated).toLocaleString('ja-JP')}`;
+                }
+
+                applyFilters();
+            } catch (error) {
+                document.getElementById('articles-container').innerHTML = `
+                    <div class="py-8 text-center text-white/40">
+                        <span class="text-2xl">❌</span>
+                        <p class="mt-2">Failed to load articles</p>
+                    </div>
+                `;
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', debounce(e => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+
+            document.querySelectorAll('.notion-btn[data-source]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.notion-btn[data-source]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilters.source = btn.dataset.source;
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('sort-select').addEventListener('change', e => {
+                currentFilters.sort = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            filteredArticles = articles.filter(article => {
+                if (currentFilters.source !== 'all' && !article.source.includes(currentFilters.source)) return false;
+                if (currentFilters.search) {
+                    const text = [article.title, article.summary, ...(article.tags || [])].join(' ').toLowerCase();
+                    if (!text.includes(currentFilters.search)) return false;
+                }
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentFilters.sort) {
+                    case 'interest_score': return (b.interest_score || 0) - (a.interest_score || 0);
+                    case 'created_at': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments_count': return (b.comments_count || 0) - (a.comments_count || 0);
+                    default: return 0;
+                }
+            });
+
+            document.getElementById('article-count').textContent = `${filteredArticles.length} items`;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const container = document.getElementById('articles-container');
+
+            if (filteredArticles.length === 0) {
+                container.innerHTML = `
+                    <div class="py-8 text-center text-white/40">
+                        <span class="text-2xl">📭</span>
+                        <p class="mt-2">No articles found</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filteredArticles.map((article, index) => {
+                const score = article.interest_score || 0;
+                const scoreClass = score >= 30 ? 'score-high' : score >= 15 ? 'score-medium' : 'score-low';
+                const sourceEmoji = getSourceEmoji(article.source);
+                const dateStr = formatDate(article.created_at);
+                const hasDetails = article.summary || (article.matched_keywords?.length > 0);
+                const toggleId = `toggle-${index}`;
+
+                return `
+                    <div class="notion-row">
+                        <!-- Main Row -->
+                        <div class="grid grid-cols-12 gap-2 px-2 py-2.5 items-center ${hasDetails ? 'notion-toggle' : ''}" ${hasDetails ? `onclick="toggleRow('${toggleId}')"` : ''}>
+                            <div class="col-span-6 flex items-center gap-2">
+                                ${hasDetails ? `
+                                    <span class="notion-toggle-icon">▶</span>
+                                ` : `
+                                    <span class="w-3"></span>
+                                `}
+                                <a href="${escapeHtml(article.url)}" target="_blank" class="hover:underline text-sm truncate" onclick="event.stopPropagation()">
+                                    ${escapeHtml(article.title)}
+                                </a>
+                            </div>
+                            <div class="col-span-2">
+                                <span class="notion-tag tag-gray">${sourceEmoji} ${getSourceShort(article.source)}</span>
+                            </div>
+                            <div class="col-span-1 text-center">
+                                <span class="score-badge ${scoreClass}">${score}</span>
+                            </div>
+                            <div class="col-span-1 text-center text-sm text-white/50">
+                                <a href="${escapeHtml(article.comments_url || '#')}" target="_blank" class="hover:text-white/80" onclick="event.stopPropagation()">
+                                    ${article.comments_count || 0}
+                                </a>
+                            </div>
+                            <div class="col-span-2 text-right text-sm text-white/40">
+                                ${dateStr}
+                            </div>
+                        </div>
+
+                        ${hasDetails ? `
+                            <!-- Toggle Content -->
+                            <div id="${toggleId}" class="notion-toggle-content pb-3">
+                                ${article.summary ? `
+                                    <p class="text-sm text-white/60 mb-2 leading-relaxed">${escapeHtml(article.summary)}</p>
+                                ` : ''}
+                                ${article.matched_keywords?.length ? `
+                                    <div class="flex flex-wrap gap-1.5">
+                                        ${article.matched_keywords.map(kw => `
+                                            <span class="notion-tag ${keywordColorMap[kw] || 'tag-gray'}">${escapeHtml(kw)}</span>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                                <div class="mt-2 text-xs text-white/30">
+                                    Source score: ${article.source_score || 0}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleRow(toggleId) {
+            const content = document.getElementById(toggleId);
+            const row = content.previousElementSibling;
+            row.parentElement.classList.toggle('open');
+
+            // Toggle icon rotation handled by CSS
+            const icon = row.querySelector('.notion-toggle-icon');
+            if (icon) {
+                row.parentElement.classList.contains('open')
+                    ? icon.textContent = '▼'
+                    : icon.textContent = '▶';
+            }
+        }
+
+        function getSourceEmoji(source) {
+            if (source.includes('Hacker News')) return '📰';
+            if (source.includes('Reddit')) return '💬';
+            if (source.includes('GitHub')) return '💻';
+            return '📄';
+        }
+
+        function getSourceShort(source) {
+            if (source.includes('Hacker News')) return 'HN';
+            if (source.includes('Reddit')) return source.split('/')[1] || 'Reddit';
+            if (source.includes('GitHub')) return 'GitHub';
+            return source;
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            const days = Math.floor(diff / 86400000);
+
+            if (days === 0) return 'Today';
+            if (days === 1) return 'Yesterday';
+            if (days < 7) return `${days} days ago`;
+            return date.toLocaleDateString('ja-JP', { month: 'short', day: 'numeric' });
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+    </script>
+</body>
+</html>

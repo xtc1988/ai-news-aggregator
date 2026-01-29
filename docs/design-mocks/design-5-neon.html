@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator - Neon Cyberpunk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'JetBrains Mono', monospace; }
+        h1, h2, .headline { font-family: 'Orbitron', sans-serif; }
+
+        body {
+            background: #0A0A0A;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            z-index: 1000;
+        }
+
+        /* Grid background */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .neon-green {
+            color: #00FF88;
+            text-shadow: 0 0 10px #00FF88, 0 0 20px #00FF88, 0 0 30px #00FF88;
+        }
+
+        .neon-magenta {
+            color: #FF00FF;
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF;
+        }
+
+        .neon-cyan {
+            color: #00FFFF;
+            text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+        }
+
+        .neon-border-green {
+            border: 1px solid #00FF88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3), inset 0 0 10px rgba(0, 255, 136, 0.1);
+        }
+
+        .neon-border-magenta {
+            border: 1px solid #FF00FF;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3), inset 0 0 10px rgba(255, 0, 255, 0.1);
+        }
+
+        .neon-card {
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            position: relative;
+        }
+
+        .neon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00FF88, transparent);
+        }
+
+        .neon-card:hover {
+            border-color: #00FF88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .source-filter.active {
+            background: rgba(0, 255, 136, 0.2);
+            border-color: #00FF88;
+            color: #00FF88;
+        }
+
+        .glitch-text {
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            91% { transform: translate(-2px, 1px); }
+            92% { transform: translate(2px, -1px); }
+            93% { transform: translate(-1px, 2px); }
+        }
+
+        .typing-cursor::after {
+            content: '_';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #00FF88, #00FFFF, #FF00FF);
+            height: 2px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #00FF88; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00FFAA; }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen p-4 md:p-8">
+    <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-600">[SYS.INIT]</span>
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    </div>
+                    <h1 class="headline text-3xl md:text-5xl font-black neon-green glitch-text mt-2">
+                        AI//NEWS.FEED
+                    </h1>
+                    <p class="text-sm text-gray-600 mt-1 typing-cursor">Loading neural network data streams</p>
+                </div>
+                <div class="neon-border-green rounded p-4 bg-black/50">
+                    <div class="text-xs text-gray-600 mb-1">&gt; STATUS</div>
+                    <div class="flex items-center gap-6">
+                        <div>
+                            <span id="articleCount" class="text-2xl font-bold neon-green">000</span>
+                            <span class="text-xs text-gray-600 ml-1">RECORDS</span>
+                        </div>
+                        <div>
+                            <span id="lastUpdated" class="text-xs text-gray-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar w-full"></div>
+        </header>
+
+        <!-- Terminal-style Search -->
+        <div class="neon-border-green rounded-lg p-6 mb-8 bg-black/30">
+            <div class="flex items-center gap-2 text-xs text-gray-600 mb-4">
+                <span class="neon-green">&gt;</span>
+                <span>QUERY_INTERFACE v2.0</span>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4">
+                <!-- Search Input -->
+                <div class="flex-1 relative">
+                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 neon-green">&gt;_</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="SEARCH_QUERY..."
+                        class="w-full bg-black/50 pl-12 pr-4 py-3 rounded border border-gray-800 text-green-400 placeholder-gray-700 focus:outline-none focus:border-green-500 font-mono"
+                    >
+                </div>
+
+                <!-- Sort -->
+                <select id="sortSelect" class="bg-black/50 border border-gray-800 px-4 py-3 rounded text-green-400 focus:outline-none focus:border-green-500 cursor-pointer">
+                    <option value="score" class="bg-black">SORT::SCORE</option>
+                    <option value="date" class="bg-black">SORT::DATE</option>
+                    <option value="comments" class="bg-black">SORT::ACTIVITY</option>
+                </select>
+            </div>
+
+            <!-- Source Filters -->
+            <div class="flex flex-wrap gap-2 mt-4">
+                <span class="text-xs text-gray-600 mr-2">[FILTER]</span>
+                <button class="source-filter active px-4 py-1 rounded text-xs border border-gray-700 transition-all" data-source="all">
+                    ALL::SOURCES
+                </button>
+                <button class="source-filter px-4 py-1 rounded text-xs border border-gray-700 transition-all" data-source="GitHub Trending">
+                    GIT::HUB
+                </button>
+                <button class="source-filter px-4 py-1 rounded text-xs border border-gray-700 transition-all" data-source="Hacker News">
+                    HACKER::NEWS
+                </button>
+                <button class="source-filter px-4 py-1 rounded text-xs border border-gray-700 transition-all" data-source="Reddit">
+                    RED::DIT
+                </button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Articles will be inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden neon-border-magenta rounded-lg p-12 text-center bg-black/30">
+            <div class="text-6xl mb-4 neon-magenta">[!]</div>
+            <p class="neon-magenta text-lg">NO_DATA_FOUND</p>
+            <p class="text-gray-600 text-sm mt-2">&gt; Adjust query parameters and retry_</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-gray-900 text-center text-xs text-gray-700">
+            <p>&lt;AI//NEWS.FEED&gt; CYBERPUNK_EDITION // SYS.VERSION::5.0</p>
+            <p class="neon-green mt-2">[CONNECTED]</p>
+        </footer>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentSource = 'all';
+        let currentSort = 'score';
+        let searchQuery = '';
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles;
+
+                const lastUpdated = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent = `SYNC::${lastUpdated.toISOString().slice(0, 19).replace('T', '_')}`;
+
+                filterAndRender();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        function filterAndRender() {
+            filteredArticles = articles.filter(article => {
+                if (currentSource !== 'all') {
+                    if (currentSource === 'Reddit') {
+                        if (!article.source.includes('Reddit')) return false;
+                    } else if (article.source !== currentSource) {
+                        return false;
+                    }
+                }
+
+                if (searchQuery) {
+                    const searchLower = searchQuery.toLowerCase();
+                    const titleMatch = article.title.toLowerCase().includes(searchLower);
+                    const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchLower);
+                    const keywordMatch = article.matched_keywords.some(k => k.toLowerCase().includes(searchLower));
+                    if (!titleMatch && !summaryMatch && !keywordMatch) return false;
+                }
+
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentSort) {
+                    case 'score': return b.interest_score - a.interest_score;
+                    case 'date': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments': return b.comments_count - a.comments_count;
+                    default: return 0;
+                }
+            });
+
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const grid = document.getElementById('articlesGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            document.getElementById('articleCount').textContent = String(filteredArticles.length).padStart(3, '0');
+
+            if (filteredArticles.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filteredArticles.slice(0, 21).map((article, index) => {
+                const scoreColor = article.interest_score >= 40 ? 'neon-magenta' : article.interest_score >= 25 ? 'neon-cyan' : 'neon-green';
+
+                return `
+                <article class="neon-card rounded-lg p-5 hover:bg-black/50 transition-all group">
+                    <!-- Header -->
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="text-xs">
+                            <span class="text-gray-600">[${String(index + 1).padStart(2, '0')}]</span>
+                            <span class="text-gray-500 ml-2">${article.source.toUpperCase().replace(' ', '::').replace('/', '/')}</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="${scoreColor} text-lg font-bold">${article.interest_score}</span>
+                            <span class="text-xs text-gray-600 block">SCORE</span>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="text-sm font-semibold text-gray-200 mb-3 leading-relaxed group-hover:text-green-400 transition-colors">
+                        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-green-500">
+                            &gt; ${escapeHtml(article.title)}
+                        </a>
+                    </h2>
+
+                    ${article.summary ? `
+                        <p class="text-xs text-gray-500 mb-3 line-clamp-2 leading-relaxed">${escapeHtml(article.summary)}</p>
+                    ` : ''}
+
+                    <!-- Keywords -->
+                    ${article.matched_keywords.length > 0 ? `
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            ${article.matched_keywords.slice(0, 3).map(keyword => `
+                                <span class="px-2 py-0.5 bg-green-900/30 text-green-400 text-xs rounded border border-green-900/50">#${escapeHtml(keyword.toLowerCase().replace(' ', '_'))}</span>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between text-xs text-gray-600 pt-3 border-t border-gray-900">
+                        <span>${formatCyberDate(article.created_at)}</span>
+                        <a href="${article.comments_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-green-400 transition-colors">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+                            </svg>
+                            ${article.comments_count}
+                        </a>
+                    </div>
+                </article>
+            `}).join('');
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatCyberDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+
+            if (hours < 1) return 'T-0H';
+            if (hours < 24) return `T-${hours}H`;
+            const days = Math.floor(hours / 24);
+            return `T-${days}D`;
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRender();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            filterAndRender();
+        });
+
+        document.querySelectorAll('.source-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSource = btn.dataset.source;
+                filterAndRender();
+            });
+        });
+
+        loadArticles();
+    </script>
+</body>
+</html>

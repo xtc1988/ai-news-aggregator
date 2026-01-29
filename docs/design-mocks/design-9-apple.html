@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News - Apple Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background-color: #000000;
+            color: #F5F5F7;
+        }
+
+        .glass-card {
+            background: rgba(28, 28, 30, 0.8);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(44, 44, 46, 0.9);
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #F5F5F7 0%, #A1A1A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .apple-blue { color: #0A84FF; }
+        .apple-green { color: #30D158; }
+        .apple-orange { color: #FF9F0A; }
+        .apple-red { color: #FF453A; }
+        .apple-purple { color: #BF5AF2; }
+
+        .score-ring {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .score-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 3px;
+            background: conic-gradient(from 0deg, #30D158, #0A84FF, #BF5AF2, #30D158);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .search-field {
+            background: rgba(118, 118, 128, 0.24);
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .search-field:focus {
+            background: rgba(118, 118, 128, 0.36);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.3);
+        }
+
+        .segment-control {
+            background: rgba(118, 118, 128, 0.24);
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        .segment-btn {
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: #8E8E93;
+            transition: all 0.2s;
+        }
+
+        .segment-btn.active {
+            background: rgba(255, 255, 255, 0.12);
+            color: #F5F5F7;
+        }
+
+        .source-pill {
+            background: rgba(118, 118, 128, 0.24);
+            border-radius: 100px;
+            padding: 4px 12px;
+            font-size: 13px;
+            color: #8E8E93;
+        }
+
+        .tag-chip {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.2) 0%, rgba(191, 90, 242, 0.2) 100%);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 11px;
+            color: #A1A1A6;
+        }
+
+        .sf-icon {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        ::selection {
+            background: rgba(10, 132, 255, 0.5);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between gap-6">
+                <h1 class="text-2xl font-semibold gradient-text tracking-tight">
+                    AI News
+                </h1>
+
+                <div class="flex-1 max-w-lg">
+                    <div class="relative">
+                        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Search"
+                            class="search-field w-full pl-12 pr-4 py-3 text-[17px] text-white placeholder-gray-500"
+                        >
+                    </div>
+                </div>
+
+                <div class="segment-control flex">
+                    <button class="segment-btn active text-sm" data-source="all">All</button>
+                    <button class="segment-btn text-sm" data-source="Hacker News">HN</button>
+                    <button class="segment-btn text-sm" data-source="Reddit">Reddit</button>
+                    <button class="segment-btn text-sm" data-source="GitHub">GitHub</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Status Bar -->
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <span class="text-[15px] text-gray-400" id="article-count">0 articles</span>
+            <span class="text-gray-600">|</span>
+            <select id="sort-select" class="bg-transparent text-[15px] text-gray-400 focus:outline-none cursor-pointer">
+                <option value="interest_score" class="bg-zinc-900">Sort by Score</option>
+                <option value="created_at" class="bg-zinc-900">Sort by Date</option>
+                <option value="comments_count" class="bg-zinc-900">Sort by Comments</option>
+            </select>
+        </div>
+        <span class="text-[13px] text-gray-500" id="last-updated"></span>
+    </div>
+
+    <!-- Article Grid -->
+    <main class="max-w-6xl mx-auto px-6 pb-12">
+        <div class="grid gap-4" id="articles-container">
+            <div class="glass-card p-8 text-center text-gray-500">Loading...</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-6 py-8 border-t border-white/5">
+        <p class="text-center text-[13px] text-gray-500">
+            Designed with Apple Human Interface Guidelines
+        </p>
+    </footer>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentFilters = { source: 'all', search: '', sort: 'interest_score' };
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadArticles();
+            setupEventListeners();
+        });
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles || [];
+
+                if (data.last_updated) {
+                    document.getElementById('last-updated').textContent =
+                        `Updated ${getRelativeTime(data.last_updated)}`;
+                }
+
+                applyFilters();
+            } catch (error) {
+                document.getElementById('articles-container').innerHTML =
+                    '<div class="glass-card p-8 text-center text-red-400">Unable to load articles</div>';
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', debounce(e => {
+                currentFilters.search = e.target.value.toLowerCase();
+                applyFilters();
+            }, 300));
+
+            document.querySelectorAll('.segment-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilters.source = btn.dataset.source;
+                    applyFilters();
+                });
+            });
+
+            document.getElementById('sort-select').addEventListener('change', e => {
+                currentFilters.sort = e.target.value;
+                applyFilters();
+            });
+        }
+
+        function applyFilters() {
+            filteredArticles = articles.filter(article => {
+                if (currentFilters.source !== 'all' && !article.source.includes(currentFilters.source)) return false;
+                if (currentFilters.search) {
+                    const text = [article.title, article.summary, ...(article.tags || [])].join(' ').toLowerCase();
+                    if (!text.includes(currentFilters.search)) return false;
+                }
+                return true;
+            });
+
+            filteredArticles.sort((a, b) => {
+                switch (currentFilters.sort) {
+                    case 'interest_score': return (b.interest_score || 0) - (a.interest_score || 0);
+                    case 'created_at': return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments_count': return (b.comments_count || 0) - (a.comments_count || 0);
+                    default: return 0;
+                }
+            });
+
+            document.getElementById('article-count').textContent = `${filteredArticles.length} articles`;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const container = document.getElementById('articles-container');
+
+            if (filteredArticles.length === 0) {
+                container.innerHTML = '<div class="glass-card p-8 text-center text-gray-500">No articles found</div>';
+                return;
+            }
+
+            container.innerHTML = filteredArticles.map(article => {
+                const score = article.interest_score || 0;
+                const scoreColor = score >= 30 ? 'apple-green' : score >= 15 ? 'apple-blue' : 'text-gray-400';
+                const timeAgo = getRelativeTime(article.created_at);
+                const sourceIcon = getSourceIcon(article.source);
+
+                return `
+                    <article class="glass-card p-5 cursor-pointer" onclick="window.open('${escapeHtml(article.url)}', '_blank')">
+                        <div class="flex items-start gap-4">
+                            <!-- Score Ring -->
+                            <div class="score-ring flex-shrink-0">
+                                <span class="text-[15px] font-semibold ${scoreColor}">${score}</span>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="source-pill">${sourceIcon} ${escapeHtml(article.source)}</span>
+                                    <span class="text-[13px] text-gray-500">${timeAgo}</span>
+                                </div>
+
+                                <h3 class="text-[17px] font-medium text-white mb-2 line-clamp-2">
+                                    ${escapeHtml(article.title)}
+                                </h3>
+
+                                ${article.summary ? `
+                                    <p class="text-[15px] text-gray-400 mb-3 line-clamp-2">${escapeHtml(article.summary)}</p>
+                                ` : ''}
+
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-wrap gap-1.5">
+                                        ${(article.matched_keywords || []).slice(0, 4).map(kw => `
+                                            <span class="tag-chip">${escapeHtml(kw)}</span>
+                                        `).join('')}
+                                    </div>
+
+                                    <div class="flex items-center gap-4 text-[13px] text-gray-500">
+                                        <span class="apple-orange">${article.source_score || 0} pts</span>
+                                        <a href="${escapeHtml(article.comments_url || '#')}" target="_blank" class="apple-blue hover:underline" onclick="event.stopPropagation()">
+                                            ${article.comments_count || 0} comments
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function getSourceIcon(source) {
+            if (source.includes('Hacker News')) return '<span class="apple-orange">Y</span>';
+            if (source.includes('Reddit')) return '<span class="apple-red">r/</span>';
+            if (source.includes('GitHub')) return '<span class="text-white">&#9679;</span>';
+            return '';
+        }
+
+        function getRelativeTime(dateString) {
+            if (!dateString) return '';
+            const diff = Date.now() - new Date(dateString).getTime();
+            const mins = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            if (mins < 60) return `${mins}m ago`;
+            if (hours < 24) return `${hours}h ago`;
+            if (days < 7) return `${days}d ago`;
+            return new Date(dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(...args), wait);
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Aggregator - Glassmorphism Dark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .score-badge {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6);
+        }
+        .keyword-tag {
+            background: rgba(96, 165, 250, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.4);
+        }
+        .source-filter.active {
+            background: rgba(96, 165, 250, 0.3);
+            border-color: #60A5FA;
+        }
+    </style>
+</head>
+<body class="text-white p-4 md:p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-white">
+                        <span class="text-blue-400">AI</span> News Aggregator
+                    </h1>
+                    <p id="lastUpdated" class="text-gray-400 mt-1 text-sm"></p>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <span id="articleCount" class="text-blue-400 font-semibold">0</span>
+                    <span>articles loaded</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search & Filter -->
+        <div class="glass-card rounded-2xl p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <!-- Search Input -->
+                <div class="flex-1 relative">
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search articles..."
+                        class="glass-input w-full pl-12 pr-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    >
+                </div>
+                <!-- Sort Select -->
+                <select id="sortSelect" class="glass-input px-4 py-3 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer">
+                    <option value="score" class="bg-slate-800">Score (High to Low)</option>
+                    <option value="date" class="bg-slate-800">Date (Newest)</option>
+                    <option value="comments" class="bg-slate-800">Comments</option>
+                </select>
+            </div>
+
+            <!-- Source Filters -->
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button class="source-filter active px-4 py-2 rounded-lg text-sm border border-white/20 transition-all hover:bg-white/10" data-source="all">
+                    All Sources
+                </button>
+                <button class="source-filter px-4 py-2 rounded-lg text-sm border border-white/20 transition-all hover:bg-white/10" data-source="GitHub Trending">
+                    GitHub
+                </button>
+                <button class="source-filter px-4 py-2 rounded-lg text-sm border border-white/20 transition-all hover:bg-white/10" data-source="Hacker News">
+                    Hacker News
+                </button>
+                <button class="source-filter px-4 py-2 rounded-lg text-sm border border-white/20 transition-all hover:bg-white/10" data-source="Reddit">
+                    Reddit
+                </button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Articles will be inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden glass-card rounded-2xl p-12 text-center">
+            <svg class="w-16 h-16 mx-auto text-gray-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+            </svg>
+            <p class="text-gray-400 text-lg">No articles found</p>
+            <p class="text-gray-500 text-sm mt-2">Try adjusting your search or filters</p>
+        </div>
+    </div>
+
+    <script>
+        let articles = [];
+        let filteredArticles = [];
+        let currentSource = 'all';
+        let currentSort = 'score';
+        let searchQuery = '';
+
+        // Load articles from JSON
+        async function loadArticles() {
+            try {
+                const response = await fetch('../data/articles.json');
+                const data = await response.json();
+                articles = data.articles;
+
+                // Update last updated
+                const lastUpdated = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent = `Last updated: ${lastUpdated.toLocaleString('ja-JP')}`;
+
+                filterAndRender();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+            }
+        }
+
+        // Filter and sort articles
+        function filterAndRender() {
+            filteredArticles = articles.filter(article => {
+                // Source filter
+                if (currentSource !== 'all') {
+                    if (currentSource === 'Reddit') {
+                        if (!article.source.includes('Reddit')) return false;
+                    } else if (article.source !== currentSource) {
+                        return false;
+                    }
+                }
+
+                // Search filter
+                if (searchQuery) {
+                    const searchLower = searchQuery.toLowerCase();
+                    const titleMatch = article.title.toLowerCase().includes(searchLower);
+                    const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchLower);
+                    const keywordMatch = article.matched_keywords.some(k => k.toLowerCase().includes(searchLower));
+                    if (!titleMatch && !summaryMatch && !keywordMatch) return false;
+                }
+
+                return true;
+            });
+
+            // Sort
+            filteredArticles.sort((a, b) => {
+                switch (currentSort) {
+                    case 'score':
+                        return b.interest_score - a.interest_score;
+                    case 'date':
+                        return new Date(b.created_at) - new Date(a.created_at);
+                    case 'comments':
+                        return b.comments_count - a.comments_count;
+                    default:
+                        return 0;
+                }
+            });
+
+            renderArticles();
+        }
+
+        // Render articles
+        function renderArticles() {
+            const grid = document.getElementById('articlesGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            document.getElementById('articleCount').textContent = filteredArticles.length;
+
+            if (filteredArticles.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filteredArticles.map(article => `
+                <article class="glass-card rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">${article.source}</span>
+                        <span class="score-badge px-3 py-1 rounded-full text-xs font-semibold text-white">
+                            ${article.interest_score}
+                        </span>
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors line-clamp-2">
+                        <a href="${article.url}" target="_blank" rel="noopener noreferrer">
+                            ${escapeHtml(article.title)}
+                        </a>
+                    </h2>
+
+                    ${article.summary ? `
+                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${escapeHtml(article.summary)}</p>
+                    ` : ''}
+
+                    <!-- Keywords -->
+                    ${article.matched_keywords.length > 0 ? `
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${article.matched_keywords.slice(0, 4).map(keyword => `
+                                <span class="keyword-tag px-2 py-1 rounded text-xs text-blue-300">${escapeHtml(keyword)}</span>
+                            `).join('')}
+                            ${article.matched_keywords.length > 4 ? `
+                                <span class="text-xs text-gray-500">+${article.matched_keywords.length - 4}</span>
+                            ` : ''}
+                        </div>
+                    ` : ''}
+
+                    <!-- Footer -->
+                    <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-white/10">
+                        <span>${formatDate(article.created_at)}</span>
+                        <a href="${article.comments_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-blue-400 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            ${article.comments_count}
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Helper functions
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+
+            if (hours < 1) return 'Just now';
+            if (hours < 24) return `${hours}h ago`;
+            const days = Math.floor(hours / 24);
+            if (days < 7) return `${days}d ago`;
+            return date.toLocaleDateString('ja-JP');
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            filterAndRender();
+        });
+
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            filterAndRender();
+        });
+
+        document.querySelectorAll('.source-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSource = btn.dataset.source;
+                filterAndRender();
+            });
+        });
+
+        // Initialize
+        loadArticles();
+    </script>
+</body>
+</html>
