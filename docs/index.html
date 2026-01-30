@@ -3,61 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI News Aggregator</title>
+    <title>THE AI CHRONICLE - AI News Aggregator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Playfair+Display:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>AI News Aggregator</h1>
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="キーワード検索...">
-        </div>
-    </header>
+<body class="min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Masthead -->
+        <header class="text-center mb-6">
+            <div class="double-border py-4 mb-4">
+                <h1 class="headline-main font-black tracking-tight">THE AI CHRONICLE</h1>
+                <p class="tagline text-sm tracking-widest uppercase mt-2">Your Daily Source for Artificial Intelligence News</p>
+            </div>
+            <div class="flex justify-between items-center text-sm border-b-2 border-current pb-2">
+                <span id="lastUpdated" class="dateline"></span>
+                <span id="articleCount" class="font-semibold">0 Articles</span>
+                <span>Est. 2026</span>
+            </div>
+        </header>
 
-    <main>
-        <div class="filters">
-            <div class="filter-group">
-                <label>ソース:</label>
-                <button class="filter-btn active" data-source="all">All</button>
-                <button class="filter-btn" data-source="Hacker News">HN</button>
-                <button class="filter-btn" data-source="Reddit">Reddit</button>
-                <button class="filter-btn" data-source="GitHub">GitHub</button>
-            </div>
-            <div class="filter-group">
-                <label>期間:</label>
-                <button class="filter-btn active" data-date="all">全期間</button>
-                <button class="filter-btn" data-date="today">今日</button>
-                <button class="filter-btn" data-date="week">今週</button>
-            </div>
-            <div class="filter-group">
-                <label>並び替え:</label>
-                <select id="sort-select">
-                    <option value="interest_score">スコア順</option>
-                    <option value="created_at">日時順</option>
-                    <option value="comments_count">コメント数順</option>
-                    <option value="source_score">ソーススコア順</option>
+        <!-- Search & Filter -->
+        <div class="mb-8 py-4 border-y border-gray-400">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <!-- Search -->
+                <div class="flex-1 w-full">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search the archives..."
+                        class="w-full px-4 py-2 bg-transparent border border-gray-600 focus:outline-none focus:border-gray-900"
+                    >
+                </div>
+
+                <!-- Source Filters -->
+                <div class="flex gap-2 flex-wrap justify-center">
+                    <button class="source-filter active px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="all">All</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="GitHub Trending">GitHub</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="Hacker News">HN</button>
+                    <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="Reddit">Reddit</button>
+                </div>
+
+                <!-- Sort -->
+                <select id="sortSelect" class="bg-transparent border border-gray-600 px-4 py-2 focus:outline-none cursor-pointer">
+                    <option value="score">By Relevance</option>
+                    <option value="date">By Date</option>
+                    <option value="comments">By Discussion</option>
                 </select>
             </div>
         </div>
 
-        <div class="tags-filter" id="tags-filter">
-            <label>タグ:</label>
-            <div class="tags-container" id="tags-container"></div>
+        <!-- Main Content -->
+        <main>
+            <!-- Featured Article -->
+            <div id="featuredArticle" class="mb-8 pb-8 border-b-2 border-gray-800">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <!-- Article Grid -->
+            <div id="articlesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Articles will be inserted here -->
+            </div>
+        </main>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <p class="text-2xl font-serif italic text-gray-500">No articles match your search criteria</p>
+            <p class="text-sm text-gray-400 mt-2">Please adjust your filters and try again</p>
         </div>
 
-        <div class="status-bar">
-            <span id="article-count">0件の記事</span>
-            <span id="last-updated">最終更新: --</span>
-        </div>
-
-        <div class="articles" id="articles-container">
-            <div class="loading">読み込み中...</div>
-        </div>
-    </main>
-
-    <footer>
-        <p>Powered by GitHub Pages | Data updated automatically via GitHub Actions</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t-2 border-current text-center text-sm">
+            <p class="italic">"All the AI News That's Fit to Print"</p>
+            <p class="mt-2 text-gray-600">Powered by Gemini API | Data from Hacker News, Reddit, GitHub</p>
+        </footer>
+    </div>
 
     <script src="app.js"></script>
 </body>

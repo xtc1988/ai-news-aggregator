@@ -1,30 +1,27 @@
 /**
- * AI News Aggregator - Frontend Application
+ * THE AI CHRONICLE - Frontend Application
+ * Newspaper Style News Aggregator
  */
 
 // State
 let articles = [];
 let filteredArticles = [];
-let allTags = [];
-let currentFilters = {
-    source: 'all',
-    date: 'all',
-    search: '',
-    tags: [],
-    sort: 'interest_score'
-};
+let currentSource = 'all';
+let currentSort = 'score';
+let searchQuery = '';
 
 // DOM Elements
-const articlesContainer = document.getElementById('articles-container');
-const searchInput = document.getElementById('search-input');
-const tagsContainer = document.getElementById('tags-container');
-const articleCount = document.getElementById('article-count');
-const lastUpdated = document.getElementById('last-updated');
-const sortSelect = document.getElementById('sort-select');
+const featuredContainer = document.getElementById('featuredArticle');
+const grid = document.getElementById('articlesGrid');
+const emptyState = document.getElementById('emptyState');
+const searchInput = document.getElementById('searchInput');
+const sortSelect = document.getElementById('sortSelect');
+const articleCountEl = document.getElementById('articleCount');
+const lastUpdatedEl = document.getElementById('lastUpdated');
 
 // Initialize
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadArticles();
+document.addEventListener('DOMContentLoaded', () => {
+    loadArticles();
     setupEventListeners();
 });
 
@@ -40,18 +37,13 @@ async function loadArticles() {
         // Update last updated
         if (data.last_updated) {
             const date = new Date(data.last_updated);
-            lastUpdated.textContent = `最終更新: ${formatDate(date)}`;
+            lastUpdatedEl.textContent = formatNewspaperDate(date);
         }
 
-        // Extract all unique tags
-        allTags = [...new Set(articles.flatMap(a => a.tags || []))].sort();
-        renderTags();
-
-        // Apply filters and render
-        applyFilters();
+        filterAndRender();
     } catch (error) {
         console.error('Error loading articles:', error);
-        articlesContainer.innerHTML = '<div class="no-results">記事の読み込みに失敗しました</div>';
+        featuredContainer.innerHTML = '<p class="text-center text-gray-500 py-8">Failed to load articles</p>';
     }
 }
 
@@ -59,216 +51,176 @@ async function loadArticles() {
 function setupEventListeners() {
     // Search
     searchInput.addEventListener('input', debounce((e) => {
-        currentFilters.search = e.target.value.toLowerCase();
-        applyFilters();
+        searchQuery = e.target.value.toLowerCase();
+        filterAndRender();
     }, 300));
-
-    // Source filter
-    document.querySelectorAll('[data-source]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('[data-source]').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilters.source = btn.dataset.source;
-            applyFilters();
-        });
-    });
-
-    // Date filter
-    document.querySelectorAll('[data-date]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('[data-date]').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilters.date = btn.dataset.date;
-            applyFilters();
-        });
-    });
 
     // Sort
     sortSelect.addEventListener('change', (e) => {
-        currentFilters.sort = e.target.value;
-        applyFilters();
+        currentSort = e.target.value;
+        filterAndRender();
     });
-}
 
-// Render tags
-function renderTags() {
-    tagsContainer.innerHTML = allTags.map(tag =>
-        `<button class="tag-btn" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`
-    ).join('');
-
-    // Add tag click listeners
-    tagsContainer.querySelectorAll('.tag-btn').forEach(btn => {
+    // Source filters
+    document.querySelectorAll('.source-filter').forEach(btn => {
         btn.addEventListener('click', () => {
-            const tag = btn.dataset.tag;
-            if (currentFilters.tags.includes(tag)) {
-                currentFilters.tags = currentFilters.tags.filter(t => t !== tag);
-                btn.classList.remove('active');
-            } else {
-                currentFilters.tags.push(tag);
-                btn.classList.add('active');
-            }
-            applyFilters();
+            document.querySelectorAll('.source-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentSource = btn.dataset.source;
+            filterAndRender();
         });
     });
 }
 
-// Apply filters
-function applyFilters() {
+// Filter and render
+function filterAndRender() {
     filteredArticles = articles.filter(article => {
         // Source filter
-        if (currentFilters.source !== 'all') {
-            if (!article.source.includes(currentFilters.source)) return false;
-        }
-
-        // Date filter
-        if (currentFilters.date !== 'all') {
-            const articleDate = new Date(article.created_at || article.fetched_at);
-            const now = new Date();
-
-            if (currentFilters.date === 'today') {
-                const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-                if (articleDate < todayStart) return false;
-            } else if (currentFilters.date === 'week') {
-                const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-                if (articleDate < weekAgo) return false;
+        if (currentSource !== 'all') {
+            if (currentSource === 'Reddit') {
+                if (!article.source.includes('Reddit')) return false;
+            } else if (!article.source.includes(currentSource)) {
+                return false;
             }
         }
 
         // Search filter
-        if (currentFilters.search) {
-            const searchText = [
-                article.title,
-                article.summary,
-                ...(article.tags || [])
-            ].join(' ').toLowerCase();
-
-            if (!searchText.includes(currentFilters.search)) return false;
-        }
-
-        // Tags filter
-        if (currentFilters.tags.length > 0) {
-            const articleTags = article.tags || [];
-            if (!currentFilters.tags.some(tag => articleTags.includes(tag))) return false;
+        if (searchQuery) {
+            const titleMatch = article.title.toLowerCase().includes(searchQuery);
+            const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchQuery);
+            const keywordMatch = (article.matched_keywords || []).some(k => k.toLowerCase().includes(searchQuery));
+            const tagMatch = (article.tags || []).some(t => t.toLowerCase().includes(searchQuery));
+            if (!titleMatch && !summaryMatch && !keywordMatch && !tagMatch) return false;
         }
 
         return true;
     });
 
     // Sort
-    sortArticles();
-
-    // Update count
-    articleCount.textContent = `${filteredArticles.length}件の記事`;
-
-    // Render
-    renderArticles();
-}
-
-// Sort articles
-function sortArticles() {
     filteredArticles.sort((a, b) => {
-        switch (currentFilters.sort) {
-            case 'interest_score':
+        switch (currentSort) {
+            case 'score':
                 return (b.interest_score || 0) - (a.interest_score || 0);
-            case 'created_at':
+            case 'date':
                 return new Date(b.created_at || b.fetched_at) - new Date(a.created_at || a.fetched_at);
-            case 'comments_count':
+            case 'comments':
                 return (b.comments_count || 0) - (a.comments_count || 0);
-            case 'source_score':
-                return (b.source_score || 0) - (a.source_score || 0);
             default:
                 return 0;
         }
     });
+
+    renderArticles();
 }
 
 // Render articles
 function renderArticles() {
+    articleCountEl.textContent = `${filteredArticles.length} Articles`;
+
     if (filteredArticles.length === 0) {
-        articlesContainer.innerHTML = '<div class="no-results">該当する記事がありません</div>';
+        featuredContainer.classList.add('hidden');
+        grid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
         return;
     }
 
-    articlesContainer.innerHTML = filteredArticles.map(article => {
-        const score = article.interest_score || 0;
-        const scoreClass = score >= 15 ? '' : score >= 5 ? 'medium' : 'low';
-        const sourceClass = getSourceClass(article.source);
-        const timeAgo = getTimeAgo(article.created_at || article.fetched_at);
+    featuredContainer.classList.remove('hidden');
+    grid.classList.remove('hidden');
+    emptyState.classList.add('hidden');
 
-        return `
-            <div class="article-card">
-                <div class="article-header">
-                    <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer" class="article-title">
-                        ${escapeHtml(article.title)}
-                    </a>
-                    <span class="article-score ${scoreClass}">Score: ${score}</span>
-                </div>
-                ${article.summary ? `<p class="article-summary">${escapeHtml(article.summary)}</p>` : ''}
-                <div class="article-meta">
-                    <div class="article-tags">
-                        ${(article.tags || []).map(tag =>
-                            `<span class="article-tag">${escapeHtml(tag)}</span>`
-                        ).join('')}
-                    </div>
-                    <span class="article-source ${sourceClass}">${escapeHtml(article.source)}</span>
-                    <span class="article-time">${timeAgo}</span>
-                    ${article.comments_url ? `
-                        <span class="article-comments">
-                            <a href="${escapeHtml(article.comments_url)}" target="_blank" rel="noopener noreferrer">
-                                ${article.comments_count || 0} comments
-                            </a>
-                        </span>
-                    ` : ''}
-                </div>
-                ${(article.matched_keywords || []).length > 0 ? `
-                    <div class="matched-keywords">
-                        Matched: ${article.matched_keywords.join(', ')}
-                    </div>
-                ` : ''}
+    // Featured article (first one with highest score)
+    const featured = filteredArticles[0];
+    featuredContainer.innerHTML = `
+        <article>
+            <div class="flex items-center gap-4 mb-4 text-sm flex-wrap">
+                <span class="uppercase tracking-wider font-semibold">${escapeHtml(featured.source)}</span>
+                <span class="text-gray-500">|</span>
+                <span class="dateline">${formatArticleDate(featured.created_at)}</span>
+                <span class="text-gray-500">|</span>
+                <span class="font-semibold">Score: ${featured.interest_score || 0}</span>
             </div>
-        `;
-    }).join('');
+
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6">
+                <a href="${escapeHtml(featured.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-2">
+                    ${escapeHtml(featured.title)}
+                </a>
+            </h2>
+
+            ${featured.summary ? `
+                <div class="multi-column">
+                    <p class="drop-cap text-lg leading-relaxed">${escapeHtml(featured.summary)}</p>
+                </div>
+            ` : ''}
+
+            ${(featured.matched_keywords || []).length > 0 ? `
+                <div class="flex flex-wrap gap-4 mt-6 text-sm">
+                    ${featured.matched_keywords.map(keyword => `
+                        <span class="uppercase tracking-wider text-gray-600">${escapeHtml(keyword)}</span>
+                    `).join('<span class="text-gray-400">|</span>')}
+                </div>
+            ` : ''}
+
+            <div class="mt-4">
+                <a href="${escapeHtml(featured.comments_url)}" target="_blank" rel="noopener noreferrer" class="text-sm italic hover:underline">
+                    Join the discussion (${featured.comments_count || 0} comments) &rarr;
+                </a>
+            </div>
+        </article>
+    `;
+
+    // Remaining articles (up to 15)
+    const remaining = filteredArticles.slice(1, 16);
+    grid.innerHTML = remaining.map((article, index) => `
+        <article class="${index < 2 ? 'md:col-span-1' : ''} pb-6 mb-6 border-b border-gray-300">
+            <div class="text-xs uppercase tracking-wider text-gray-600 mb-2">
+                ${escapeHtml(article.source)}
+            </div>
+
+            <h3 class="text-xl font-bold leading-snug mb-3">
+                <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                    ${escapeHtml(article.title)}
+                </a>
+            </h3>
+
+            ${article.summary ? `
+                <p class="text-sm text-gray-700 leading-relaxed mb-3 line-clamp-3">${escapeHtml(article.summary)}</p>
+            ` : ''}
+
+            <div class="flex items-center justify-between text-xs text-gray-500 flex-wrap gap-2">
+                <span class="dateline">${formatArticleDate(article.created_at)}</span>
+                <div class="flex items-center gap-3">
+                    <span class="font-semibold">Score: ${article.interest_score || 0}</span>
+                    <a href="${escapeHtml(article.comments_url)}" target="_blank" class="hover:underline">${article.comments_count || 0} comments</a>
+                </div>
+            </div>
+
+            ${(article.matched_keywords || []).length > 0 ? `
+                <div class="mt-3 text-xs text-gray-600">
+                    ${article.matched_keywords.slice(0, 3).map(k => `<span class="italic">${escapeHtml(k)}</span>`).join(', ')}
+                </div>
+            ` : ''}
+        </article>
+    `).join('');
 }
 
 // Utility functions
-function getSourceClass(source) {
-    if (source.includes('Hacker News')) return 'hn';
-    if (source.includes('Reddit')) return 'reddit';
-    if (source.includes('GitHub')) return 'github';
-    return '';
-}
-
-function getTimeAgo(dateString) {
-    if (!dateString) return '';
-
-    const date = new Date(dateString);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffMins = Math.floor(diffMs / (1000 * 60));
-    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-    if (diffMins < 60) return `${diffMins}分前`;
-    if (diffHours < 24) return `${diffHours}時間前`;
-    if (diffDays < 7) return `${diffDays}日前`;
-    return formatDate(date);
-}
-
-function formatDate(date) {
-    return date.toLocaleDateString('ja-JP', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-}
-
 function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function formatNewspaperDate(date) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+function formatArticleDate(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
 }
 
 function debounce(func, wait) {
