@@ -1,14 +1,49 @@
 # AI-news-aggregater Known Issues
 
-> Last updated: 2026-01-30
+> Last updated: 2026-01-31
 
 ## Active Issues
 
-(現在、アクティブな問題はありません)
+### [KNOWN] Reddit API blocked from GitHub Actions
+**Discovered:** 2026-01-31
+**Status:** Won't Fix (External Limitation)
+**Severity:** Low
+
+**Description:** RedditがクラウドプロバイダーのIPアドレスをブロックしているため、GitHub ActionsからReddit APIにアクセスできない。
+
+**Error:**
+```
+403 Client Error: Blocked for url: https://www.reddit.com/r/MachineLearning/hot.json
+```
+
+**Impact:** Reddit記事が取得できない（Hacker News + GitHub Trendingは正常動作）
+
+**Workarounds:**
+1. Reddit公式APIを使用（OAuth認証が必要）
+2. プロキシサービスを使用
+3. ローカル実行でReddit記事を取得
 
 ---
 
 ## Resolved Issues
+
+### [FIXED] GitHub Actions workflow permission denied
+**Discovered:** 2026-01-31
+**Fixed:** 2026-01-31
+**Root Cause:** GitHub Actionsワークフローに`permissions: contents: write`が設定されていなかったため、`git push`が403エラーで失敗
+**Solution:** `.github/workflows/fetch.yml`に`permissions: contents: write`を追加
+**Prevention:** GitHub Actionsでリポジトリに書き込む場合は明示的にパーミッションを設定
+
+### [FIXED] Gemini API model not found
+**Discovered:** 2026-01-31
+**Fixed:** 2026-01-31
+**Root Cause:** `gemini-1.5-flash`モデルがAPI v1betaで利用不可（廃止またはリネーム）
+**Error:**
+```
+404 models/gemini-1.5-flash is not found for API version v1beta
+```
+**Solution:** モデル名を`gemini-2.0-flash`に更新
+**Prevention:** Gemini APIのモデル名は定期的に変更されるため、エラーが発生したら最新モデル名を確認
 
 ### [FIXED] pytest not installed on Python 3.10
 **Discovered:** 2026-01-30
