@@ -4,29 +4,26 @@
 
 ## Active Issues
 
-### [KNOWN] Gemini API Free Tier Rate Limits
+### [RESOLVED] Gemini API SDK移行とレート制限対策
 **Discovered:** 2026-01-31
-**Status:** Mitigated
+**Fixed:** 2026-01-31
 **Severity:** Medium
 
-**Description:** Gemini API無料枠のレート制限により、一度に多くの記事を処理するとクォータ超過エラー(429)が発生する。
+**問題:**
+1. 旧SDK `google.generativeai` が非推奨（2025年8月廃止予定）
+2. 誤ったモデル選択でレート制限に抵触
 
-**Error:**
-```
-429 You exceeded your current quota
-Quota exceeded for metric: generate_content_free_tier_requests
-```
+**解決策:**
+- 新SDK `google.genai` に移行
+- `gemini-2.5-flash-lite` モデル使用（高スループット向け）
+- バッチサイズ5、1回30記事、バッチ間待機3-5秒
 
-**Mitigation Applied:**
-- バッチサイズを10→5に削減
-- 1回の処理記事数を50→20に削減
-- バッチ間の待機時間を2秒→15-20秒に延長
-- リトライロジック（指数バックオフ）を追加
+**参考資料:**
+- [Gemini API Migration Guide](https://ai.google.dev/gemini-api/docs/migrate)
+- [Google Gen AI Python SDK](https://github.com/googleapis/python-genai)
+- [Rate Limits Documentation](https://ai.google.dev/gemini-api/docs/rate-limits)
 
-**Long-term Solutions:**
-1. Gemini API有料プランにアップグレード
-2. 処理を複数回の実行に分散
-3. 他のLLM API（Claude API等）への移行検討
+**Note:** クォータは太平洋時間の深夜（日本時間17:00頃）にリセットされる
 
 ---
 

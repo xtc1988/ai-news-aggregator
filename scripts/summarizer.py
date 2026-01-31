@@ -17,8 +17,9 @@ except ImportError:
 MAX_RETRIES = 3
 BASE_DELAY = 10  # 秒
 
-# Flash-Liteモデル: 1日1000リクエストまで（無料枠）
-DEFAULT_MODEL = "gemini-2.0-flash-lite"
+# Flash-Liteモデル: 高スループット向け（無料枠）
+# gemini-2.0-flash-lite は2026年3月廃止予定のため、2.5を使用
+DEFAULT_MODEL = "gemini-2.5-flash-lite"
 
 
 def get_client():
