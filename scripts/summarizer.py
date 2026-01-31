@@ -33,7 +33,7 @@ def parse_gemini_response(response_text: str, expected_count: int) -> list[dict]
         results.append({"summary": None, "tags": []})
     return results[:expected_count]
 
-def summarize_batch(articles: list[dict], model_name: str = "gemini-1.5-flash") -> list[dict]:
+def summarize_batch(articles: list[dict], model_name: str = "gemini-2.0-flash") -> list[dict]:
     if not GEMINI_AVAILABLE or not configure_gemini():
         return [{"summary": None, "tags": []} for _ in articles]
     prompt = """以下の記事を日本語で要約してください。
