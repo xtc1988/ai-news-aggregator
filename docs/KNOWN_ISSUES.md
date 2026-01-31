@@ -4,6 +4,32 @@
 
 ## Active Issues
 
+### [KNOWN] Gemini API Free Tier Rate Limits
+**Discovered:** 2026-01-31
+**Status:** Mitigated
+**Severity:** Medium
+
+**Description:** Gemini API無料枠のレート制限により、一度に多くの記事を処理するとクォータ超過エラー(429)が発生する。
+
+**Error:**
+```
+429 You exceeded your current quota
+Quota exceeded for metric: generate_content_free_tier_requests
+```
+
+**Mitigation Applied:**
+- バッチサイズを10→5に削減
+- 1回の処理記事数を50→20に削減
+- バッチ間の待機時間を2秒→15-20秒に延長
+- リトライロジック（指数バックオフ）を追加
+
+**Long-term Solutions:**
+1. Gemini API有料プランにアップグレード
+2. 処理を複数回の実行に分散
+3. 他のLLM API（Claude API等）への移行検討
+
+---
+
 ### [KNOWN] Reddit API blocked from GitHub Actions
 **Discovered:** 2026-01-31
 **Status:** Won't Fix (External Limitation)
