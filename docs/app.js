@@ -1,6 +1,6 @@
 /**
- * THE AI CHRONICLE - Frontend Application
- * Newspaper Style News Aggregator
+ * AI新聞 - フロントエンドアプリケーション
+ * 新聞スタイル ニュースアグリゲーター
  */
 
 // State
@@ -43,7 +43,7 @@ async function loadArticles() {
         filterAndRender();
     } catch (error) {
         console.error('Error loading articles:', error);
-        featuredContainer.innerHTML = '<p class="text-center text-gray-500 py-8">Failed to load articles</p>';
+        featuredContainer.innerHTML = '<p class="text-center text-gray-500 py-8">記事の読み込みに失敗しました</p>';
     }
 }
 
@@ -115,7 +115,7 @@ function filterAndRender() {
 
 // Render articles
 function renderArticles() {
-    articleCountEl.textContent = `${filteredArticles.length} Articles`;
+    articleCountEl.textContent = `${filteredArticles.length} 件の記事`;
 
     if (filteredArticles.length === 0) {
         featuredContainer.classList.add('hidden');
@@ -137,7 +137,7 @@ function renderArticles() {
                 <span class="text-gray-500">|</span>
                 <span class="dateline">${formatArticleDate(featured.created_at)}</span>
                 <span class="text-gray-500">|</span>
-                <span class="font-semibold">Score: ${featured.interest_score || 0}</span>
+                <span class="font-semibold">スコア: ${featured.interest_score || 0}</span>
             </div>
 
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6">
@@ -162,7 +162,7 @@ function renderArticles() {
 
             <div class="mt-4">
                 <a href="${escapeHtml(featured.comments_url)}" target="_blank" rel="noopener noreferrer" class="text-sm italic hover:underline">
-                    Join the discussion (${featured.comments_count || 0} comments) &rarr;
+                    ディスカッションに参加 (${featured.comments_count || 0} コメント) &rarr;
                 </a>
             </div>
         </article>
@@ -189,8 +189,8 @@ function renderArticles() {
             <div class="flex items-center justify-between text-xs text-gray-500 flex-wrap gap-2">
                 <span class="dateline">${formatArticleDate(article.created_at)}</span>
                 <div class="flex items-center gap-3">
-                    <span class="font-semibold">Score: ${article.interest_score || 0}</span>
-                    <a href="${escapeHtml(article.comments_url)}" target="_blank" class="hover:underline">${article.comments_count || 0} comments</a>
+                    <span class="font-semibold">スコア: ${article.interest_score || 0}</span>
+                    <a href="${escapeHtml(article.comments_url)}" target="_blank" class="hover:underline">${article.comments_count || 0} コメント</a>
                 </div>
             </div>
 
@@ -212,15 +212,15 @@ function escapeHtml(text) {
 }
 
 function formatNewspaperDate(date) {
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+    return date.toLocaleDateString('ja-JP', options);
 }
 
 function formatArticleDate(dateString) {
     if (!dateString) return '';
     const date = new Date(dateString);
-    const options = { month: 'short', day: 'numeric', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('ja-JP', options);
 }
 
 function debounce(func, wait) {

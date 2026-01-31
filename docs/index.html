@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE AI CHRONICLE - AI News Aggregator</title>
+    <title>AI新聞 - AIニュースアグリゲーター</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,72 +12,72 @@
 </head>
 <body class="min-h-screen">
     <div class="max-w-6xl mx-auto px-4 py-8">
-        <!-- Masthead -->
+        <!-- ヘッダー -->
         <header class="text-center mb-6">
             <div class="double-border py-4 mb-4">
-                <h1 class="headline-main font-black tracking-tight">THE AI CHRONICLE</h1>
-                <p class="tagline text-sm tracking-widest uppercase mt-2">Your Daily Source for Artificial Intelligence News</p>
+                <h1 class="headline-main font-black tracking-tight">AI新聞</h1>
+                <p class="tagline text-sm tracking-widest uppercase mt-2">人工知能ニュースの最前線</p>
             </div>
             <div class="flex justify-between items-center text-sm border-b-2 border-current pb-2">
                 <span id="lastUpdated" class="dateline"></span>
-                <span id="articleCount" class="font-semibold">0 Articles</span>
-                <span>Est. 2026</span>
+                <span id="articleCount" class="font-semibold">0 件の記事</span>
+                <span>創刊 2026年</span>
             </div>
         </header>
 
-        <!-- Search & Filter -->
+        <!-- 検索・フィルター -->
         <div class="mb-8 py-4 border-y border-gray-400">
             <div class="flex flex-col md:flex-row gap-4 items-center">
-                <!-- Search -->
+                <!-- 検索 -->
                 <div class="flex-1 w-full">
                     <input
                         type="text"
                         id="searchInput"
-                        placeholder="Search the archives..."
+                        placeholder="記事を検索..."
                         class="w-full px-4 py-2 bg-transparent border border-gray-600 focus:outline-none focus:border-gray-900"
                     >
                 </div>
 
-                <!-- Source Filters -->
+                <!-- ソースフィルター -->
                 <div class="flex gap-2 flex-wrap justify-center">
-                    <button class="source-filter active px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="all">All</button>
+                    <button class="source-filter active px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="all">すべて</button>
                     <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="GitHub Trending">GitHub</button>
                     <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="Hacker News">HN</button>
                     <button class="source-filter px-4 py-1 text-sm border border-gray-800 transition-all cursor-pointer" data-source="Reddit">Reddit</button>
                 </div>
 
-                <!-- Sort -->
+                <!-- ソート -->
                 <select id="sortSelect" class="bg-transparent border border-gray-600 px-4 py-2 focus:outline-none cursor-pointer">
-                    <option value="score">By Relevance</option>
-                    <option value="date">By Date</option>
-                    <option value="comments">By Discussion</option>
+                    <option value="score">関連度順</option>
+                    <option value="date">新着順</option>
+                    <option value="comments">コメント数順</option>
                 </select>
             </div>
         </div>
 
-        <!-- Main Content -->
+        <!-- メインコンテンツ -->
         <main>
-            <!-- Featured Article -->
+            <!-- 注目記事 -->
             <div id="featuredArticle" class="mb-8 pb-8 border-b-2 border-gray-800">
-                <!-- Will be populated by JS -->
+                <!-- JSで挿入 -->
             </div>
 
-            <!-- Article Grid -->
+            <!-- 記事グリッド -->
             <div id="articlesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Articles will be inserted here -->
+                <!-- 記事がここに挿入される -->
             </div>
         </main>
 
-        <!-- Empty State -->
+        <!-- 検索結果なし -->
         <div id="emptyState" class="hidden text-center py-20">
-            <p class="text-2xl font-serif italic text-gray-500">No articles match your search criteria</p>
-            <p class="text-sm text-gray-400 mt-2">Please adjust your filters and try again</p>
+            <p class="text-2xl font-serif italic text-gray-500">検索条件に一致する記事がありません</p>
+            <p class="text-sm text-gray-400 mt-2">フィルターを変更して再度お試しください</p>
         </div>
 
-        <!-- Footer -->
+        <!-- フッター -->
         <footer class="mt-12 pt-6 border-t-2 border-current text-center text-sm">
-            <p class="italic">"All the AI News That's Fit to Print"</p>
-            <p class="mt-2 text-gray-600">Powered by Gemini API | Data from Hacker News, Reddit, GitHub</p>
+            <p class="italic">「AIに関するすべてのニュースをお届けします」</p>
+            <p class="mt-2 text-gray-600">Gemini API搭載 | データ: Hacker News, Reddit, GitHub</p>
         </footer>
     </div>
 

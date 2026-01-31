@@ -1,6 +1,6 @@
-/* THE AI CHRONICLE - Newspaper Style */
+/* AI新聞 - 新聞スタイル */
 
-/* Base Styles */
+/* 基本スタイル */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     line-height: 1.7;
 }
 
-/* Typography */
+/* タイポグラフィ */
 h1, h2, h3, .headline {
     font-family: 'Playfair Display', serif;
 }
@@ -30,7 +30,7 @@ h1, h2, h3, .headline {
     letter-spacing: 0.15em;
 }
 
-/* Borders */
+/* ボーダー */
 .double-border {
     border-top: 3px double #2C2C2C;
     border-bottom: 3px double #2C2C2C;
@@ -40,12 +40,12 @@ h1, h2, h3, .headline {
     border: 2px solid #2C2C2C;
 }
 
-/* Column Styles */
+/* カラムスタイル */
 .column-divider {
     border-right: 1px solid #D4C4A8;
 }
 
-/* Drop Cap */
+/* ドロップキャップ */
 .drop-cap::first-letter {
     float: left;
     font-size: 4rem;
@@ -56,13 +56,13 @@ h1, h2, h3, .headline {
     color: #2C2C2C;
 }
 
-/* Dateline */
+/* 日付行 */
 .dateline {
     font-style: italic;
     color: #666;
 }
 
-/* Source Filters */
+/* ソースフィルター */
 .source-filter {
     background: transparent;
     font-family: 'Merriweather', serif;
@@ -77,13 +77,13 @@ h1, h2, h3, .headline {
     color: #FDF6E3;
 }
 
-/* Select */
+/* セレクト */
 select {
     font-family: 'Merriweather', serif;
     background: #FDF6E3;
 }
 
-/* Multi-column Layout */
+/* マルチカラムレイアウト */
 .multi-column {
     column-count: 1;
     column-gap: 2rem;
@@ -102,7 +102,7 @@ select {
     }
 }
 
-/* Article Cards */
+/* 記事カード */
 article {
     break-inside: avoid;
 }
@@ -119,14 +119,14 @@ article a:hover {
     text-underline-offset: 3px;
 }
 
-/* Score Badge */
+/* スコアバッジ */
 .score-badge {
     font-family: 'Merriweather', serif;
     font-weight: 600;
     font-size: 0.75rem;
 }
 
-/* Line Clamp */
+/* 行数制限 */
 .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -134,7 +134,7 @@ article a:hover {
     overflow: hidden;
 }
 
-/* Responsive */
+/* レスポンシブ */
 @media (max-width: 768px) {
     .headline-main {
         font-size: 2rem;
@@ -145,7 +145,7 @@ article a:hover {
     }
 }
 
-/* Print Styles */
+/* 印刷スタイル */
 @media print {
     body {
         background: white;
@@ -158,7 +158,7 @@ article a:hover {
     }
 }
 
-/* Scrollbar */
+/* スクロールバー */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -176,13 +176,13 @@ article a:hover {
     background: #9A8A6A;
 }
 
-/* Selection */
+/* テキスト選択 */
 ::selection {
     background: #2C2C2C;
     color: #FDF6E3;
 }
 
-/* Focus Styles */
+/* フォーカススタイル */
 input:focus,
 select:focus,
 button:focus {
@@ -190,7 +190,7 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* Animation */
+/* アニメーション */
 @keyframes fadeIn {
     from {
         opacity: 0;
