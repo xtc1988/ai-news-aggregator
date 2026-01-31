@@ -84,13 +84,14 @@ function filterAndRender() {
             }
         }
 
-        // Search filter
+        // Search filter (日本語・英語両方で検索)
         if (searchQuery) {
-            const titleMatch = article.title.toLowerCase().includes(searchQuery);
-            const summaryMatch = article.summary && article.summary.toLowerCase().includes(searchQuery);
+            const titleMatch = (article.title || '').toLowerCase().includes(searchQuery);
+            const titleJaMatch = (article.title_ja || '').toLowerCase().includes(searchQuery);
+            const summaryMatch = (article.summary || '').toLowerCase().includes(searchQuery);
             const keywordMatch = (article.matched_keywords || []).some(k => k.toLowerCase().includes(searchQuery));
             const tagMatch = (article.tags || []).some(t => t.toLowerCase().includes(searchQuery));
-            if (!titleMatch && !summaryMatch && !keywordMatch && !tagMatch) return false;
+            if (!titleMatch && !titleJaMatch && !summaryMatch && !keywordMatch && !tagMatch) return false;
         }
 
         return true;
@@ -142,7 +143,7 @@ function renderArticles() {
 
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6">
                 <a href="${escapeHtml(featured.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-2">
-                    ${escapeHtml(featured.title)}
+                    ${escapeHtml(getTitle(featured))}
                 </a>
             </h2>
 
@@ -178,7 +179,7 @@ function renderArticles() {
 
             <h3 class="text-xl font-bold leading-snug mb-3">
                 <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                    ${escapeHtml(article.title)}
+                    ${escapeHtml(getTitle(article))}
                 </a>
             </h3>
 
@@ -204,6 +205,11 @@ function renderArticles() {
 }
 
 // Utility functions
+function getTitle(article) {
+    // 日本語タイトルがあれば優先、なければ元のタイトル
+    return article.title_ja || article.title || '';
+}
+
 function escapeHtml(text) {
     if (!text) return '';
     const div = document.createElement('div');

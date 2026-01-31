@@ -3,14 +3,16 @@ import re
 from typing import Tuple
 
 def calculate_interest_score(article: dict, interests: dict, weights: dict) -> Tuple[int, list[str]]:
-    """記事の興味スコアを計算"""
+    """記事の興味スコアを計算（日本語・英語両方のキーワードに対応）"""
     # None値を安全に処理
     title = article.get("title") or ""
+    title_ja = article.get("title_ja") or ""
     summary = article.get("summary") or ""
     tags = article.get("tags") or []
 
     text = " ".join([
         title,
+        title_ja,
         summary,
         " ".join(tags)
     ]).lower()
