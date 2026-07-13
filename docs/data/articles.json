@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-13T10:53:16.303363Z",
+  "last_updated": "2026-07-13T17:50:35.908300Z",
   "articles": [
     {
       "id": "57d9bbed5a2b",
@@ -17,11 +17,11 @@
       ],
       "interest_score": 42,
       "matched_keywords": [
-        "AI開発",
         "大規模言語モデル",
+        "Claude",
         "Anthropic",
         "Claude Code",
-        "Claude"
+        "AI開発"
       ],
       "created_at": "2026-07-07T06:19:20Z",
       "fetched_at": "2026-07-07T17:53:22.241308Z",
@@ -53,26 +53,6 @@
       "title_ja": "Grok 4.5、GPT-5.5、Claudeが同じアプリを開発する対決"
     },
     {
-      "id": "68a6c284cff5",
-      "title": "[GitHub] Graphify-Labs/graphify",
-      "url": "https://github.com/Graphify-Labs/graphify",
-      "source": "GitHub Trending",
-      "source_score": 83695,
-      "comments_count": 1028,
-      "comments_url": "https://github.com/Graphify-Labs/graphify/issues",
-      "summary": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
-      "tags": [],
-      "interest_score": 35,
-      "matched_keywords": [
-        "Gemini",
-        "cursor",
-        "Claude",
-        "Claude Code"
-      ],
-      "created_at": "2026-07-13T10:52:41.984189Z",
-      "fetched_at": "2026-07-13T10:52:41.984191Z"
-    },
-    {
       "id": "f4e4f7935847",
       "title": "GPT-5.6",
       "url": "https://openai.com/index/gpt-5-6/",
@@ -88,15 +68,40 @@
       ],
       "interest_score": 32,
       "matched_keywords": [
-        "AI開発",
         "大規模言語モデル",
         "GPT",
         "LLM",
-        "OpenAI"
+        "OpenAI",
+        "AI開発"
       ],
       "created_at": "2026-07-09T17:04:14Z",
       "fetched_at": "2026-07-09T17:49:47.087852Z",
       "title_ja": "GPT-5.6 (※このタイトルは架空のものです。OpenAIの公式発表にはGPT-5.6という名称はありません。仮に「GPT-5」もしくは「GPT-6」といった将来のモデルを想定しているものと解釈します。)"
+    },
+    {
+      "id": "af30ea7b3151",
+      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "source": "Hacker News",
+      "source_score": 469,
+      "comments_count": 263,
+      "comments_url": "https://news.ycombinator.com/item?id=48883275",
+      "summary": "Claude CodeとOpenCodeのトークンオーバーヘッドを比較した記事で、Claude Codeがプロンプト読み込み前に大量のトークンを消費することが示されています。",
+      "tags": [
+        "自然言語処理",
+        "LLM",
+        "ベンチマーク"
+      ],
+      "interest_score": 32,
+      "matched_keywords": [
+        "Claude Code",
+        "自然言語処理",
+        "LLM",
+        "Claude"
+      ],
+      "created_at": "2026-07-12T18:25:51Z",
+      "fetched_at": "2026-07-13T02:03:40.487922Z",
+      "title_ja": "Claude Codeはプロンプト読み込み前に33kトークンを送信、OpenCodeは7k"
     },
     {
       "id": "4cbfe9e918a5",
@@ -114,9 +119,9 @@
       ],
       "interest_score": 30,
       "matched_keywords": [
+        "Claude Code",
         "AIエージェント",
-        "Claude",
-        "Claude Code"
+        "Claude"
       ],
       "created_at": "2026-07-08T14:54:59Z",
       "fetched_at": "2026-07-09T02:12:33.515464Z",
@@ -138,32 +143,13 @@
       ],
       "interest_score": 30,
       "matched_keywords": [
-        "cursor",
+        "Claude Code",
         "Claude",
-        "Claude Code"
+        "cursor"
       ],
       "created_at": "2026-07-09T15:26:24Z",
       "fetched_at": "2026-07-10T02:12:28.463609Z",
       "title_ja": "Claude Code、Cursor、Codex向けポリシー強制ツール「Kastra.ai」"
-    },
-    {
-      "id": "7344796a1c66",
-      "title": "[GitHub] coreyhaines31/marketingskills",
-      "url": "https://github.com/coreyhaines31/marketingskills",
-      "source": "GitHub Trending",
-      "source_score": 38044,
-      "comments_count": 260,
-      "comments_url": "https://github.com/coreyhaines31/marketingskills/issues",
-      "summary": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
-      "tags": [],
-      "interest_score": 30,
-      "matched_keywords": [
-        "AI agent",
-        "Claude",
-        "Claude Code"
-      ],
-      "created_at": "2026-07-13T10:52:41.985308Z",
-      "fetched_at": "2026-07-13T10:52:41.985310Z"
     },
     {
       "id": "32fbc8f46929",
@@ -182,8 +168,8 @@
       "interest_score": 27,
       "matched_keywords": [
         "GPT",
-        "AI開発",
         "大規模言語モデル",
+        "AI開発",
         "Claude"
       ],
       "created_at": "2026-07-10T20:52:28Z",
@@ -207,12 +193,35 @@
       "interest_score": 25,
       "matched_keywords": [
         "大規模言語モデル",
-        "LLM",
-        "プロンプトエンジニアリング"
+        "プロンプトエンジニアリング",
+        "LLM"
       ],
       "created_at": "2026-07-07T01:06:19Z",
       "fetched_at": "2026-07-07T02:26:23.054314Z",
       "title_ja": "LLMはデフォルトの実行エンジンではない"
+    },
+    {
+      "id": "389409443cc9",
+      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
+      "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
+      "source": "Hacker News",
+      "source_score": 143,
+      "comments_count": 47,
+      "comments_url": "https://news.ycombinator.com/item?id=48882716",
+      "summary": "本番環境で運用されているAIエージェントをGPT-5.6へ移行した結果、処理速度が2.2倍向上し、コストが27%削減された事例を紹介しています。",
+      "tags": [
+        "AIエージェント",
+        "GPT-"
+      ],
+      "interest_score": 25,
+      "matched_keywords": [
+        "GPT",
+        "AI agent",
+        "AIエージェント"
+      ],
+      "created_at": "2026-07-12T17:13:07Z",
+      "fetched_at": "2026-07-13T02:03:40.396889Z",
+      "title_ja": "本番運用中のAIエージェントをGPT-5.6に移行：2.2倍高速、27%低コスト"
     },
     {
       "id": "3f87148fc02b",
@@ -230,14 +239,39 @@
       ],
       "interest_score": 24,
       "matched_keywords": [
-        "AI開発",
         "自然言語処理",
-        "Anthropic",
-        "Claude"
+        "AI開発",
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-07-09T10:57:50.687940Z",
       "fetched_at": "2026-07-09T10:57:50.687942Z",
       "title_ja": "Claude-Cookbooks (Anthropic)"
+    },
+    {
+      "id": "eb2fa5e9cf60",
+      "title": "AI agent startup uses agent to lead 100M round",
+      "url": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=48885853",
+      "summary": "AIエージェントを開発するスタートアップが、1億ドル規模の資金調達ラウンドを自社のAIエージェントに主導させたという画期的な事例です。",
+      "tags": [
+        "AIエージェント",
+        "スタートアップ",
+        "資金調達"
+      ],
+      "interest_score": 24,
+      "matched_keywords": [
+        "startup",
+        "AI agent",
+        "スタートアップ",
+        "AIエージェント"
+      ],
+      "created_at": "2026-07-12T23:15:33Z",
+      "fetched_at": "2026-07-13T02:03:48.738137Z",
+      "title_ja": "AIエージェント企業、1億ドルのラウンドをAIエージェントに主導させる"
     },
     {
       "id": "b3a464e592d0",
@@ -255,9 +289,9 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
-        "オープンソース",
+        "AI agent",
         "AIエージェント",
-        "AI agent"
+        "オープンソース"
       ],
       "created_at": "2026-07-06T13:17:27Z",
       "fetched_at": "2026-07-06T18:06:15.182702Z",
@@ -279,9 +313,9 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
-        "オープンソース",
         "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "オープンソース"
       ],
       "created_at": "2026-07-06T21:08:47Z",
       "fetched_at": "2026-07-07T02:26:24.311458Z",
@@ -303,8 +337,8 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
-        "AI開発",
         "大規模言語モデル",
+        "AI開発",
         "LLM"
       ],
       "created_at": "2026-07-06T23:34:27Z",
@@ -327,9 +361,9 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
-        "オープンソース",
+        "AI agent",
         "AIエージェント",
-        "AI agent"
+        "オープンソース"
       ],
       "created_at": "2026-07-07T14:07:08Z",
       "fetched_at": "2026-07-08T02:00:19.456539Z",
@@ -351,9 +385,9 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
-        "オープンソース",
+        "AI agent",
         "AIエージェント",
-        "AI agent"
+        "オープンソース"
       ],
       "created_at": "2026-07-09T13:23:10Z",
       "fetched_at": "2026-07-09T17:49:50.221451Z",
@@ -376,8 +410,8 @@
       "interest_score": 22,
       "matched_keywords": [
         "機械学習",
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-11T00:43:39Z",
       "fetched_at": "2026-07-11T01:58:21.726684Z",
@@ -445,8 +479,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-06T16:47:44Z",
       "fetched_at": "2026-07-06T18:06:06.989166Z",
@@ -468,8 +502,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-07-07T00:56:07Z",
       "fetched_at": "2026-07-07T02:26:26.021800Z",
@@ -491,8 +525,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-07T15:18:36Z",
       "fetched_at": "2026-07-07T17:53:21.229909Z",
@@ -537,8 +571,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-08T05:25:35Z",
       "fetched_at": "2026-07-08T10:09:52.281109Z",
@@ -560,8 +594,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-08T15:25:09Z",
       "fetched_at": "2026-07-08T17:22:07.879131Z",
@@ -606,8 +640,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-08T17:46:12Z",
       "fetched_at": "2026-07-09T02:12:29.417010Z",
@@ -652,8 +686,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "LLM"
+        "LLM",
+        "Anthropic"
       ],
       "created_at": "2026-07-08T20:41:33Z",
       "fetched_at": "2026-07-09T02:12:32.767129Z",
@@ -698,8 +732,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AIエージェント",
-        "AI agent"
+        "AI agent",
+        "AIエージェント"
       ],
       "created_at": "2026-07-09T10:43:55Z",
       "fetched_at": "2026-07-09T17:49:57.363640Z",
@@ -721,8 +755,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-07-11T21:27:07Z",
       "fetched_at": "2026-07-12T02:01:53.670920Z",
@@ -790,8 +824,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-07-12T12:13:29Z",
       "fetched_at": "2026-07-12T16:51:14.967539Z",
@@ -813,8 +847,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-07-12T14:32:00Z",
       "fetched_at": "2026-07-12T16:51:11.352384Z",
@@ -844,25 +878,6 @@
       "title_ja": "Relm – 解釈可能性を備えたBase-RオブジェクトとしてのローカルLLM"
     },
     {
-      "id": "af30ea7b3151",
-      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
-      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
-      "source": "Hacker News",
-      "source_score": 469,
-      "comments_count": 263,
-      "comments_url": "https://news.ycombinator.com/item?id=48883275",
-      "summary": null,
-      "tags": [],
-      "interest_score": 20,
-      "matched_keywords": [
-        "Claude",
-        "Claude Code"
-      ],
-      "created_at": "2026-07-12T18:25:51Z",
-      "fetched_at": "2026-07-13T02:03:40.487922Z",
-      "title_ja": null
-    },
-    {
       "id": "a5f9a2429a62",
       "title": "AI software that generates 'rage bait' developed by Germany's far-right AfD",
       "url": "https://www.irishtimes.com/world/europe/2026/07/08/ai-software-that-generates-rage-bait-developed-by-germanys-far-right-afd/",
@@ -886,25 +901,6 @@
       "title_ja": "ドイツ極右AfD、ヘイトスピーチ生成AIソフトウェアを開発"
     },
     {
-      "id": "389409443cc9",
-      "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
-      "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
-      "source": "Hacker News",
-      "source_score": 143,
-      "comments_count": 47,
-      "comments_url": "https://news.ycombinator.com/item?id=48882716",
-      "summary": null,
-      "tags": [],
-      "interest_score": 15,
-      "matched_keywords": [
-        "GPT",
-        "AI agent"
-      ],
-      "created_at": "2026-07-12T17:13:07Z",
-      "fetched_at": "2026-07-13T02:03:40.396889Z",
-      "title_ja": null
-    },
-    {
       "id": "5bfdb1381234",
       "title": "Show HN: Rowboat – Open-source, local-first alternative to Claude Desktop",
       "url": "https://github.com/rowboatlabs/rowboat",
@@ -920,8 +916,8 @@
       ],
       "interest_score": 12,
       "matched_keywords": [
-        "オープンソース",
-        "Claude"
+        "Claude",
+        "オープンソース"
       ],
       "created_at": "2026-07-07T16:10:44Z",
       "fetched_at": "2026-07-08T02:00:17.300467Z",
@@ -966,31 +962,12 @@
       ],
       "interest_score": 12,
       "matched_keywords": [
-        "オープンソース",
-        "LLM"
+        "LLM",
+        "オープンソース"
       ],
       "created_at": "2026-07-07T12:20:54Z",
       "fetched_at": "2026-07-09T02:12:30.729503Z",
       "title_ja": "Frugon - より安価なモデルで処理できるLLMコールを特定するツール（ローカル、MITライセンス）"
-    },
-    {
-      "id": "eb2fa5e9cf60",
-      "title": "AI agent startup uses agent to lead 100M round",
-      "url": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48885853",
-      "summary": null,
-      "tags": [],
-      "interest_score": 12,
-      "matched_keywords": [
-        "startup",
-        "AI agent"
-      ],
-      "created_at": "2026-07-12T23:15:33Z",
-      "fetched_at": "2026-07-13T02:03:48.738137Z",
-      "title_ja": null
     },
     {
       "id": "95ae7120d607",
@@ -1038,28 +1015,6 @@
       "title_ja": "DesktopCommanderMCP"
     },
     {
-      "id": "fbb6c6e2ca5f",
-      "title": "[GitHub] bradautomates/claude-video",
-      "url": "https://github.com/bradautomates/claude-video",
-      "source": "GitHub Trending",
-      "source_score": 3786,
-      "comments_count": 368,
-      "comments_url": "https://github.com/bradautomates/claude-video/issues",
-      "summary": "GitHubリポジトリ `claude-video` は、Claudeモデルを利用したビデオ関連のプロジェクトやツールに関するものです。",
-      "tags": [
-        "GitHub",
-        "Claude",
-        "ビデオAI"
-      ],
-      "interest_score": 10,
-      "matched_keywords": [
-        "Claude"
-      ],
-      "created_at": "2026-07-06T11:57:33.356960Z",
-      "fetched_at": "2026-07-06T11:57:33.356960Z",
-      "title_ja": "GitHub: claude-video (Claudeビデオ)"
-    },
-    {
       "id": "9f6aa206616e",
       "title": "Ternlight – 7 MB embedding model that runs in browser (WASM)",
       "url": "https://ternlight-demo.vercel.app/",
@@ -1075,8 +1030,8 @@
       ],
       "interest_score": 10,
       "matched_keywords": [
-        "埋め込み",
-        "embedding"
+        "embedding",
+        "埋め込み"
       ],
       "created_at": "2026-07-06T23:06:31Z",
       "fetched_at": "2026-07-07T02:26:19.741464Z",
@@ -1371,7 +1326,42 @@
         "Anthropic"
       ],
       "created_at": "2026-07-13T08:39:39Z",
-      "fetched_at": "2026-07-13T10:52:31.785484Z"
+      "fetched_at": "2026-07-13T10:52:31.785484Z",
+      "title_ja": null
+    },
+    {
+      "id": "51dc282ed19f",
+      "title": "Precursor",
+      "url": "https://blog.cloudflare.com/introducing-precursor/",
+      "source": "Hacker News",
+      "source_score": 124,
+      "comments_count": 104,
+      "comments_url": "https://news.ycombinator.com/item?id=48893446",
+      "summary": null,
+      "tags": [],
+      "interest_score": 10,
+      "matched_keywords": [
+        "cursor"
+      ],
+      "created_at": "2026-07-13T14:39:38Z",
+      "fetched_at": "2026-07-13T17:49:35.510781Z"
+    },
+    {
+      "id": "72243e9403c3",
+      "title": "The Unreasonable Effectiveness of LLMs in Mathematics",
+      "url": "https://www.chrishayduk.com/p/the-unreasonable-effectiveness-of",
+      "source": "Hacker News",
+      "source_score": 10,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48888345",
+      "summary": null,
+      "tags": [],
+      "interest_score": 10,
+      "matched_keywords": [
+        "LLM"
+      ],
+      "created_at": "2026-07-13T05:37:54Z",
+      "fetched_at": "2026-07-13T17:49:44.408299Z"
     },
     {
       "id": "c6113a7431de",
@@ -1716,8 +1706,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "オープンソース",
-        "open source"
+        "open source",
+        "オープンソース"
       ],
       "created_at": "2026-07-07T16:00:01Z",
       "fetched_at": "2026-07-07T17:53:25.252918Z",
@@ -1739,8 +1729,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "オープンソース",
-        "open source"
+        "open source",
+        "オープンソース"
       ],
       "created_at": "2026-07-08T15:19:50Z",
       "fetched_at": "2026-07-08T17:22:06.149046Z",
@@ -1762,8 +1752,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "オープンソース",
-        "open source"
+        "open source",
+        "オープンソース"
       ],
       "created_at": "2026-07-03T21:46:07Z",
       "fetched_at": "2026-07-08T17:22:07.473194Z",
@@ -1785,8 +1775,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "オープンソース",
-        "open source"
+        "open source",
+        "オープンソース"
       ],
       "created_at": "2026-07-08T21:43:07Z",
       "fetched_at": "2026-07-09T02:12:32.285215Z",
@@ -1809,12 +1799,34 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "オープンソース",
-        "open source"
+        "open source",
+        "オープンソース"
       ],
       "created_at": "2026-07-11T20:45:06Z",
       "fetched_at": "2026-07-12T09:44:58.418155Z",
       "title_ja": "TradingSpy: ローカルでプライバシーを重視したAIトレーディングアシスタント（初のオープンソース）"
+    },
+    {
+      "id": "68a6c284cff5",
+      "title": "[GitHub] Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "source": "GitHub Trending",
+      "source_score": 83695,
+      "comments_count": 1028,
+      "comments_url": "https://github.com/Graphify-Labs/graphify/issues",
+      "summary": "Graphify-Labsによるグラフベースのデータ分析・処理のためのプロジェクトです。GitHub Trendingで注目されています。",
+      "tags": [
+        "グラフデータベース",
+        "データ分析",
+        "オープンソース"
+      ],
+      "interest_score": 2,
+      "matched_keywords": [
+        "オープンソース"
+      ],
+      "created_at": "2026-07-13T10:52:41.984189Z",
+      "fetched_at": "2026-07-13T10:52:41.984191Z",
+      "title_ja": "Graphify-Labs/graphify (GitHub)"
     },
     {
       "id": "f73b7c861bcc",
@@ -1861,26 +1873,68 @@
       "title_ja": "[GitHub] home-assistant/core"
     },
     {
-      "id": "d2594b988e2b",
-      "title": "Show HN: Visualize Model Spikiness in 3D",
-      "url": "https://www.modelmap.tech/",
+      "id": "aca08c38154e",
+      "title": "Show HN: Pulpie – Models for Cleaning the Web",
+      "url": "https://usefeyn.com/blog/pulpie-pareto-optimal-models-for-cleaning-the-web/",
       "source": "Hacker News",
-      "source_score": 15,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=48766556",
-      "summary": "このツールは、機械学習モデルの「スパイクネス」という概念を3Dで視覚化することを可能にします。これにより、モデルの挙動をより深く理解するのに役立ちます。",
+      "source_score": 30,
+      "comments_count": 4,
+      "comments_url": "https://news.ycombinator.com/item?id=48806575",
+      "summary": "Web上のデータをクリーンアップするための「Pulpie」という新しいモデルが発表されました。これはPareto最適化されたモデルであり、効率的なデータクリーニングを目指しています。",
       "tags": [
-        "機械学習",
-        "可視化",
-        "モデル評価"
+        "データクリーニング",
+        "Webスクレイピング",
+        "自然言語処理"
+      ],
+      "interest_score": 2,
+      "matched_keywords": [
+        "自然言語処理"
+      ],
+      "created_at": "2026-07-06T16:04:27Z",
+      "fetched_at": "2026-07-06T18:06:06.245720Z",
+      "title_ja": "Show HN: Pulpie – Webをクリーンアップするためのモデル"
+    },
+    {
+      "id": "41676ec528a9",
+      "title": "The AI Superforecasters Are Here",
+      "url": "https://www.astralcodexten.com/p/the-ai-superforecasters-are-here",
+      "source": "Hacker News",
+      "source_score": 22,
+      "comments_count": 14,
+      "comments_url": "https://news.ycombinator.com/item?id=48806296",
+      "summary": "AIの予測能力が飛躍的に向上し、人間を凌駕する「スーパーフォーキャスター」が出現しています。これらのAIは、複雑な出来事の確率を驚くほど正確に予測し始めています。",
+      "tags": [
+        "AI",
+        "予測",
+        "機械学習"
       ],
       "interest_score": 2,
       "matched_keywords": [
         "機械学習"
       ],
-      "created_at": "2026-07-02T19:57:43Z",
-      "fetched_at": "2026-07-06T11:57:22.515064Z",
-      "title_ja": "モデルのスパイクネスを3Dで可視化するShow HN"
+      "created_at": "2026-07-06T15:45:11Z",
+      "fetched_at": "2026-07-06T18:06:06.843741Z",
+      "title_ja": "AIスーパーフォーキャスターが登場"
+    },
+    {
+      "id": "7344796a1c66",
+      "title": "[GitHub] coreyhaines31/marketingskills",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "source": "GitHub Trending",
+      "source_score": 38044,
+      "comments_count": 260,
+      "comments_url": "https://github.com/coreyhaines31/marketingskills/issues",
+      "summary": "マーケティングスキルに関するリソースや情報をまとめたGitHubリポジトリです。GitHub Trendingで紹介されています。",
+      "tags": [
+        "マーケティング",
+        "スキルアップ",
+        "GitHub"
+      ],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T10:52:41.985308Z",
+      "fetched_at": "2026-07-13T10:52:41.985310Z",
+      "title_ja": "coreyhaines31/marketingskills (GitHub)"
     },
     {
       "id": "85770197f1cb",
@@ -1983,678 +2037,6 @@
       "title_ja": "[GitHub] AI求人検索ツールの開発"
     },
     {
-      "id": "cb3eddfe11b5",
-      "title": "[GitHub] mvanhorn/last30days-skill",
-      "url": "https://github.com/mvanhorn/last30days-skill",
-      "source": "GitHub Trending",
-      "source_score": 49481,
-      "comments_count": 237,
-      "comments_url": "https://github.com/mvanhorn/last30days-skill/issues",
-      "summary": "GitHubリポジトリ `last30days-skill` は、直近30日間のスキルに関する情報やリソースをまとめたものです。",
-      "tags": [
-        "GitHub",
-        "スキル",
-        "開発"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.356444Z",
-      "fetched_at": "2026-07-06T11:57:33.356446Z",
-      "title_ja": "GitHub: last30days-skill (過去30日間のスキル)"
-    },
-    {
-      "id": "3dc1f1d165e8",
-      "title": "Real-time map of Great Britain's rail network",
-      "url": "https://www.map.signalbox.io",
-      "source": "Hacker News",
-      "source_score": 142,
-      "comments_count": 56,
-      "comments_url": "https://news.ycombinator.com/item?id=48802535",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T09:38:36Z",
-      "fetched_at": "2026-07-06T11:57:16.894047Z",
-      "title_ja": null
-    },
-    {
-      "id": "3c558d06fe80",
-      "title": "Introduction to Genomics for Engineers",
-      "url": "https://learngenomics.dev/docs/biological-foundations/cells-genomes-dna-chromosomes/",
-      "source": "Hacker News",
-      "source_score": 63,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=48760424",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T12:28:20Z",
-      "fetched_at": "2026-07-06T11:57:17.239163Z",
-      "title_ja": null
-    },
-    {
-      "id": "d928d052cbf4",
-      "title": "How the U.S. Engineered Its Sovereignty",
-      "url": "https://spectrum.ieee.org/us-engineered-sovereignty",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802971",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:49:29Z",
-      "fetched_at": "2026-07-06T11:57:17.661286Z",
-      "title_ja": null
-    },
-    {
-      "id": "cdb75a5fc5fa",
-      "title": "Building relationships with customers through support didn't turn out as hoped",
-      "url": "https://www.uncommonapps.nyc/p/castro-podcasts-things-i-got-wrong-support",
-      "source": "Hacker News",
-      "source_score": 184,
-      "comments_count": 110,
-      "comments_url": "https://news.ycombinator.com/item?id=48799929",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T02:06:49Z",
-      "fetched_at": "2026-07-06T11:57:17.802815Z",
-      "title_ja": null
-    },
-    {
-      "id": "291793de7f75",
-      "title": "Generate parametric, manufacturable 3D models in seconds",
-      "url": "https://kyrall.com/",
-      "source": "Hacker News",
-      "source_score": 45,
-      "comments_count": 36,
-      "comments_url": "https://news.ycombinator.com/item?id=48801488",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:04:33Z",
-      "fetched_at": "2026-07-06T11:57:18.086008Z",
-      "title_ja": null
-    },
-    {
-      "id": "8415d2d98878",
-      "title": "The Complete Homemade Juggling Beanbag Guide",
-      "url": "https://www.joshuaclifton.com/juggle/",
-      "source": "Hacker News",
-      "source_score": 8,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=48757215",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T06:13:50Z",
-      "fetched_at": "2026-07-06T11:57:18.226935Z",
-      "title_ja": null
-    },
-    {
-      "id": "bfe37a825190",
-      "title": "Behind the scenes with the Midjourney scanner [video]",
-      "url": "https://www.youtube.com/watch?v=4nzzpUKhj1M",
-      "source": "Hacker News",
-      "source_score": 43,
-      "comments_count": 18,
-      "comments_url": "https://news.ycombinator.com/item?id=48774720",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-03T13:21:33Z",
-      "fetched_at": "2026-07-06T11:57:18.523092Z",
-      "title_ja": null
-    },
-    {
-      "id": "ead36eb01d39",
-      "title": "My quest to see all of Tetris",
-      "url": "https://antithesis.com/blog/2026/tetris-quest/",
-      "source": "Hacker News",
-      "source_score": 20,
-      "comments_count": 4,
-      "comments_url": "https://news.ycombinator.com/item?id=48765999",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T19:09:35Z",
-      "fetched_at": "2026-07-06T11:57:18.666273Z",
-      "title_ja": null
-    },
-    {
-      "id": "4e5693c016ee",
-      "title": "X402, a static blog monetization excercise",
-      "url": "https://shtein.me/posts/x402-poc/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802885",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:37:58Z",
-      "fetched_at": "2026-07-06T11:57:19.094013Z",
-      "title_ja": null
-    },
-    {
-      "id": "12c9a7cb08c2",
-      "title": "The Age of Personalized Hardware Is Coming",
-      "url": "https://geastack.com/blog-the-age-of-personalized-hardware-is-coming",
-      "source": "Hacker News",
-      "source_score": 79,
-      "comments_count": 52,
-      "comments_url": "https://news.ycombinator.com/item?id=48757900",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T07:42:33Z",
-      "fetched_at": "2026-07-06T11:57:19.233868Z",
-      "title_ja": null
-    },
-    {
-      "id": "9faf0573f9de",
-      "title": "Show HN: Paint the Earth on a live, interactive globe (collaborative art.)",
-      "url": "https://earth.tattoo",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=48802818",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:28:32Z",
-      "fetched_at": "2026-07-06T11:57:19.376308Z",
-      "title_ja": null
-    },
-    {
-      "id": "472bca470fa1",
-      "title": "Vacuum at the Page Level",
-      "url": "https://boringsql.com/posts/vacuum-at-the-page-level/",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802660",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:02:08Z",
-      "fetched_at": "2026-07-06T11:57:19.945956Z",
-      "title_ja": null
-    },
-    {
-      "id": "3545428d1bac",
-      "title": "\"Software Engineering\" Is Not Engineering",
-      "url": "https://web.archive.org/web/20050615235108/http://www.geocities.com/tablizer/science.htm",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48803338",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:42:46Z",
-      "fetched_at": "2026-07-06T11:57:20.365360Z",
-      "title_ja": null
-    },
-    {
-      "id": "a021e8109101",
-      "title": "When AI Costs More Than the Engineer",
-      "url": "https://tomtunguz.com/ai-spend-breakeven-2029/",
-      "source": "Hacker News",
-      "source_score": 107,
-      "comments_count": 94,
-      "comments_url": "https://news.ycombinator.com/item?id=48801493",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:05:25Z",
-      "fetched_at": "2026-07-06T11:57:21.231415Z",
-      "title_ja": null
-    },
-    {
-      "id": "982d2ddaaeff",
-      "title": "Modernizing a 25-year-old minimal C++ unit testing framework (Part 2)",
-      "url": "https://freshsources.com/code-capsules/test-part2/",
-      "source": "Hacker News",
-      "source_score": 21,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=48765706",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T18:45:17Z",
-      "fetched_at": "2026-07-06T11:57:21.661967Z",
-      "title_ja": null
-    },
-    {
-      "id": "32922e6a20cc",
-      "title": "The Hitchhiker's Guide to Agentic AI",
-      "url": "https://arxiv.org/abs/2606.24937",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802156",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T08:40:29Z",
-      "fetched_at": "2026-07-06T11:57:21.803942Z",
-      "title_ja": null
-    },
-    {
-      "id": "e56b22272168",
-      "title": "your competitor is 10x better than you",
-      "url": "https://www.mentionedby.world/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48802137",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T08:36:30Z",
-      "fetched_at": "2026-07-06T11:57:22.230778Z",
-      "title_ja": null
-    },
-    {
-      "id": "ba16617d1c25",
-      "title": "Veteran Coder, Modern Delivery: The Hunt for the Perfect Technical TPM Role",
-      "url": "https://www.mariusb.net/blog/2026/07/veteran-coder-modern-delivery-the-hunt-for-the-perfect-technical-tpm-role/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48801805",
-      "summary": "経験豊富なコーダーが、現代のソフトウェア開発において、理想的なテクニカルプロダクトマネージャー（TPM）の役割をどのように探求しているかについて論じています。",
-      "tags": [
-        "プロダクトマネジメント",
-        "ソフトウェア開発",
-        "キャリア"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:51:43Z",
-      "fetched_at": "2026-07-06T11:57:23.221330Z",
-      "title_ja": "ベテランコーダー、モダンデリバリー：完璧なテクニカルTPM職を探して"
-    },
-    {
-      "id": "166d1efeb218",
-      "title": "South Korea's hottest new bachelors are chip workers",
-      "url": "https://www.technologyreview.com/2026/07/06/1140000/south-korea-bachelors-samsung-skhynix-chip-workers/",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48803045",
-      "summary": "韓国では、サムスンやSKハイニックスといった半導体企業の男性労働者が、その高収入と安定性から「最も魅力的な独身男性」として注目されています。",
-      "tags": [
-        "半導体産業",
-        "韓国",
-        "社会動向"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:02:08Z",
-      "fetched_at": "2026-07-06T11:57:23.365144Z",
-      "title_ja": "韓国で最も人気のある独身男性は半導体労働者"
-    },
-    {
-      "id": "4545fdad3422",
-      "title": "A Skiing Accident Put Our Development Practices to the Test",
-      "url": "https://blog.enioka.com/2026/07/03/how-a-skiing-accident-put-our-development-practices-to-the-test/",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48801699",
-      "summary": "筆者が遭遇したスキー事故という予期せぬ出来事が、チームの開発プラクティスにどのような試練を与え、それを乗り越える過程で何を学んだのかを綴っています。",
-      "tags": [
-        "ソフトウェア開発",
-        "チームワーク",
-        "プラクティス"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:35:20Z",
-      "fetched_at": "2026-07-06T11:57:23.640717Z",
-      "title_ja": "スキー事故が開発プラクティスを試した"
-    },
-    {
-      "id": "b3b8797feb2f",
-      "title": "Looking Forward to Postgres 19: Split Personality",
-      "url": "https://www.pgedge.com/blog/looking-forward-to-postgres-19-split-personality",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48801682",
-      "summary": "Postgres 19における「Split Personality（二重人格）」という機能または設計思想について、その可能性と将来的な影響について考察しています。",
-      "tags": [
-        "PostgreSQL",
-        "データベース",
-        "開発ロードマップ"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:32:16Z",
-      "fetched_at": "2026-07-06T11:57:23.787210Z",
-      "title_ja": "Postgres 19への期待：二重人格"
-    },
-    {
-      "id": "cf6b3daa9385",
-      "title": "Defeat air-gapped systems by exfiltrating data using Apple Find My network",
-      "url": "https://github.com/HouzuoGuo/hzgl-air-bridge",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48801677",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:31:47Z",
-      "fetched_at": "2026-07-06T11:57:23.925453Z"
-    },
-    {
-      "id": "b3d047e38416",
-      "title": "Shrimple – A Simpler, Nicer Markdown",
-      "url": "https://qount25.dev/Shrimple/",
-      "source": "Hacker News",
-      "source_score": 25,
-      "comments_count": 33,
-      "comments_url": "https://news.ycombinator.com/item?id=48800026",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T02:24:15Z",
-      "fetched_at": "2026-07-06T11:57:24.206953Z"
-    },
-    {
-      "id": "47e8eb21fbd3",
-      "title": "Do you hate XML? (2010)",
-      "url": "https://sigfrid-lundberg.se/entries/2010/07/hate_xml/",
-      "source": "Hacker News",
-      "source_score": 39,
-      "comments_count": 68,
-      "comments_url": "https://news.ycombinator.com/item?id=48796438",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-05T18:10:50Z",
-      "fetched_at": "2026-07-06T11:57:24.504858Z"
-    },
-    {
-      "id": "4f3e0b9b417a",
-      "title": "Revised Rules of Engineering Leadership",
-      "url": "https://lethain.com/revised-rules-of-engineering-leadership/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48801483",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T07:03:35Z",
-      "fetched_at": "2026-07-06T11:57:24.791291Z"
-    },
-    {
-      "id": "4ca57daf085e",
-      "title": "The Internet Is Dead and Nobody Cares [video]",
-      "url": "https://www.youtube.com/watch?v=PUSY6mtqQDI",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48802919",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:43:12Z",
-      "fetched_at": "2026-07-06T11:57:24.932111Z"
-    },
-    {
-      "id": "fcab3dd6014d",
-      "title": "An Ordinary Mind on an Ordinary Day",
-      "url": "https://www.laphamsquarterly.org/roundtable/ordinary-mind-ordinary-day",
-      "source": "Hacker News",
-      "source_score": 18,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48769058",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-03T00:10:34Z",
-      "fetched_at": "2026-07-06T11:57:25.360481Z"
-    },
-    {
-      "id": "ba0d7b0b9b54",
-      "title": "Android is almost dead – OSnews",
-      "url": "https://www.osnews.com/story/145415/android-is-almost-dead/",
-      "source": "Hacker News",
-      "source_score": 45,
-      "comments_count": 9,
-      "comments_url": "https://news.ycombinator.com/item?id=48801059",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T05:45:15Z",
-      "fetched_at": "2026-07-06T11:57:25.495947Z"
-    },
-    {
-      "id": "f676197dbef7",
-      "title": "Papa Johns Can Predict When Your Fridge Is Empty",
-      "url": "https://www.adexchanger.com/tv/papa-johns-can-predict-when-your-fridge-is-empty/",
-      "source": "Hacker News",
-      "source_score": 42,
-      "comments_count": 60,
-      "comments_url": "https://news.ycombinator.com/item?id=48755686",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T02:24:20Z",
-      "fetched_at": "2026-07-06T11:57:26.350885Z"
-    },
-    {
-      "id": "7ebec7daff5d",
-      "title": "Secure Unix ancestor KSOS did type safety before Rust made it cool",
-      "url": "https://www.theregister.com/os-platforms/2026/07/06/secure-unix-ancestor-ksos-did-type-safety-before-rust-made-it-cool/5266458",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802808",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T10:27:01Z",
-      "fetched_at": "2026-07-06T11:57:26.493543Z"
-    },
-    {
-      "id": "b1b92eb17f39",
-      "title": "Platonic Hydrocarbons",
-      "url": "https://en.wikipedia.org/wiki/Platonic_hydrocarbon",
-      "source": "Hacker News",
-      "source_score": 15,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48765394",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-02T18:18:31Z",
-      "fetched_at": "2026-07-06T11:57:26.637870Z"
-    },
-    {
-      "id": "af1317c4b75b",
-      "title": "Sentiment analysis of Reddit threads using BERT models",
-      "url": "https://threadmood.sibencedigital.com/app?url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fprogramming%2Fcomments%2F1um497y%2Flinux_has_officially_won%2F",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48801991",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T08:18:09Z",
-      "fetched_at": "2026-07-06T11:57:29.628001Z"
-    },
-    {
-      "id": "3473cfa2bfeb",
-      "title": "Read Rust Like a Chinese Character",
-      "url": "https://dawaba.pages.dev/writing/sometimes-read-rust-like-a-chinese-character/",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48802209",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T08:48:04Z",
-      "fetched_at": "2026-07-06T11:57:29.793436Z"
-    },
-    {
-      "id": "4460e30dfef6",
-      "title": "Bad Epoll (CVE-2026-46242)",
-      "url": "https://github.com/J-jaeyoung/bad-epoll",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=48802504",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T09:34:34Z",
-      "fetched_at": "2026-07-06T11:57:30.246981Z"
-    },
-    {
-      "id": "41721ec63309",
-      "title": "ByteDance and Alibaba to disable humanlike AI custom agents as new rules loom",
-      "url": "https://www.scmp.com/tech/big-tech/article/3359482/bytedance-and-alibaba-disable-humanlike-ai-custom-agents-new-rules-loom",
-      "source": "Hacker News",
-      "source_score": 14,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=48801154",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T06:02:38Z",
-      "fetched_at": "2026-07-06T11:57:31.459329Z"
-    },
-    {
-      "id": "a9e007ab43d4",
-      "title": "Who Survives Europe's Energy Crisis?",
-      "url": "https://themerchantsnews.substack.com/p/who-survives-europes-energy-crisis",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=48802091",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T08:29:38Z",
-      "fetched_at": "2026-07-06T11:57:31.602365Z"
-    },
-    {
-      "id": "0d1bd25a3199",
-      "title": "[GitHub] addyosmani/agent-skills",
-      "url": "https://github.com/addyosmani/agent-skills",
-      "source": "GitHub Trending",
-      "source_score": 70261,
-      "comments_count": 1114,
-      "comments_url": "https://github.com/addyosmani/agent-skills/issues",
-      "summary": "Production-grade engineering skills for AI coding agents.",
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.354863Z",
-      "fetched_at": "2026-07-06T11:57:33.354865Z"
-    },
-    {
-      "id": "23317f074088",
-      "title": "[GitHub] karakeep-app/karakeep",
-      "url": "https://github.com/karakeep-app/karakeep",
-      "source": "GitHub Trending",
-      "source_score": 26668,
-      "comments_count": 178,
-      "comments_url": "https://github.com/karakeep-app/karakeep/issues",
-      "summary": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.357184Z",
-      "fetched_at": "2026-07-06T11:57:33.357185Z"
-    },
-    {
-      "id": "49a1c7e387a4",
-      "title": "[GitHub] firecrawl/firecrawl",
-      "url": "https://github.com/firecrawl/firecrawl",
-      "source": "GitHub Trending",
-      "source_score": 145593,
-      "comments_count": 834,
-      "comments_url": "https://github.com/firecrawl/firecrawl/issues",
-      "summary": "The API to search, scrape, and interact with the web at scale. 🔥",
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.357409Z",
-      "fetched_at": "2026-07-06T11:57:33.357410Z"
-    },
-    {
-      "id": "3d63f2e9a8d5",
-      "title": "[GitHub] alibaba/zvec",
-      "url": "https://github.com/alibaba/zvec",
-      "source": "GitHub Trending",
-      "source_score": 13161,
-      "comments_count": 355,
-      "comments_url": "https://github.com/alibaba/zvec/issues",
-      "summary": "A lightweight, lightning-fast, in-process vector database",
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.357934Z",
-      "fetched_at": "2026-07-06T11:57:33.357935Z"
-    },
-    {
-      "id": "09c61568d4dc",
-      "title": "[GitHub] sindresorhus/awesome",
-      "url": "https://github.com/sindresorhus/awesome",
-      "source": "GitHub Trending",
-      "source_score": 481978,
-      "comments_count": 352,
-      "comments_url": "https://github.com/sindresorhus/awesome/issues",
-      "summary": "😎 Awesome lists about all kinds of interesting topics",
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T11:57:33.358201Z",
-      "fetched_at": "2026-07-06T11:57:33.358202Z"
-    },
-    {
       "id": "02a6feb62f23",
       "title": "AMD Ryzen AI Halo – $4k AI Dev Kit",
       "url": "https://www.lttlabs.com/articles/2026/07/06/amd-ryzen-ai-halo",
@@ -2667,7 +2049,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T15:01:18Z",
-      "fetched_at": "2026-07-06T18:06:05.085244Z"
+      "fetched_at": "2026-07-06T18:06:05.085244Z",
+      "title_ja": null
     },
     {
       "id": "a78758b85543",
@@ -2682,7 +2065,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T13:28:57Z",
-      "fetched_at": "2026-07-06T18:06:05.230573Z"
+      "fetched_at": "2026-07-06T18:06:05.230573Z",
+      "title_ja": null
     },
     {
       "id": "837674107f6c",
@@ -2697,7 +2081,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T15:53:24Z",
-      "fetched_at": "2026-07-06T18:06:05.376265Z"
+      "fetched_at": "2026-07-06T18:06:05.376265Z",
+      "title_ja": null
     },
     {
       "id": "2c31cd2125d5",
@@ -2712,7 +2097,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T11:47:37Z",
-      "fetched_at": "2026-07-06T18:06:05.520226Z"
+      "fetched_at": "2026-07-06T18:06:05.520226Z",
+      "title_ja": null
     },
     {
       "id": "e733694ca3c5",
@@ -2722,12 +2108,17 @@
       "source_score": 123,
       "comments_count": 75,
       "comments_url": "https://news.ycombinator.com/item?id=48803762",
-      "summary": null,
-      "tags": [],
+      "summary": "Fable 5というシステムがVending-Bench環境で誤動作を起こし、その原因究明と、否定の余地がある状況について論じています。",
+      "tags": [
+        "システムテスト",
+        "バグ報告",
+        "デバッグ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T12:38:13Z",
-      "fetched_at": "2026-07-06T18:06:05.815360Z"
+      "fetched_at": "2026-07-06T18:06:05.815360Z",
+      "title_ja": "Fable 5 on Vending-Bench: 誤動作と、それらしい否定の余地"
     },
     {
       "id": "4b374abd09ce",
@@ -2737,27 +2128,17 @@
       "source_score": 166,
       "comments_count": 119,
       "comments_url": "https://news.ycombinator.com/item?id=48804993",
-      "summary": null,
-      "tags": [],
+      "summary": "Xbox本体をリセットするための公式な手順について説明しています。これにより、問題解決や初期状態への復帰が可能になります。",
+      "tags": [
+        "Xbox",
+        "コンソール",
+        "トラブルシューティング"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T14:18:23Z",
-      "fetched_at": "2026-07-06T18:06:05.958973Z"
-    },
-    {
-      "id": "aca08c38154e",
-      "title": "Show HN: Pulpie – Models for Cleaning the Web",
-      "url": "https://usefeyn.com/blog/pulpie-pareto-optimal-models-for-cleaning-the-web/",
-      "source": "Hacker News",
-      "source_score": 30,
-      "comments_count": 4,
-      "comments_url": "https://news.ycombinator.com/item?id=48806575",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T16:04:27Z",
-      "fetched_at": "2026-07-06T18:06:06.245720Z"
+      "fetched_at": "2026-07-06T18:06:05.958973Z",
+      "title_ja": "Xboxのリセット方法"
     },
     {
       "id": "87394a5a0ae5",
@@ -2767,12 +2148,17 @@
       "source_score": 51,
       "comments_count": 18,
       "comments_url": "https://news.ycombinator.com/item?id=48806073",
-      "summary": null,
-      "tags": [],
+      "summary": "1枚の画像から1000語の文章を作成するWriting Club主催の作文コンテストについて告知しています。",
+      "tags": [
+        "作文コンテスト",
+        "ライティング",
+        "クリエイティブ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T15:30:08Z",
-      "fetched_at": "2026-07-06T18:06:06.388969Z"
+      "fetched_at": "2026-07-06T18:06:06.388969Z",
+      "title_ja": "1k Words: 作文コンテスト"
     },
     {
       "id": "27e316acd404",
@@ -2782,12 +2168,17 @@
       "source_score": 126,
       "comments_count": 24,
       "comments_url": "https://news.ycombinator.com/item?id=48767211",
-      "summary": null,
-      "tags": [],
+      "summary": "Clojureの最新バージョン1.13（アルファ1）で、チェック付きキー（checked keys）をサポートする機能が追加されました。これにより、より安全なデータ構造の操作が可能になります。",
+      "tags": [
+        "Clojure",
+        "プログラミング言語",
+        "ソフトウェアアップデート"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-02T20:51:52Z",
-      "fetched_at": "2026-07-06T18:06:06.535578Z"
+      "fetched_at": "2026-07-06T18:06:06.535578Z",
+      "title_ja": "Clojure 1.13でチェック付きキーのサポートが追加"
     },
     {
       "id": "bf7cb6411d0e",
@@ -2797,27 +2188,17 @@
       "source_score": 42,
       "comments_count": 3,
       "comments_url": "https://news.ycombinator.com/item?id=48779274",
-      "summary": null,
-      "tags": [],
+      "summary": "エジプトは、砂漠地帯への灌漑と開発を目的として、巨大な地下水路システムである「新ナイル川」を建設しています。このプロジェクトは、水資源の活用と国土の拡大を目指すものです。",
+      "tags": [
+        "インフラ",
+        "水資源",
+        "灌漑"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-03T20:00:34Z",
-      "fetched_at": "2026-07-06T18:06:06.691897Z"
-    },
-    {
-      "id": "41676ec528a9",
-      "title": "The AI Superforecasters Are Here",
-      "url": "https://www.astralcodexten.com/p/the-ai-superforecasters-are-here",
-      "source": "Hacker News",
-      "source_score": 22,
-      "comments_count": 14,
-      "comments_url": "https://news.ycombinator.com/item?id=48806296",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-07-06T15:45:11Z",
-      "fetched_at": "2026-07-06T18:06:06.843741Z"
+      "fetched_at": "2026-07-06T18:06:06.691897Z",
+      "title_ja": "エジプト、新たなナイル川を建設中"
     },
     {
       "id": "b5d8ec4bd700",
@@ -2827,12 +2208,17 @@
       "source_score": 24,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=48805965",
-      "summary": null,
-      "tags": [],
+      "summary": "Counter-Strike 2 (CS2) のサーバーサイドで、壁越しに見える（ウォールハック）のを防ぐためのオクルージョンカリング（視線遮蔽判定）技術に関するGitHubリポジトリです。",
+      "tags": [
+        "ゲーム開発",
+        "サーバーサイド",
+        "CS2"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T15:23:34Z",
-      "fetched_at": "2026-07-06T18:06:07.140934Z"
+      "fetched_at": "2026-07-06T18:06:07.140934Z",
+      "title_ja": "CS2 Fog Of War: CS2サーバー向けサーバーサイドのウォールハック対策オクルージョンカリング"
     },
     {
       "id": "28f3ac2e19a6",
@@ -2842,12 +2228,17 @@
       "source_score": 13,
       "comments_count": 9,
       "comments_url": "https://news.ycombinator.com/item?id=48746939",
-      "summary": null,
-      "tags": [],
+      "summary": "筆者が小さなキーボードを好む理由と、その利点について語っています。コンパクトさや携帯性、タイピング体験の変化に焦点を当てています。",
+      "tags": [
+        "ハードウェア",
+        "キーボード",
+        "ライフスタイル"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-01T14:00:29Z",
-      "fetched_at": "2026-07-06T18:06:07.282979Z"
+      "fetched_at": "2026-07-06T18:06:07.282979Z",
+      "title_ja": "小さなキーボードが好き"
     },
     {
       "id": "10c14595e9b4",
@@ -2857,12 +2248,17 @@
       "source_score": 34,
       "comments_count": 6,
       "comments_url": "https://news.ycombinator.com/item?id=48807383",
-      "summary": null,
-      "tags": [],
+      "summary": "米最高裁判所が、Flock社のナンバープレート認識カメラシステムに関して、プライバシーや監視に関する懸念から一石を投じました。この判決は、監視技術の普及に影響を与える可能性があります。",
+      "tags": [
+        "プライバシー",
+        "監視技術",
+        "最高裁判所"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T16:58:51Z",
-      "fetched_at": "2026-07-06T18:06:07.442890Z"
+      "fetched_at": "2026-07-06T18:06:07.442890Z",
+      "title_ja": "最高裁判所がFlock社のナンバープレートカメラ帝国に火をつけた"
     },
     {
       "id": "986b44398f33",
@@ -2877,7 +2273,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T15:44:44Z",
-      "fetched_at": "2026-07-06T18:06:07.626684Z"
+      "fetched_at": "2026-07-06T18:06:07.626684Z",
+      "title_ja": null
     },
     {
       "id": "fdfe27002820",
@@ -2892,7 +2289,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-02T20:29:23Z",
-      "fetched_at": "2026-07-06T18:06:07.770637Z"
+      "fetched_at": "2026-07-06T18:06:07.770637Z",
+      "title_ja": null
     },
     {
       "id": "7bb5ae03255c",
@@ -2907,7 +2305,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T14:47:45Z",
-      "fetched_at": "2026-07-06T18:06:08.059303Z"
+      "fetched_at": "2026-07-06T18:06:08.059303Z",
+      "title_ja": null
     },
     {
       "id": "de0b22ecd6f0",
@@ -2922,7 +2321,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T14:45:31Z",
-      "fetched_at": "2026-07-06T18:06:08.248232Z"
+      "fetched_at": "2026-07-06T18:06:08.248232Z",
+      "title_ja": null
     },
     {
       "id": "238a01162d81",
@@ -2937,7 +2337,8 @@
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-07-06T17:16:41Z",
-      "fetched_at": "2026-07-06T18:06:08.404820Z"
+      "fetched_at": "2026-07-06T18:06:08.404820Z",
+      "title_ja": null
     },
     {
       "id": "c69eed8cf371",
@@ -14458,6 +13859,456 @@
       "matched_keywords": [],
       "created_at": "2026-07-13T10:52:41.984874Z",
       "fetched_at": "2026-07-13T10:52:41.984876Z"
+    },
+    {
+      "id": "f7cc71af96a7",
+      "title": "Apple's new SpeechAnalyzer API, benchmarked against Whisper and its predecessor",
+      "url": "https://get-inscribe.com/blog/apple-speech-api-benchmark.html",
+      "source": "Hacker News",
+      "source_score": 131,
+      "comments_count": 73,
+      "comments_url": "https://news.ycombinator.com/item?id=48894752",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T16:06:08Z",
+      "fetched_at": "2026-07-13T17:49:33.705754Z"
+    },
+    {
+      "id": "b99e7ca57153",
+      "title": "The art and engineering of Sega CD Silpheed",
+      "url": "https://fabiensanglard.net/silpheed/index.html",
+      "source": "Hacker News",
+      "source_score": 129,
+      "comments_count": 20,
+      "comments_url": "https://news.ycombinator.com/item?id=48893639",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T14:52:33Z",
+      "fetched_at": "2026-07-13T17:49:33.816701Z"
+    },
+    {
+      "id": "9214111cdf85",
+      "title": "A voxel Tokyo in real Japan time – ride the Yamanote line and study Japanese",
+      "url": "https://jivx.com/densha",
+      "source": "Hacker News",
+      "source_score": 255,
+      "comments_count": 38,
+      "comments_url": "https://news.ycombinator.com/item?id=48890959",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T11:18:30Z",
+      "fetched_at": "2026-07-13T17:49:33.930390Z"
+    },
+    {
+      "id": "4b510c0ce267",
+      "title": "LAPD lets contract with surveillance giant Flock expire",
+      "url": "https://techcrunch.com/2026/07/13/lapd-lets-contract-with-surveillance-giant-flock-expire-citing-serious-concerns-over-civil-liberties-and-privacy/",
+      "source": "Hacker News",
+      "source_score": 188,
+      "comments_count": 113,
+      "comments_url": "https://news.ycombinator.com/item?id=48893947",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:11:50Z",
+      "fetched_at": "2026-07-13T17:49:34.042855Z"
+    },
+    {
+      "id": "6070987047fa",
+      "title": "Show HN: DOM-docx – HTML to native, editable Word docs (MIT)",
+      "url": "https://github.com/floodtide/dom-docx",
+      "source": "Hacker News",
+      "source_score": 98,
+      "comments_count": 24,
+      "comments_url": "https://news.ycombinator.com/item?id=48891267",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T11:51:56Z",
+      "fetched_at": "2026-07-13T17:49:34.156317Z"
+    },
+    {
+      "id": "e39c8828e2ee",
+      "title": "Tune Code Before Your Garbage Collector",
+      "url": "http://blog.vanillajava.blog/2026/06/why-you-should-tun-code-before-your.html",
+      "source": "Hacker News",
+      "source_score": 11,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=48828983",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-08T08:05:10Z",
+      "fetched_at": "2026-07-13T17:49:34.270800Z"
+    },
+    {
+      "id": "f07804d7247a",
+      "title": "Benchmarking 15 \"E-Waste\" GPUs with Modern Workloads",
+      "url": "https://esologic.com/benchmarking-tesla-gpus/",
+      "source": "Hacker News",
+      "source_score": 41,
+      "comments_count": 10,
+      "comments_url": "https://news.ycombinator.com/item?id=48892638",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T13:48:42Z",
+      "fetched_at": "2026-07-13T17:49:34.384676Z"
+    },
+    {
+      "id": "f94ac8a53e9b",
+      "title": "PgDog (YC P25) Is Hiring a Founding Software Engineer",
+      "url": "https://www.ycombinator.com/companies/pgdog/jobs/uWymUYy-founding-software-engineer",
+      "source": "Hacker News",
+      "source_score": 1,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=48895565",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T17:00:54Z",
+      "fetched_at": "2026-07-13T17:49:34.499082Z"
+    },
+    {
+      "id": "55fcea3ccbb0",
+      "title": "The 'absolute magic' of Morse code that still connects people globally",
+      "url": "https://www.bbc.com/news/articles/cwye0dlzgejo",
+      "source": "Hacker News",
+      "source_score": 80,
+      "comments_count": 45,
+      "comments_url": "https://news.ycombinator.com/item?id=48832329",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-08T14:20:09Z",
+      "fetched_at": "2026-07-13T17:49:34.609565Z"
+    },
+    {
+      "id": "36e133f7ef0f",
+      "title": "Counting ArXiv Delays",
+      "url": "https://fi-le.net/arxiv/",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 8,
+      "comments_url": "https://news.ycombinator.com/item?id=48855881",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-10T04:52:34Z",
+      "fetched_at": "2026-07-13T17:49:34.837567Z"
+    },
+    {
+      "id": "ef1f080c5ce7",
+      "title": "Cursed circuits #6: reverse avalanche oscillator",
+      "url": "https://lcamtuf.substack.com/p/cursed-circuits-6-reverse-avalanche",
+      "source": "Hacker News",
+      "source_score": 49,
+      "comments_count": 9,
+      "comments_url": "https://news.ycombinator.com/item?id=48841962",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-09T07:00:17Z",
+      "fetched_at": "2026-07-13T17:49:35.057410Z"
+    },
+    {
+      "id": "605051643c80",
+      "title": "Show HN: Clawk – Give coding agents a disposable Linux VM, not your laptop",
+      "url": "https://github.com/clawkwork/clawk",
+      "source": "Hacker News",
+      "source_score": 125,
+      "comments_count": 118,
+      "comments_url": "https://news.ycombinator.com/item?id=48892859",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T14:02:03Z",
+      "fetched_at": "2026-07-13T17:49:35.393493Z"
+    },
+    {
+      "id": "59259ee4e0c0",
+      "title": "Wikipedia escapes Category 1 designation under the UK Online Safety Act for now",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost/2026-07-13/Special_report",
+      "source": "Hacker News",
+      "source_score": 36,
+      "comments_count": 21,
+      "comments_url": "https://news.ycombinator.com/item?id=48894671",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:59:36Z",
+      "fetched_at": "2026-07-13T17:49:35.621059Z"
+    },
+    {
+      "id": "5d824efdc7a9",
+      "title": "DOGE is done. What happened to its records?",
+      "url": "https://www.ms.now/opinion/doge-government-efficiency-records-job-cuts-elon-musk-foia",
+      "source": "Hacker News",
+      "source_score": 214,
+      "comments_count": 162,
+      "comments_url": "https://news.ycombinator.com/item?id=48894641",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:56:39Z",
+      "fetched_at": "2026-07-13T17:49:35.843746Z"
+    },
+    {
+      "id": "fbec6fa89e0b",
+      "title": "Nokia's 14 Years of Mobile-Phone Supremacy Ended in an Afternoon",
+      "url": "https://spectrum.ieee.org/nokia-phones-history",
+      "source": "Hacker News",
+      "source_score": 15,
+      "comments_count": 11,
+      "comments_url": "https://news.ycombinator.com/item?id=48892709",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T13:54:10Z",
+      "fetched_at": "2026-07-13T17:49:35.955039Z"
+    },
+    {
+      "id": "a80e6a94a43b",
+      "title": "Go-Flavored Concurrency in C",
+      "url": "https://antonz.org/concurrency-in-c/",
+      "source": "Hacker News",
+      "source_score": 26,
+      "comments_count": 6,
+      "comments_url": "https://news.ycombinator.com/item?id=48894637",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:56:22Z",
+      "fetched_at": "2026-07-13T17:49:36.070542Z"
+    },
+    {
+      "id": "35602ac53d07",
+      "title": "Grok CLI uploaded the whole home directory to GCS",
+      "url": "https://twitter.com/a_green_being/status/2076598897779020159",
+      "source": "Hacker News",
+      "source_score": 292,
+      "comments_count": 347,
+      "comments_url": "https://news.ycombinator.com/item?id=48892468",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T13:35:32Z",
+      "fetched_at": "2026-07-13T17:49:36.409517Z"
+    },
+    {
+      "id": "c8a698ea28b5",
+      "title": "DMS 1.5 \"The Wolverine\" Released",
+      "url": "https://danklinux.com/blog/v1-5-release",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 9,
+      "comments_url": "https://news.ycombinator.com/item?id=48837412",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-08T21:04:52Z",
+      "fetched_at": "2026-07-13T17:49:36.743808Z"
+    },
+    {
+      "id": "1cbee6e77a8c",
+      "title": "A Farewell to ARPs: IPv4 Service on IPv6-Only Networks",
+      "url": "https://labs.ripe.net/author/remco-van-mook/a-farewell-to-arps-ipv4-service-on-ipv6-only-networks/",
+      "source": "Hacker News",
+      "source_score": 12,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=48891987",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T12:58:07Z",
+      "fetched_at": "2026-07-13T17:49:36.858649Z"
+    },
+    {
+      "id": "71dba2e9c7a3",
+      "title": "Samsung overtakes Apple as smartphone market sinks to a 13-year low",
+      "url": "https://www.androidauthority.com/counterpoint-research-q2-2026-smartphone-shipment-report-3686931/",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48895828",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T17:18:10Z",
+      "fetched_at": "2026-07-13T17:49:37.431238Z"
+    },
+    {
+      "id": "1f6d9dec62f1",
+      "title": "GLP-1s are shrinking bodies. Enter cadaver fat injections",
+      "url": "https://www.cnn.com/2026/07/13/style/alloclae-glp-1-cadaver-fat-interview",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 4,
+      "comments_url": "https://news.ycombinator.com/item?id=48895355",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T16:49:04Z",
+      "fetched_at": "2026-07-13T17:49:38.235993Z"
+    },
+    {
+      "id": "aea348b609cb",
+      "title": "Control the Ideas, Not the Code",
+      "url": "https://antirez.com/news/169",
+      "source": "Hacker News",
+      "source_score": 183,
+      "comments_count": 151,
+      "comments_url": "https://news.ycombinator.com/item?id=48891184",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T11:45:36Z",
+      "fetched_at": "2026-07-13T17:49:38.347194Z"
+    },
+    {
+      "id": "325412572334",
+      "title": "A Heuristic for When to Reason vs When to Act",
+      "url": "https://techandsundry.medium.com/when-to-reason-and-when-to-act-8144f3c31053",
+      "source": "Hacker News",
+      "source_score": 4,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48895724",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T17:11:08Z",
+      "fetched_at": "2026-07-13T17:49:38.677369Z"
+    },
+    {
+      "id": "ad4d11bfd963",
+      "title": "Apple's rumored M7 Ultra targets 1.5TB and Blackwell-class AI performance",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/apples-rumored-m7-ultra-targets-1-5tb-of-memory-and-blackwell-class-ai",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 13,
+      "comments_url": "https://news.ycombinator.com/item?id=48894277",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:32:19Z",
+      "fetched_at": "2026-07-13T17:49:39.023107Z"
+    },
+    {
+      "id": "5ab9b23af922",
+      "title": "An Infuriating Goodbye to Photoshop",
+      "url": "https://anderegg.ca/2026/07/12/an-infuriating-goodbye-to-photoshop",
+      "source": "Hacker News",
+      "source_score": 166,
+      "comments_count": 108,
+      "comments_url": "https://news.ycombinator.com/item?id=48891200",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T11:46:47Z",
+      "fetched_at": "2026-07-13T17:49:41.018799Z"
+    },
+    {
+      "id": "7f9251cf654d",
+      "title": "Why Am I Left-Handed?",
+      "url": "https://www.quantamagazine.org/why-am-i-left-handed-20260713/",
+      "source": "Hacker News",
+      "source_score": 10,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48894095",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T15:22:04Z",
+      "fetched_at": "2026-07-13T17:49:41.127793Z"
+    },
+    {
+      "id": "77ea519fa38e",
+      "title": "There's no way this bond market can fund the markets needs without higher yields",
+      "url": "https://www.youtube.com/watch?v=W-Dxpp9YG3s",
+      "source": "Hacker News",
+      "source_score": 8,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=48893403",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T14:36:16Z",
+      "fetched_at": "2026-07-13T17:49:41.569114Z"
+    },
+    {
+      "id": "a6e284d5ca72",
+      "title": "Photovoltaics are still running after a year under Swiss trains",
+      "url": "https://www.theregister.com/offbeat/2026/07/13/photovoltaics-are-still-running-after-a-year-under-swiss-trains/5269664",
+      "source": "Hacker News",
+      "source_score": 18,
+      "comments_count": 10,
+      "comments_url": "https://news.ycombinator.com/item?id=48890603",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T10:36:46Z",
+      "fetched_at": "2026-07-13T17:49:42.593684Z"
+    },
+    {
+      "id": "5c9b41daafe3",
+      "title": "Z.ai founder backs open-source AI as global security debate intensifies",
+      "url": "https://www.business-standard.com/technology/tech-news/zhipu-founder-backs-open-source-ai-as-global-security-debate-intensifies-126071200342_1.html",
+      "source": "Hacker News",
+      "source_score": 4,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48893569",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T14:48:16Z",
+      "fetched_at": "2026-07-13T17:49:43.715604Z"
+    },
+    {
+      "id": "96c9af94d786",
+      "title": "Dell sued by Finnish company over $70M price increase for data centre servers",
+      "url": "https://www.irishtimes.com/crime-law/courts/2026/06/15/finnish-company-sues-dell-over-70m-price-increase-for-data-centre-servers/",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=48893606",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-07-13T14:50:26Z",
+      "fetched_at": "2026-07-13T17:49:43.959564Z"
     }
   ]
 }
