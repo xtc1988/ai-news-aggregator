@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-26T00:52:34.301205Z",
+  "last_updated": "2026-08-26T08:34:33.812281Z",
   "articles": [
     {
       "id": "1e61851c7eb0",
@@ -17,10 +17,10 @@
       ],
       "interest_score": 42,
       "matched_keywords": [
-        "大規模言語モデル",
-        "Claude",
-        "Claude Code",
         "オープンソース",
+        "Claude",
+        "大規模言語モデル",
+        "Claude Code",
         "Anthropic"
       ],
       "created_at": "2026-08-22T16:14:46.825897Z",
@@ -43,10 +43,10 @@
       ],
       "interest_score": 32,
       "matched_keywords": [
-        "Anthropic",
-        "大規模言語モデル",
+        "オープンソース",
         "Claude",
-        "オープンソース"
+        "大規模言語モデル",
+        "Anthropic"
       ],
       "created_at": "2026-08-25T16:27:21.788203Z",
       "fetched_at": "2026-08-25T16:27:21.788204Z",
@@ -68,9 +68,9 @@
       ],
       "interest_score": 30,
       "matched_keywords": [
+        "Claude",
         "Claude Code",
-        "Anthropic",
-        "Claude"
+        "Anthropic"
       ],
       "created_at": "2026-08-22T16:58:49Z",
       "fetched_at": "2026-08-23T00:53:08.784236Z",
@@ -116,9 +116,9 @@
       ],
       "interest_score": 30,
       "matched_keywords": [
-        "Anthropic",
         "Claude",
-        "LLM"
+        "LLM",
+        "Anthropic"
       ],
       "created_at": "2026-08-24T03:32:42Z",
       "fetched_at": "2026-08-24T08:38:41.980648Z",
@@ -140,8 +140,8 @@
       ],
       "interest_score": 24,
       "matched_keywords": [
-        "機械学習",
         "オープンソース",
+        "機械学習",
         "大規模言語モデル",
         "LLM"
       ],
@@ -190,8 +190,8 @@
       "interest_score": 22,
       "matched_keywords": [
         "自然言語処理",
-        "大規模言語モデル",
-        "Claude"
+        "Claude",
+        "大規模言語モデル"
       ],
       "created_at": "2026-08-21T14:31:52Z",
       "fetched_at": "2026-08-21T16:23:01.205350Z",
@@ -214,8 +214,8 @@
       "interest_score": 22,
       "matched_keywords": [
         "自然言語処理",
-        "Claude Code",
-        "Claude"
+        "Claude",
+        "Claude Code"
       ],
       "created_at": "2026-08-21T19:51:48Z",
       "fetched_at": "2026-08-22T00:48:36.649367Z",
@@ -270,6 +270,54 @@
       "title_ja": "Free LLM API (GitHub)"
     },
     {
+      "id": "3c866db70617",
+      "title": "Ornith-1.5: From Self-Scaffolding to Self-Improvement",
+      "url": "https://ornith.ai/ornith_1_5.html",
+      "source": "Hacker News",
+      "source_score": 10,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49362401",
+      "summary": "Ornith-1.5は、大規模言語モデル（LLM）が自己学習能力を向上させるための新たなアプローチを提案します。これにより、モデルはより効率的に知識を習得し、改善していくことが期待されます。",
+      "tags": [
+        "機械学習",
+        "大規模言語モデル",
+        "AI"
+      ],
+      "interest_score": 22,
+      "matched_keywords": [
+        "機械学習",
+        "大規模言語モデル",
+        "LLM"
+      ],
+      "created_at": "2026-08-19T14:48:39Z",
+      "fetched_at": "2026-08-19T16:21:49.703594Z",
+      "title_ja": "Ornith-1.5：自己足場形成から自己改善へ"
+    },
+    {
+      "id": "d30b76221b4c",
+      "title": "Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces",
+      "url": "https://arxiv.org/abs/2504.09762",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=49360140",
+      "summary": "大規模言語モデル（LLM）の内部表現である中間トークンを、人間の推論や思考プロセスと直接結びつけて解釈することの危険性を指摘している。トークンはあくまで計算上の構造であり、擬人化は誤解を招く。",
+      "tags": [
+        "自然言語処理",
+        "LLM",
+        "AI研究"
+      ],
+      "interest_score": 22,
+      "matched_keywords": [
+        "自然言語処理",
+        "大規模言語モデル",
+        "LLM"
+      ],
+      "created_at": "2026-08-19T11:35:26Z",
+      "fetched_at": "2026-08-19T16:21:54.090321Z",
+      "title_ja": "中間トークンを推論・思考の痕跡として擬人化することをやめる"
+    },
+    {
       "id": "46405393d4f5",
       "title": "[GitHub] Shubhamsaboo/awesome-llm-apps",
       "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
@@ -308,35 +356,12 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-08-23T16:15:53.133442Z",
       "fetched_at": "2026-08-23T16:15:53.133443Z",
       "title_ja": "anthropics/claude-plugins-community: Claudeプラグインコミュニティ"
-    },
-    {
-      "id": "64f365cd8119",
-      "title": "Show HN: PlugClaw – Private AI agent hardware for any phone or PC",
-      "url": "https://plugos.net/plugclaw/",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49356609",
-      "summary": "PlugClawは、あらゆるスマートフォンやPCに接続して利用できるプライベートAIエージェントハードウェアです。これにより、ユーザーは自身のデバイス上で安全にAIエージェントを実行できます。",
-      "tags": [
-        "AI",
-        "ハードウェア",
-        "プライバシー"
-      ],
-      "interest_score": 20,
-      "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
-      ],
-      "created_at": "2026-08-19T04:03:16Z",
-      "fetched_at": "2026-08-19T08:27:19.420611Z",
-      "title_ja": "誰でも使えるプライベートAIエージェントハードウェア「PlugClaw」、スマホやPCで利用可能"
     },
     {
       "id": "4efa0c40ed82",
@@ -423,8 +448,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "embedding",
         "埋め込み",
+        "embedding",
         "LLM"
       ],
       "created_at": "2026-08-17T18:26:53Z",
@@ -516,8 +541,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-08-24T06:32:28Z",
       "fetched_at": "2026-08-24T08:38:39.783805Z",
@@ -539,8 +564,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Claude Code",
-        "Claude"
+        "Claude",
+        "Claude Code"
       ],
       "created_at": "2026-08-24T19:32:18Z",
       "fetched_at": "2026-08-25T00:50:57.379983Z",
@@ -570,27 +595,45 @@
       "title_ja": "LLMは推論エンジンの脆弱性を悪用してホストマシンを制御できる可能性"
     },
     {
-      "id": "a678b2801da4",
-      "title": "DFlash 2: Keep Drafting Parallel",
-      "url": "https://inco.ai/blog/dflash2/",
+      "id": "1a5786f0f625",
+      "title": "Cross-vendor byte-identical inference for a 72B LLM (AMD MI300X vs. Nvidia H100)",
+      "url": "https://zenodo.org/records/19882078",
       "source": "Hacker News",
-      "source_score": 11,
+      "source_score": 5,
       "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49354885",
-      "summary": "DFlash 2は、大規模言語モデル（LLM）における継続的なドラフト生成を可能にする新しい方法論。これにより、より長文で一貫性のあるテキスト生成が期待できる。",
+      "comments_url": "https://news.ycombinator.com/item?id=49440102",
+      "summary": "AMD MI300XとNvidia H100という異なるハードウェアベンダー間で、720億パラメータのLLM（大規模言語モデル）がバイト単位で同一の推論結果を出力できるかを検証した研究について報告しています。これにより、ベンダーロックインの懸念を払拭し、モデルの移植性を高める可能性が示唆されます。",
       "tags": [
         "大規模言語モデル",
-        "LLM",
-        "テキスト生成"
+        "ハードウェア比較",
+        "LLM推論"
       ],
       "interest_score": 20,
       "matched_keywords": [
         "大規模言語モデル",
         "LLM"
       ],
-      "created_at": "2026-08-19T00:20:19Z",
-      "fetched_at": "2026-08-19T08:27:19.010476Z",
-      "title_ja": "DFlash 2: 並行してドラフトを継続する"
+      "created_at": "2026-08-25T20:24:36Z",
+      "fetched_at": "2026-08-26T00:51:56.177579Z",
+      "title_ja": "72B LLMにおけるベンダー横断のバイト同一推論（AMD MI300X vs. Nvidia H100）"
+    },
+    {
+      "id": "1ac76cbca0bc",
+      "title": "I miss the old Claude Code",
+      "url": "https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/",
+      "source": "Hacker News",
+      "source_score": 21,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49444863",
+      "summary": null,
+      "tags": [],
+      "interest_score": 20,
+      "matched_keywords": [
+        "Claude",
+        "Claude Code"
+      ],
+      "created_at": "2026-08-26T06:34:35Z",
+      "fetched_at": "2026-08-26T08:33:54.417875Z"
     },
     {
       "id": "e1725a890e04",
@@ -656,8 +699,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "生成AI",
-        "GPT"
+        "GPT",
+        "生成AI"
       ],
       "created_at": "2026-08-23T16:15:53.129196Z",
       "fetched_at": "2026-08-23T16:15:53.129198Z",
@@ -772,10 +815,10 @@
       ],
       "interest_score": 11,
       "matched_keywords": [
-        "自然言語処理",
         "オープンソース",
-        "GPT",
-        "機械学習"
+        "自然言語処理",
+        "機械学習",
+        "GPT"
       ],
       "created_at": "2026-08-23T00:25:07Z",
       "fetched_at": "2026-08-23T08:20:21.235990Z",
@@ -1120,45 +1163,6 @@
       "title_ja": "Anthropic、セキュリティチームのストライキの可能性により、スタッフに自宅勤務を指示"
     },
     {
-      "id": "940a239ade36",
-      "title": "Cerebras CS-4",
-      "url": "https://www.cerebras.ai/cs4",
-      "source": "Hacker News",
-      "source_score": 252,
-      "comments_count": 173,
-      "comments_url": "https://news.ycombinator.com/item?id=49354949",
-      "summary": "Cerebrasが発表した、AIやHPCワークロード向けに設計された最新のコンピューティングシステム「CS-4」を紹介する。",
-      "tags": [
-        "AI",
-        "ハードウェア",
-        "HPC"
-      ],
-      "interest_score": 10,
-      "matched_keywords": [
-        "クロード"
-      ],
-      "created_at": "2026-08-19T00:28:18Z",
-      "fetched_at": "2026-08-19T08:27:10.485520Z",
-      "title_ja": "Cerebras CS-4"
-    },
-    {
-      "id": "1a5786f0f625",
-      "title": "Cross-vendor byte-identical inference for a 72B LLM (AMD MI300X vs. Nvidia H100)",
-      "url": "https://zenodo.org/records/19882078",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49440102",
-      "summary": null,
-      "tags": [],
-      "interest_score": 10,
-      "matched_keywords": [
-        "LLM"
-      ],
-      "created_at": "2026-08-25T20:24:36Z",
-      "fetched_at": "2026-08-26T00:51:56.177579Z"
-    },
-    {
       "id": "2a55432ac713",
       "title": "Anthropic expected to tell investors it sees over $30T in potential revenue",
       "url": "https://www.reuters.com/business/media-telecom/anthropic-expected-tell-investors-it-sees-over-30-trillion-potential-revenue-wsj-2026-08-25/",
@@ -1166,14 +1170,41 @@
       "source_score": 18,
       "comments_count": 11,
       "comments_url": "https://news.ycombinator.com/item?id=49438349",
-      "summary": null,
-      "tags": [],
+      "summary": "AI企業Anthropicが、投資家向け説明会で30兆ドルを超える潜在的な収益機会を見込んでいると報じられています。これは、AI技術がもたらす経済的インパクトの大きさを浮き彫りにするものです。",
+      "tags": [
+        "AI",
+        "収益見込み",
+        "投資"
+      ],
       "interest_score": 10,
       "matched_keywords": [
         "Anthropic"
       ],
       "created_at": "2026-08-25T18:21:40Z",
-      "fetched_at": "2026-08-26T00:52:00.939037Z"
+      "fetched_at": "2026-08-26T00:52:00.939037Z",
+      "title_ja": "Anthropic、投資家向けに30兆ドル超の潜在的収益見込みを提示か"
+    },
+    {
+      "id": "658cf41423d6",
+      "title": "AI Has Plunged the Book Publishing Industry into Utter Chaos",
+      "url": "https://www.wsj.com/arts-culture/books/generative-ai-book-publishing-be79a287",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 16,
+      "comments_url": "https://news.ycombinator.com/item?id=49361352",
+      "summary": "生成AIの台頭により、書籍出版業界は前例のない混乱に直面している。AIによるコンテンツ生成、著作権問題、そして人間の著者の役割への疑問などが業界を揺るがしている。",
+      "tags": [
+        "AI",
+        "書籍出版",
+        "知的財産"
+      ],
+      "interest_score": 10,
+      "matched_keywords": [
+        "生成AI"
+      ],
+      "created_at": "2026-08-19T13:28:44Z",
+      "fetched_at": "2026-08-19T16:21:53.511505Z",
+      "title_ja": "AIが書籍出版業界を大混乱に陥れる"
     },
     {
       "id": "1a57528ba5a4",
@@ -1191,8 +1222,8 @@
       ],
       "interest_score": 7,
       "matched_keywords": [
-        "OpenAI",
-        "自然言語処理"
+        "自然言語処理",
+        "OpenAI"
       ],
       "created_at": "2026-08-22T16:14:46.823480Z",
       "fetched_at": "2026-08-22T16:14:46.823491Z",
@@ -1214,8 +1245,8 @@
       ],
       "interest_score": 7,
       "matched_keywords": [
-        "GPT",
-        "機械学習"
+        "機械学習",
+        "GPT"
       ],
       "created_at": "2026-08-22T22:14:27Z",
       "fetched_at": "2026-08-23T00:53:05.559495Z",
@@ -1237,8 +1268,8 @@
       ],
       "interest_score": 7,
       "matched_keywords": [
-        "GPT",
-        "オープンソース"
+        "オープンソース",
+        "GPT"
       ],
       "created_at": "2026-08-23T21:41:17Z",
       "fetched_at": "2026-08-24T00:51:14.489398Z",
@@ -1494,14 +1525,36 @@
       "source_score": 35,
       "comments_count": 13,
       "comments_url": "https://news.ycombinator.com/item?id=49439489",
-      "summary": null,
-      "tags": [],
+      "summary": "OpenAIのデータセンター運営を統括していた責任者が同社を退職したというニュースです。AIインフラの重要なポストであり、今後の動向が注目されます。",
+      "tags": [
+        "OpenAI",
+        "データセンター",
+        "人事異動"
+      ],
       "interest_score": 5,
       "matched_keywords": [
         "OpenAI"
       ],
       "created_at": "2026-08-25T19:37:39Z",
-      "fetched_at": "2026-08-26T00:51:56.063144Z"
+      "fetched_at": "2026-08-26T00:51:56.063144Z",
+      "title_ja": "OpenAIのデータセンター責任者が退職"
+    },
+    {
+      "id": "6a2f1a2066bf",
+      "title": "France, Saudi Arabia agree on €6B Dragon Ball Z theme park project near Paris",
+      "url": "https://www.reuters.com/world/middle-east/france-saudi-arabia-agree-6-billion-dragon-ball-z-theme-park-project-near-paris-2026-08-24/",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49445146",
+      "summary": null,
+      "tags": [],
+      "interest_score": 5,
+      "matched_keywords": [
+        "RAG"
+      ],
+      "created_at": "2026-08-26T07:16:18Z",
+      "fetched_at": "2026-08-26T08:33:59.169771Z"
     },
     {
       "id": "718b7896f915",
@@ -1519,8 +1572,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "startup",
-        "スタートアップ"
+        "スタートアップ",
+        "startup"
       ],
       "created_at": "2026-08-22T00:07:06Z",
       "fetched_at": "2026-08-22T00:48:39.005583Z",
@@ -1542,8 +1595,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "open source",
-        "オープンソース"
+        "オープンソース",
+        "open source"
       ],
       "created_at": "2026-08-23T16:54:10Z",
       "fetched_at": "2026-08-24T00:51:14.783559Z",
@@ -1565,12 +1618,35 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "open source",
-        "オープンソース"
+        "オープンソース",
+        "open source"
       ],
       "created_at": "2026-08-24T06:25:42Z",
       "fetched_at": "2026-08-24T08:38:41.897521Z",
       "title_ja": "オープンソースモデルに隠された時限式バックドアの可能性"
+    },
+    {
+      "id": "c55f492d9463",
+      "title": "Anduril is aquiring startups like crazy, this explains why",
+      "url": "https://startupwiki.substack.com/p/anduril-explained",
+      "source": "Hacker News",
+      "source_score": 9,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49440484",
+      "summary": "防衛技術企業Andurilがスタートアップ企業を活発に買収している背景について解説しています。同社が技術革新を加速させ、競争優位性を確立するために、買収戦略を活用していることが説明されています。",
+      "tags": [
+        "Anduril",
+        "スタートアップ買収",
+        "防衛技術"
+      ],
+      "interest_score": 4,
+      "matched_keywords": [
+        "スタートアップ",
+        "startup"
+      ],
+      "created_at": "2026-08-25T20:54:21Z",
+      "fetched_at": "2026-08-26T00:51:59.794823Z",
+      "title_ja": "Andurilがスタートアップを積極的に買収する理由"
     },
     {
       "id": "afdace39e749",
@@ -1727,45 +1803,6 @@
       "title_ja": "[GitHub] PostHog/posthog"
     },
     {
-      "id": "b116bae8accf",
-      "title": "The Mojo language (by Modular, now Qualcomm) is now open-source",
-      "url": "https://www.modular.com/blog/modcon-announcements",
-      "source": "Hacker News",
-      "source_score": 9,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49358327",
-      "summary": "Modular社が開発し、現在はQualcomm傘下にあるプログラミング言語Mojoがオープンソースとして公開されました。",
-      "tags": [
-        "プログラミング言語",
-        "オープンソース",
-        "Mojo"
-      ],
-      "interest_score": 2,
-      "matched_keywords": [
-        "オープンソース"
-      ],
-      "created_at": "2026-08-19T07:47:19Z",
-      "fetched_at": "2026-08-19T08:27:14.188133Z",
-      "title_ja": "Modular社（現Qualcomm）によるMojo言語がオープンソース化"
-    },
-    {
-      "id": "c55f492d9463",
-      "title": "Anduril is aquiring startups like crazy, this explains why",
-      "url": "https://startupwiki.substack.com/p/anduril-explained",
-      "source": "Hacker News",
-      "source_score": 9,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49440484",
-      "summary": null,
-      "tags": [],
-      "interest_score": 2,
-      "matched_keywords": [
-        "startup"
-      ],
-      "created_at": "2026-08-25T20:54:21Z",
-      "fetched_at": "2026-08-26T00:51:59.794823Z"
-    },
-    {
       "id": "ce3a785ea3a9",
       "title": "[GitHub] MadsLorentzen/ai-job-search",
       "url": "https://github.com/MadsLorentzen/ai-job-search",
@@ -1846,531 +1883,6 @@
       "title_ja": "[GitHub] Tencent/AI-Infra-Guard"
     },
     {
-      "id": "39de99102be0",
-      "title": "OpenLogi",
-      "url": "https://openlogi.org/en",
-      "source": "Hacker News",
-      "source_score": 511,
-      "comments_count": 142,
-      "comments_url": "https://news.ycombinator.com/item?id=49355606",
-      "summary": "OpenLogi は、ロジスティクス関連のサービスを提供するプラットフォームです。",
-      "tags": [
-        "ロジスティクス",
-        "サービス",
-        "プラットフォーム"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:58:28Z",
-      "fetched_at": "2026-08-19T08:27:10.182303Z",
-      "title_ja": "OpenLogi"
-    },
-    {
-      "id": "a97558ff3712",
-      "title": "Where Human Sleep Went Wrong",
-      "url": "https://nautil.us/where-human-sleep-went-wrong-1283797",
-      "source": "Hacker News",
-      "source_score": 18,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49358259",
-      "summary": "現代社会における睡眠習慣の変化が、人間の健康に悪影響を与えている現状について論じている。",
-      "tags": [
-        "睡眠",
-        "健康",
-        "社会"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T07:40:32Z",
-      "fetched_at": "2026-08-19T08:27:10.330624Z",
-      "title_ja": "人間の睡眠がうまくいかなくなった場所"
-    },
-    {
-      "id": "981edf90797f",
-      "title": "Palomar: A registry of Lean verified mathematics",
-      "url": "https://terrytao.wordpress.com/2026/08/18/palomar-a-registry-of-lean-verified-mathematics/",
-      "source": "Hacker News",
-      "source_score": 91,
-      "comments_count": 17,
-      "comments_url": "https://news.ycombinator.com/item?id=49355968",
-      "summary": "近年急速に発展している形式的検証ツールLeanを用いて、検証済みの数学的命題を登録・共有するためのプラットフォーム「Palomar」について説明している。",
-      "tags": [
-        "数学",
-        "形式的検証",
-        "プログラミング言語"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T02:41:50Z",
-      "fetched_at": "2026-08-19T08:27:10.634521Z",
-      "title_ja": "Palomar: Leanで検証された数学のレジストリ"
-    },
-    {
-      "id": "2836070b028d",
-      "title": "Supersonic Trebuchet [video]",
-      "url": "https://www.youtube.com/watch?v=Co57SfcT-h0",
-      "source": "Hacker News",
-      "source_score": 86,
-      "comments_count": 19,
-      "comments_url": "https://news.ycombinator.com/item?id=49306207",
-      "summary": "超音速で投石機が物体を飛ばす様子を記録した動画。",
-      "tags": [
-        "物理",
-        "エンジニアリング",
-        "動画"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-15T00:18:08Z",
-      "fetched_at": "2026-08-19T08:27:10.778373Z",
-      "title_ja": "超音速投石機 [動画]"
-    },
-    {
-      "id": "a9b103321627",
-      "title": "Scientists stunned by children's lung recovery in ultra low emission zone",
-      "url": "https://www.bbc.com/news/articles/c1l1r1zne1ro",
-      "source": "Hacker News",
-      "source_score": 221,
-      "comments_count": 158,
-      "comments_url": "https://news.ycombinator.com/item?id=49355105",
-      "summary": "特定地域での大気汚染削減が、子供たちの肺機能回復に目覚ましい効果をもたらしたことを科学者たちが驚きをもって報告している。",
-      "tags": [
-        "環境",
-        "健康",
-        "科学"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T00:48:23Z",
-      "fetched_at": "2026-08-19T08:27:10.922507Z",
-      "title_ja": "超低排出ゾーンでの子供の肺の回復に科学者たちは驚嘆"
-    },
-    {
-      "id": "a8f522e5f622",
-      "title": "The Vietnam Binh Chau (Chau Tan) Late Tang Wreck",
-      "url": "https://www.koh-antique.com/client/tangwreck/tangwreck.html",
-      "source": "Hacker News",
-      "source_score": 36,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49355451",
-      "summary": "1998年に発見されたベトナム沖の沈没船「ビンチャウ号」について、その発見経緯、船内から見つかった陶器、そして晩唐時代の交易の様子などを解説しています。",
-      "tags": [
-        "考古学",
-        "陶磁器",
-        "海上交易"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:36:40Z",
-      "fetched_at": "2026-08-19T08:27:11.365153Z",
-      "title_ja": "ベトナム・ビンチャウ（チャウタン）号 晩唐時代の沈没船"
-    },
-    {
-      "id": "45a03afc6e97",
-      "title": "Meta's blockbuster trial draws parallels to big tobacco",
-      "url": "https://www.economist.com/business/2026/08/18/metas-blockbuster-trial-draws-parallels-to-big-tobacco",
-      "source": "Hacker News",
-      "source_score": 218,
-      "comments_count": 167,
-      "comments_url": "https://news.ycombinator.com/item?id=49355825",
-      "summary": "Meta（旧Facebook）を巡る大型訴訟は、過去のビッグタバコ産業が抱えていた問題と類似しており、プラットフォームの責任や規制のあり方について議論を深めています。",
-      "tags": [
-        "テクノロジー",
-        "訴訟",
-        "プラットフォーム規制"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T02:24:34Z",
-      "fetched_at": "2026-08-19T08:27:11.819993Z",
-      "title_ja": "Metaの大型訴訟、ビッグタバコとの類似点"
-    },
-    {
-      "id": "c3b7e227e2da",
-      "title": "CUDA Shared Memory Swizzling",
-      "url": "https://leimao.github.io/blog/CUDA-Shared-Memory-Swizzling/",
-      "source": "Hacker News",
-      "source_score": 46,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49286291",
-      "summary": "CUDAにおける共有メモリのスループットを向上させるための「スウィズリング」というテクニックについて、その仕組みと利点を解説しています。",
-      "tags": [
-        "GPU",
-        "CUDA",
-        "パフォーマンス最適化"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-13T14:13:41Z",
-      "fetched_at": "2026-08-19T08:27:12.261558Z",
-      "title_ja": "CUDA共有メモリのスウィズリング"
-    },
-    {
-      "id": "143639de482a",
-      "title": "λλ: A Programming Language for Silicon Photonics",
-      "url": "https://dl.acm.org/doi/10.1145/3789240.3829151",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49357501",
-      "summary": "シリコンフォトニクス回路の設計とシミュレーションを簡潔に行うための新しいプログラミング言語「λλ（ラムダラムダ）」について紹介しています。",
-      "tags": [
-        "プログラミング言語",
-        "フォトニクス",
-        "集積回路"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T06:09:16Z",
-      "fetched_at": "2026-08-19T08:27:12.702463Z",
-      "title_ja": "シリコンフォトニクス向けプログラミング言語「λλ」"
-    },
-    {
-      "id": "40c42a68665c",
-      "title": "Looking for Missed Alarm Bugs in a Formal Verification Tool",
-      "url": "https://blog.regehr.org/archives/2124",
-      "source": "Hacker News",
-      "source_score": 12,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49295071",
-      "summary": "フォーマル検証ツールで発生する「アラーム検出漏れ」というバグについて、その原因や調査方法、そしてデバッグの難しさを具体例を交えて解説しています。",
-      "tags": [
-        "ソフトウェア検証",
-        "フォーマルメソッド",
-        "バグ検出"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-14T05:37:51Z",
-      "fetched_at": "2026-08-19T08:27:12.847652Z",
-      "title_ja": "フォーマル検証ツールにおけるアラーム検出漏れバグの調査"
-    },
-    {
-      "id": "604d7bd1549d",
-      "title": "Show HN: Automatically detect and patch walking-dead states in Sierra games",
-      "url": "https://github.com/katiahayati/lucasartsifier/",
-      "source": "Hacker News",
-      "source_score": 47,
-      "comments_count": 20,
-      "comments_url": "https://news.ycombinator.com/item?id=49355607",
-      "summary": "Sierraのクラシックゲームで発生する、キャラクターが無限に歩き続けるバグ（walking-dead states）を自動的に検出し、修正するツール「lucasartsifier」が紹介されています。",
-      "tags": [
-        "ゲーム開発",
-        "バグ修正",
-        "Sierra"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:58:33Z",
-      "fetched_at": "2026-08-19T08:27:12.994786Z",
-      "title_ja": "Sierraゲームの「歩き続けるだけの状態」を自動検出・修正するツール"
-    },
-    {
-      "id": "fe6980025c1d",
-      "title": "\"Sabotage\": Experts, lawmakers blast RFK Jr. for destroying healthcare research",
-      "url": "https://arstechnica.com/health/2026/08/sabotage-experts-lawmakers-blast-rfk-jr-for-destroying-healthcare-research/",
-      "source": "Hacker News",
-      "source_score": 14,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49358220",
-      "summary": "専門家や議員らが、ロバート・F・ケネディ・ジュニア氏が医療研究を妨害したとして非難しています。その行為は「サボタージュ」と表現されています。",
-      "tags": [
-        "医療政策",
-        "政治",
-        "研究妨害"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T07:35:59Z",
-      "fetched_at": "2026-08-19T08:27:13.444269Z",
-      "title_ja": "「サボタージュ」：専門家や議員、RFK Jr.氏による医療研究妨害を非難"
-    },
-    {
-      "id": "66c5a7d7e96d",
-      "title": "Tiny satellite will use the dark side of the Moon as a shield",
-      "url": "https://www.cam.ac.uk/research/news/tiny-satellite-will-use-the-dark-side-of-the-moon-to-eavesdrop-on-whispers-from-the-early-universe",
-      "source": "Hacker News",
-      "source_score": 38,
-      "comments_count": 6,
-      "comments_url": "https://news.ycombinator.com/item?id=49355232",
-      "summary": "月の裏側を電波の盾として利用し、宇宙初期からの微弱な信号を傍受するための革新的な小型衛星ミッションについて説明されています。",
-      "tags": [
-        "宇宙開発",
-        "衛星技術",
-        "天文学"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:06:03Z",
-      "fetched_at": "2026-08-19T08:27:14.043459Z",
-      "title_ja": "月の裏側を盾に、宇宙の初期のささやきを傍受する小型衛星"
-    },
-    {
-      "id": "5e540063ca9f",
-      "title": "Sticky wage norms and the real wage cost of unexpected inflation",
-      "url": "https://bfi.uchicago.edu/wp-content/uploads/2026/08/BFI_WP_2026-108-1.pdf",
-      "source": "Hacker News",
-      "source_score": 355,
-      "comments_count": 214,
-      "comments_url": "https://news.ycombinator.com/item?id=49355142",
-      "summary": "予期せぬインフレーションが、硬直的な賃金規範を通じて実質賃金にどのような影響を与えるかについて分析した研究論文です。",
-      "tags": [
-        "経済学",
-        "インフレーション",
-        "賃金"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T00:53:51Z",
-      "fetched_at": "2026-08-19T08:27:14.485641Z",
-      "title_ja": "硬直的な賃金規範と予期せぬインフレーションの実質賃金コスト"
-    },
-    {
-      "id": "f7996ffd2cc5",
-      "title": "We turned off Pub/Sub and nobody noticed",
-      "url": "https://incident.io/blog/we-turned-off-pub-sub-and-nobody-noticed",
-      "source": "Hacker News",
-      "source_score": 27,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=49285325",
-      "summary": "サービスで利用していた Pub/Sub を停止したところ、実際にはほとんど利用されておらず、機能への影響も皆無だったという話。これにより、不要なシステムコンポーネントの削減とコスト削減に繋がった。",
-      "tags": [
-        "システム運用",
-        "クラウドサービス",
-        "最適化"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-13T13:05:21Z",
-      "fetched_at": "2026-08-19T08:27:14.634079Z",
-      "title_ja": "Pub/Sub を停止しても誰も気づかなかった話"
-    },
-    {
-      "id": "3157b042a509",
-      "title": "That Disgraceful, Disreputable, (Wonderful) Form of Punctuation: The Parenthesis",
-      "url": "https://lithub.com/on-that-disgraceful-disreputable-wonderful-form-of-punctuation-the-parenthesis/",
-      "source": "Hacker News",
-      "source_score": 31,
-      "comments_count": 18,
-      "comments_url": "https://news.ycombinator.com/item?id=49355360",
-      "summary": "括弧（()）という句読点について、その多様な使い方や歴史、そしてなぜ時に軽視されがちなのか、しかしながらその重要性や表現力を考察する記事。",
-      "tags": [
-        "言語",
-        "文法",
-        "表現"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:22:45Z",
-      "fetched_at": "2026-08-19T08:27:14.930689Z",
-      "title_ja": "軽蔑され、悪評高く、（そして素晴らしい）句読点：括弧"
-    },
-    {
-      "id": "d073d6e72319",
-      "title": "RF Cafe",
-      "url": "https://www.rfcafe.com/",
-      "source": "Hacker News",
-      "source_score": 9,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49355659",
-      "summary": "RF（無線周波数）技術に関する情報、ニュース、リソースを提供するウェブサイト。電子工学、通信技術に関心のある専門家や愛好家向けのポータルサイト。",
-      "tags": [
-        "RF技術",
-        "電子工学",
-        "無線通信"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T02:05:43Z",
-      "fetched_at": "2026-08-19T08:27:17.323602Z",
-      "title_ja": "RF Cafe"
-    },
-    {
-      "id": "bbd153995165",
-      "title": "BSDun – FreeBSD ELF support for the Linux kernel",
-      "url": "https://gitlab.com/megastallman/bsdun",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49356532",
-      "summary": "Linuxカーネル上でFreeBSDのELF（Executable and Linkable Format）バイナリを実行可能にするためのプロジェクトBSDunについて。これにより、Linux環境でFreeBSDバイナリを動作させる道が開かれる。",
-      "tags": [
-        "Linuxカーネル",
-        "FreeBSD",
-        "ELFバイナリ"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T03:54:16Z",
-      "fetched_at": "2026-08-19T08:27:20.011523Z",
-      "title_ja": "BSDun – Linuxカーネル向けのFreeBSD ELFサポート"
-    },
-    {
-      "id": "a8ee373c17af",
-      "title": "How to build an eval set you can maintain",
-      "url": "https://langfuse.com/academy/evaluate/choosing-what-to-evaluate",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49355417",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:31:57Z",
-      "fetched_at": "2026-08-19T08:27:20.309996Z"
-    },
-    {
-      "id": "6c0c400b84ad",
-      "title": "Japan's Gen X workers are struggling",
-      "url": "https://www.economist.com/asia/2026/08/18/japans-gen-x-workers-are-struggling",
-      "source": "Hacker News",
-      "source_score": 16,
-      "comments_count": 9,
-      "comments_url": "https://news.ycombinator.com/item?id=49356115",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T03:02:43Z",
-      "fetched_at": "2026-08-19T08:27:20.457472Z"
-    },
-    {
-      "id": "d384498211c8",
-      "title": "New images reveal before/after when a SpaceX rocket slammed into the moon",
-      "url": "https://www.cnn.com/2026/08/18/science/nasa-images-spacex-rocket-moon-collision",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49358066",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T07:19:40Z",
-      "fetched_at": "2026-08-19T08:27:20.754915Z"
-    },
-    {
-      "id": "0693254c581c",
-      "title": "Vasovagal: Markdown-Based 2nd Brain",
-      "url": "https://vasovagal.github.io/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49356262",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T03:21:47Z",
-      "fetched_at": "2026-08-19T08:27:21.497967Z"
-    },
-    {
-      "id": "3e348bd8414e",
-      "title": "Two lines of Python that segfault the interpreter – Timofei Ivankov",
-      "url": "https://deadlovelll.github.io/2026-08-10-conditional-annotations-set-add-crash/",
-      "source": "Hacker News",
-      "source_score": 12,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49353279",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-18T21:55:32Z",
-      "fetched_at": "2026-08-19T08:27:21.645432Z"
-    },
-    {
-      "id": "96f9a1966e5a",
-      "title": "Qwen3.8-27B make medium the default effort level instead of xhigh",
-      "url": "https://github.com/alainnothere/llama.cpp/blob/disk-cache-eviction/models/templates/Qwen3.8-27B-medium-default.jinja",
-      "source": "Hacker News",
-      "source_score": 11,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=49355510",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T01:44:38Z",
-      "fetched_at": "2026-08-19T08:27:21.792946Z"
-    },
-    {
-      "id": "96cdaf6973c6",
-      "title": "Cosmological natural selection: evolution beyond biology",
-      "url": "https://www.smithsonianmag.com/science-nature/earths-organisms-developed-via-evolution-some-theorists-wonder-what-if-the-entire-cosmos-did-too-180989338/",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49356108",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T03:00:59Z",
-      "fetched_at": "2026-08-19T08:27:21.942092Z"
-    },
-    {
-      "id": "e92dd4d64fbf",
-      "title": "Show HN: Capto – alerts when a background job goes quiet, with breadcrumbs",
-      "url": "https://capto.run",
-      "source": "Hacker News",
-      "source_score": 7,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=49273187",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-12T14:44:29Z",
-      "fetched_at": "2026-08-19T08:27:24.046339Z"
-    },
-    {
-      "id": "4e676d20961e",
-      "title": "There's No Reason to Buy a New Phone Anymore",
-      "url": "https://www.theatlantic.com/technology/2026/08/secondhand-tech-boom/688309/",
-      "source": "Hacker News",
-      "source_score": 12,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49356878",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T04:34:59Z",
-      "fetched_at": "2026-08-19T08:27:24.343436Z"
-    },
-    {
-      "id": "d343adfa4d2c",
-      "title": "Careless People (2025)",
-      "url": "https://en.wikipedia.org/wiki/Careless_People",
-      "source": "Hacker News",
-      "source_score": 16,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49356305",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T03:26:35Z",
-      "fetched_at": "2026-08-19T08:27:24.640045Z"
-    },
-    {
-      "id": "bf1e6c216231",
-      "title": "Have an Agent Babysit Your Deployments",
-      "url": "https://blog.exe.dev/athena-deploys-exe",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 1,
-      "comments_url": "https://news.ycombinator.com/item?id=49354574",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-18T23:46:54Z",
-      "fetched_at": "2026-08-19T08:27:25.378506Z"
-    },
-    {
       "id": "8ad277908ec2",
       "title": "Devices with GrapheneOS support should be available in 2027",
       "url": "https://grapheneos.social/@GrapheneOS/117078064184215730",
@@ -2378,12 +1890,17 @@
       "source_score": 441,
       "comments_count": 256,
       "comments_url": "https://news.ycombinator.com/item?id=49360242",
-      "summary": null,
-      "tags": [],
+      "summary": "プライバシー重視のモバイルOSであるGrapheneOSをサポートするデバイスが、2027年までに市場に投入される見込みであることが発表されました。これにより、よりセキュアなスマートフォン体験が期待されます。",
+      "tags": [
+        "GrapheneOS",
+        "プライバシー",
+        "セキュリティ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T11:46:58Z",
-      "fetched_at": "2026-08-19T16:21:47.873758Z"
+      "fetched_at": "2026-08-19T16:21:47.873758Z",
+      "title_ja": "GrapheneOS対応デバイスが2027年までに登場予定"
     },
     {
       "id": "29876e0f1e20",
@@ -2393,12 +1910,17 @@
       "source_score": 12,
       "comments_count": 0,
       "comments_url": "https://news.ycombinator.com/item?id=49363433",
-      "summary": null,
-      "tags": [],
+      "summary": "警察国家による監視や抑圧につながる可能性のある技術の開発・利用を避けるべきだという、市民の倫理的責任について論じています。",
+      "tags": [
+        "倫理",
+        "テクノロジー",
+        "監視社会"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T16:07:14Z",
-      "fetched_at": "2026-08-19T16:21:48.008013Z"
+      "fetched_at": "2026-08-19T16:21:48.008013Z",
+      "title_ja": "市民としての衛生観念 — 警察国家が利用しうる技術の構築を避ける"
     },
     {
       "id": "e5784de24be7",
@@ -2408,12 +1930,17 @@
       "source_score": 46,
       "comments_count": 22,
       "comments_url": "https://news.ycombinator.com/item?id=49362887",
-      "summary": null,
-      "tags": [],
+      "summary": "カシオが40年以上愛されてきたアイコン的なF-91Wの後継機として、新型F-B100Wを発表したことを紹介しています。",
+      "tags": [
+        "時計",
+        "カシオ",
+        "新製品"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T15:28:01Z",
-      "fetched_at": "2026-08-19T16:21:48.119083Z"
+      "fetched_at": "2026-08-19T16:21:48.119083Z",
+      "title_ja": "40年ぶりに登場したカシオF-91Wのアイコン的後継機、新型F-B100W"
     },
     {
       "id": "e6b61519a868",
@@ -2423,12 +1950,17 @@
       "source_score": 222,
       "comments_count": 44,
       "comments_url": "https://news.ycombinator.com/item?id=49360545",
-      "summary": null,
-      "tags": [],
+      "summary": "幾何学的な手法とCUDAプログラミングを活用して、地図上にランダムに表示された島を特定するプロセスを解説しています。",
+      "tags": [
+        "CUDA",
+        "幾何学",
+        "OSINT"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T12:19:52Z",
-      "fetched_at": "2026-08-19T16:21:48.232165Z"
+      "fetched_at": "2026-08-19T16:21:48.232165Z",
+      "title_ja": "幾何学とCUDAプログラミングでランダムな島を地理特定する"
     },
     {
       "id": "2f388a168f88",
@@ -2438,12 +1970,17 @@
       "source_score": 285,
       "comments_count": 40,
       "comments_url": "https://news.ycombinator.com/item?id=49360015",
-      "summary": null,
-      "tags": [],
+      "summary": "ジョークのつもりで購入したドメイン名が、地政学的な対立を引き起こす原因となった出来事について語っています。",
+      "tags": [
+        "地政学",
+        "ドメイン名",
+        "サイバーセキュリティ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T11:21:50Z",
-      "fetched_at": "2026-08-19T16:21:48.340538Z"
+      "fetched_at": "2026-08-19T16:21:48.340538Z",
+      "title_ja": "ジョークでドメイン購入が地政学的な戦争に発展"
     },
     {
       "id": "e2a80de0b9ad",
@@ -2453,12 +1990,17 @@
       "source_score": 245,
       "comments_count": 95,
       "comments_url": "https://news.ycombinator.com/item?id=49361395",
-      "summary": null,
-      "tags": [],
+      "summary": "モデルナが、メラノーマ（悪性黒色腫）治療のためのmRNA新抗原療法において、初期の第3相臨床試験で良好な結果を得たことを発表しました。",
+      "tags": [
+        "がん治療",
+        "mRNAワクチン",
+        "臨床試験"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T13:33:35Z",
-      "fetched_at": "2026-08-19T16:21:48.568845Z"
+      "fetched_at": "2026-08-19T16:21:48.568845Z",
+      "title_ja": "モデルナ、メラノーマに対するmRNA新抗原療法で初の第3相試験陽性結果を報告"
     },
     {
       "id": "380964910df1",
@@ -2468,12 +2010,17 @@
       "source_score": 145,
       "comments_count": 102,
       "comments_url": "https://news.ycombinator.com/item?id=49361279",
-      "summary": null,
-      "tags": [],
+      "summary": "PostgreSQLは、その多用途性と拡張性から、様々な用途に利用できる強力なデータベースシステムであることが解説されています。",
+      "tags": [
+        "データベース",
+        "PostgreSQL",
+        "SQL"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T13:21:21Z",
-      "fetched_at": "2026-08-19T16:21:48.683138Z"
+      "fetched_at": "2026-08-19T16:21:48.683138Z",
+      "title_ja": "あらゆる用途に対応するPostgreSQL"
     },
     {
       "id": "70d55977476c",
@@ -2483,12 +2030,17 @@
       "source_score": 161,
       "comments_count": 65,
       "comments_url": "https://news.ycombinator.com/item?id=49359425",
-      "summary": null,
-      "tags": [],
+      "summary": "webcamの動きで演奏するブラウザベースのテルミン「Air Theremin」が紹介されています。",
+      "tags": [
+        "Web技術",
+        "インタラクティブアート",
+        "テルミン"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T10:15:00Z",
-      "fetched_at": "2026-08-19T16:21:48.792857Z"
+      "fetched_at": "2026-08-19T16:21:48.792857Z",
+      "title_ja": "webcamで操作するブラウザベースのテルミン「Air Theremin」"
     },
     {
       "id": "ce84e857fe76",
@@ -2498,12 +2050,17 @@
       "source_score": 55,
       "comments_count": 23,
       "comments_url": "https://news.ycombinator.com/item?id=49286987",
-      "summary": null,
-      "tags": [],
+      "summary": "高性能で柔軟なクロスプラットフォームUIレイアウトライブラリ「Taffy」が紹介されており、GitHubで公開されています。",
+      "tags": [
+        "UI開発",
+        "ライブラリ",
+        "クロスプラットフォーム"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-13T14:56:15Z",
-      "fetched_at": "2026-08-19T16:21:49.014368Z"
+      "fetched_at": "2026-08-19T16:21:49.014368Z",
+      "title_ja": "柔軟で高性能なクロスプラットフォームUIレイアウトライブラリ「Taffy」"
     },
     {
       "id": "ecb080af9ed3",
@@ -2513,12 +2070,17 @@
       "source_score": 43,
       "comments_count": 19,
       "comments_url": "https://news.ycombinator.com/item?id=49362934",
-      "summary": null,
-      "tags": [],
+      "summary": "7,700人の従業員を対象とした調査によると、リモートワーカーが最も高い幸福度を示していることが明らかになりました。",
+      "tags": [
+        "リモートワーク",
+        "働き方",
+        "従業員幸福度"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T15:32:08Z",
-      "fetched_at": "2026-08-19T16:21:49.128371Z"
+      "fetched_at": "2026-08-19T16:21:49.128371Z",
+      "title_ja": "7,700人の従業員を対象とした調査でリモートワーカーが最も高い幸福度を報告"
     },
     {
       "id": "f800e4e397ec",
@@ -2528,12 +2090,17 @@
       "source_score": 92,
       "comments_count": 20,
       "comments_url": "https://news.ycombinator.com/item?id=49286258",
-      "summary": null,
-      "tags": [],
+      "summary": "ドナルド・クヌースの著書「The Art of Computer Programming」のアルゴリズムに、数十年前から存在するバグが発見・解説されています。",
+      "tags": [
+        "アルゴリズム",
+        "プログラミング",
+        "数学"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-13T14:11:27Z",
-      "fetched_at": "2026-08-19T16:21:49.357724Z"
+      "fetched_at": "2026-08-19T16:21:49.357724Z",
+      "title_ja": "クヌースの筆算（TAOCP Vol II, Algorithm 4.3.1D）における数十年前のバグ"
     },
     {
       "id": "da8ed4abec6e",
@@ -2543,27 +2110,17 @@
       "source_score": 80,
       "comments_count": 35,
       "comments_url": "https://news.ycombinator.com/item?id=49298283",
-      "summary": null,
-      "tags": [],
+      "summary": "古代ギリシャのエリート層は、隕石から作られた金属で作られた指輪を身につけていた可能性が示唆されています。これらの指輪は、当時の貴重な素材と高度な技術の証と考えられます。",
+      "tags": [
+        "古代史",
+        "考古学",
+        "金属工芸"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-14T13:17:06Z",
-      "fetched_at": "2026-08-19T16:21:49.473162Z"
-    },
-    {
-      "id": "3c866db70617",
-      "title": "Ornith-1.5: From Self-Scaffolding to Self-Improvement",
-      "url": "https://ornith.ai/ornith_1_5.html",
-      "source": "Hacker News",
-      "source_score": 10,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49362401",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T14:48:39Z",
-      "fetched_at": "2026-08-19T16:21:49.703594Z"
+      "fetched_at": "2026-08-19T16:21:49.473162Z",
+      "title_ja": "隕石から作られた指輪、古代ギリシャのエリート層で流行していた可能性"
     },
     {
       "id": "b938a14b1647",
@@ -2573,12 +2130,17 @@
       "source_score": 110,
       "comments_count": 28,
       "comments_url": "https://news.ycombinator.com/item?id=49300272",
-      "summary": null,
-      "tags": [],
+      "summary": "活性化エネルギーは、化学反応だけでなく、様々なシステムやプロセスの変化を理解するための強力なアナロジーとして機能します。この概念を応用することで、複雑な現象の理解を深めることができます。",
+      "tags": [
+        "科学",
+        "物理学",
+        "システム思考"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-14T15:40:16Z",
-      "fetched_at": "2026-08-19T16:21:49.951771Z"
+      "fetched_at": "2026-08-19T16:21:49.951771Z",
+      "title_ja": "活性化エネルギーは多くの物事の良いモデルとなる"
     },
     {
       "id": "a2f2b7a928d2",
@@ -2588,12 +2150,17 @@
       "source_score": 21,
       "comments_count": 8,
       "comments_url": "https://news.ycombinator.com/item?id=49306415",
-      "summary": null,
-      "tags": [],
+      "summary": "GitHubで公開されているNikon F100フィルムカメラの修理に関する詳細なノートです。カメラ愛好家や修理を試みる人にとって、貴重な情報源となるでしょう。",
+      "tags": [
+        "カメラ",
+        "修理",
+        "DIY"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-15T00:50:57Z",
-      "fetched_at": "2026-08-19T16:21:50.405172Z"
+      "fetched_at": "2026-08-19T16:21:50.405172Z",
+      "title_ja": "Show HN: Nikon F100フィルムカメラの修理ノート"
     },
     {
       "id": "18ba83604aab",
@@ -2603,12 +2170,17 @@
       "source_score": 6,
       "comments_count": 4,
       "comments_url": "https://news.ycombinator.com/item?id=49360643",
-      "summary": null,
-      "tags": [],
+      "summary": "PowerPoint（.pptx）ファイルが内部でどのように構成されているかについて解説しています。XMLベースの構造や、画像、テキスト、スライドなどの要素がどのように格納されているかを理解することができます。",
+      "tags": [
+        "ファイルフォーマット",
+        "IT",
+        "PowerPoint"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T12:28:44Z",
-      "fetched_at": "2026-08-19T16:21:52.832116Z"
+      "fetched_at": "2026-08-19T16:21:52.832116Z",
+      "title_ja": "PowerPointファイルの中身は？"
     },
     {
       "id": "5ab2d3544226",
@@ -2618,27 +2190,17 @@
       "source_score": 10,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49362512",
-      "summary": null,
-      "tags": [],
+      "summary": "Pixel Watchに搭載されたインスリン抵抗性検出機能は、皮膚電気伝導度（EDA）センサーと体温データを用いて、インスリン抵抗性の兆候を非侵襲的にモニタリングする。この技術は、早期発見と生活習慣改善への貢献が期待されている。",
+      "tags": [
+        "ウェアラブルデバイス",
+        "健康管理",
+        "医療技術"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T14:57:18Z",
-      "fetched_at": "2026-08-19T16:21:53.177793Z"
-    },
-    {
-      "id": "658cf41423d6",
-      "title": "AI Has Plunged the Book Publishing Industry into Utter Chaos",
-      "url": "https://www.wsj.com/arts-culture/books/generative-ai-book-publishing-be79a287",
-      "source": "Hacker News",
-      "source_score": 14,
-      "comments_count": 16,
-      "comments_url": "https://news.ycombinator.com/item?id=49361352",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T13:28:44Z",
-      "fetched_at": "2026-08-19T16:21:53.511505Z"
+      "fetched_at": "2026-08-19T16:21:53.177793Z",
+      "title_ja": "Pixel Watchのインスリン抵抗性検出機能の科学的背景"
     },
     {
       "id": "487dcd058245",
@@ -2648,27 +2210,17 @@
       "source_score": 22,
       "comments_count": 8,
       "comments_url": "https://news.ycombinator.com/item?id=49357530",
-      "summary": null,
-      "tags": [],
+      "summary": "AIが子供たちの学習に与える影響は議論の的となっている。AIツールが学習を支援する一方で、批判的思考力や創造性の育成への懸念も指摘されている。",
+      "tags": [
+        "AI",
+        "教育",
+        "学習"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T06:13:31Z",
-      "fetched_at": "2026-08-19T16:21:53.852584Z"
-    },
-    {
-      "id": "d30b76221b4c",
-      "title": "Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces",
-      "url": "https://arxiv.org/abs/2504.09762",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49360140",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-08-19T11:35:26Z",
-      "fetched_at": "2026-08-19T16:21:54.090321Z"
+      "fetched_at": "2026-08-19T16:21:53.852584Z",
+      "title_ja": "AIは子供たちの学習を妨げるのか？"
     },
     {
       "id": "56b3f633f037",
@@ -2678,12 +2230,17 @@
       "source_score": 15,
       "comments_count": 20,
       "comments_url": "https://news.ycombinator.com/item?id=49283455",
-      "summary": null,
-      "tags": [],
+      "summary": "Ubuntu上でWindowsの機能を活用するための方法について説明している。具体的には、Windows on Ubuntu環境でのWin-Vの導入と利用に焦点を当てている。",
+      "tags": [
+        "Ubuntu",
+        "Windows",
+        "仮想化"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-13T09:18:42Z",
-      "fetched_at": "2026-08-19T16:21:54.427683Z"
+      "fetched_at": "2026-08-19T16:21:54.427683Z",
+      "title_ja": "Ubuntu上でWindowsとWin-Vを組み合わせる"
     },
     {
       "id": "50d3dfaa4f8a",
@@ -2693,12 +2250,17 @@
       "source_score": 24,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49361309",
-      "summary": null,
-      "tags": [],
+      "summary": "モデルナとメルクが共同開発したmRNAベースのがんワクチンが、進行期メラノーマ（悪性黒色腫）を対象とした後期臨床試験で有効性を示しました。このワクチンは、腫瘍の遺伝子情報を用いて免疫応答を誘導するものです。",
+      "tags": [
+        "がんワクチン",
+        "mRNA技術",
+        "臨床試験"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T13:23:54Z",
-      "fetched_at": "2026-08-19T16:21:55.808902Z"
+      "fetched_at": "2026-08-19T16:21:55.808902Z",
+      "title_ja": "モデルナとメルク、mRNAがんワクチンが進行期メラノーマ試験で成功"
     },
     {
       "id": "196ab54d3954",
@@ -2708,12 +2270,18 @@
       "source_score": 6,
       "comments_count": 5,
       "comments_url": "https://news.ycombinator.com/item?id=49361334",
-      "summary": null,
-      "tags": [],
+      "summary": "Ubuntuコミュニティは、C言語で書かれたコードをRust言語に自動で翻訳するツールの開発に投資することを検討しています。これにより、コードの安全性を高め、モダンな開発手法への移行を促進することを目指しています。",
+      "tags": [
+        "プログラミング言語",
+        "Rust",
+        "C言語",
+        "コード移行"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T13:26:16Z",
-      "fetched_at": "2026-08-19T16:21:57.291899Z"
+      "fetched_at": "2026-08-19T16:21:57.291899Z",
+      "title_ja": "C言語からRustへの自動翻訳への投資"
     },
     {
       "id": "62c70cbf9adf",
@@ -2723,12 +2291,17 @@
       "source_score": 5,
       "comments_count": 0,
       "comments_url": "https://news.ycombinator.com/item?id=49363141",
-      "summary": null,
-      "tags": [],
+      "summary": "イスラエル軍は、5歳の少女ヒンド・ラジャブさんが乗っていた車両に対して発砲したことを認めました。この事件は国際的な非難を浴びており、詳細な調査が求められています。",
+      "tags": [
+        "紛争",
+        "中東情勢",
+        "人権"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T15:48:01Z",
-      "fetched_at": "2026-08-19T16:21:57.403756Z"
+      "fetched_at": "2026-08-19T16:21:57.403756Z",
+      "title_ja": "イスラエル軍、5歳児ヒンド・ラジャブさんを乗せた車両への発砲を認める"
     },
     {
       "id": "4d4794c7d484",
@@ -2738,12 +2311,17 @@
       "source_score": 3,
       "comments_count": 0,
       "comments_url": "https://news.ycombinator.com/item?id=49361453",
-      "summary": null,
-      "tags": [],
+      "summary": "この記事は、一部の企業や個人が、広範な社会問題や倫理的な懸念に対して無関心である現状を批判しています。特に、利益追求が最優先され、他者への配慮が欠けている状況を指摘しています。",
+      "tags": [
+        "社会問題",
+        "倫理",
+        "企業倫理"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T13:39:01Z",
-      "fetched_at": "2026-08-19T16:21:58.552751Z"
+      "fetched_at": "2026-08-19T16:21:58.552751Z",
+      "title_ja": "彼らは気にかけない"
     },
     {
       "id": "e59b954824e4",
@@ -2753,12 +2331,17 @@
       "source_score": 7,
       "comments_count": 0,
       "comments_url": "https://news.ycombinator.com/item?id=49360307",
-      "summary": null,
-      "tags": [],
+      "summary": "細胞生物学の研究により、細胞は化学信号だけでなく、物理的な力（機械的刺激）にも応答し、その挙動を決定していることが明らかになりました。これは、細胞の機能や発生、疾患の理解に新たな視点をもたらします。",
+      "tags": [
+        "細胞生物学",
+        "機械感覚",
+        "生物物理学"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-08-19T11:55:00Z",
-      "fetched_at": "2026-08-19T16:21:58.665879Z"
+      "fetched_at": "2026-08-19T16:21:58.665879Z",
+      "title_ja": "細胞は化学的命令に従うだけでなく、周囲の力も感知する"
     },
     {
       "id": "1ae169fb23a9",
@@ -12659,6 +12242,306 @@
       "matched_keywords": [],
       "created_at": "2026-08-25T19:56:01Z",
       "fetched_at": "2026-08-26T00:52:01.410453Z"
+    },
+    {
+      "id": "49507abc0dda",
+      "title": "Stalking the Wily Hacker: 40 years later – Cliff Stoll [video]",
+      "url": "https://www.youtube.com/watch?v=656058JxTM0",
+      "source": "Hacker News",
+      "source_score": 76,
+      "comments_count": 20,
+      "comments_url": "https://news.ycombinator.com/item?id=49395802",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-22T01:52:24Z",
+      "fetched_at": "2026-08-26T08:33:51.705543Z"
+    },
+    {
+      "id": "5aed7842e682",
+      "title": "Harvest (IBM 7950): Supercomputer for cryptanalysis at the NSA in the Cold War",
+      "url": "https://spectrum.ieee.org/cold-war-codebreaker-nsa-ibm",
+      "source": "Hacker News",
+      "source_score": 31,
+      "comments_count": 9,
+      "comments_url": "https://news.ycombinator.com/item?id=49444232",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T05:09:07Z",
+      "fetched_at": "2026-08-26T08:33:51.891787Z"
+    },
+    {
+      "id": "18e2ddcdb7dd",
+      "title": "Queryable Executables",
+      "url": "https://fzakaria.com/2026/08/24/actually-queryable-executables",
+      "source": "Hacker News",
+      "source_score": 160,
+      "comments_count": 32,
+      "comments_url": "https://news.ycombinator.com/item?id=49442589",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T00:20:49Z",
+      "fetched_at": "2026-08-26T08:33:51.973991Z"
+    },
+    {
+      "id": "889962754567",
+      "title": "Disrupting a new covert influence campaign from Russia",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia/",
+      "source": "Hacker News",
+      "source_score": 21,
+      "comments_count": 4,
+      "comments_url": "https://news.ycombinator.com/item?id=49445252",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T07:31:31Z",
+      "fetched_at": "2026-08-26T08:33:52.308109Z"
+    },
+    {
+      "id": "4c796a944c92",
+      "title": "Agentic Context Management: Memory and Cost as Architecture Problems",
+      "url": "https://arxiv.org/abs/2607.21503",
+      "source": "Hacker News",
+      "source_score": 48,
+      "comments_count": 16,
+      "comments_url": "https://news.ycombinator.com/item?id=49443523",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T02:35:25Z",
+      "fetched_at": "2026-08-26T08:33:52.665342Z"
+    },
+    {
+      "id": "4a27b7af8fdc",
+      "title": "More than half of adults in U.S. say they lack basic statistical understanding",
+      "url": "https://www.psu.edu/news/research/story/more-half-adults-us-say-they-lack-basic-statistical-understanding",
+      "source": "Hacker News",
+      "source_score": 76,
+      "comments_count": 110,
+      "comments_url": "https://news.ycombinator.com/item?id=49444514",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T05:49:20Z",
+      "fetched_at": "2026-08-26T08:33:52.994303Z"
+    },
+    {
+      "id": "491b4f878cc7",
+      "title": "US removes Syria from terrorism sponsor list, lifting major investment obstacle",
+      "url": "https://www.reuters.com/world/middle-east/us-removes-syrias-designation-state-sponsor-terrorism-2026-08-24/",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49445362",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T07:46:36Z",
+      "fetched_at": "2026-08-26T08:33:54.174711Z"
+    },
+    {
+      "id": "88a741b1e34b",
+      "title": "I think the data center backlash is mostly about data centers",
+      "url": "https://blog.andymasley.com/p/i-think-the-data-center-backlash",
+      "source": "Hacker News",
+      "source_score": 17,
+      "comments_count": 10,
+      "comments_url": "https://news.ycombinator.com/item?id=49441866",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T23:01:49Z",
+      "fetched_at": "2026-08-26T08:33:54.920166Z"
+    },
+    {
+      "id": "c0d768b9daa0",
+      "title": "Hot Chips 2026: Fujitsu's Monaka CPU",
+      "url": "https://chipsandcheese.com/p/hot-chips-2026-fujitsus-monaka-cpu",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49443040",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T01:24:15Z",
+      "fetched_at": "2026-08-26T08:33:55.480713Z"
+    },
+    {
+      "id": "c407fc619137",
+      "title": "The Qualcomm Oryon CPU is the first mobile CPU to reach 5GHz",
+      "url": "https://www.qualcomm.com/news/onq/2026/08/oryon-cpu-5ghz-flexcache",
+      "source": "Hacker News",
+      "source_score": 12,
+      "comments_count": 3,
+      "comments_url": "https://news.ycombinator.com/item?id=49442223",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T23:40:18Z",
+      "fetched_at": "2026-08-26T08:33:55.823901Z"
+    },
+    {
+      "id": "b1b0b8151c98",
+      "title": "The brain may be about to have its Ozempic moment",
+      "url": "https://www.economist.com/science-and-technology/2026/08/11/the-brain-may-be-about-to-have-its-ozempic-moment",
+      "source": "Hacker News",
+      "source_score": 82,
+      "comments_count": 66,
+      "comments_url": "https://news.ycombinator.com/item?id=49442743",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T00:40:41Z",
+      "fetched_at": "2026-08-26T08:33:56.493231Z"
+    },
+    {
+      "id": "43606bcd57de",
+      "title": "Try Omarchy as a native, hardware-accelerated app on an Apple Silicon Mac",
+      "url": "https://github.com/themartiano/try-omarchy",
+      "source": "Hacker News",
+      "source_score": 12,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49439881",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T20:07:27Z",
+      "fetched_at": "2026-08-26T08:33:56.898786Z"
+    },
+    {
+      "id": "37b3909838e7",
+      "title": "More Fucked Today Than Yesterday",
+      "url": "https://climatecasino.substack.com/p/more-fucked-today-than-yesterday",
+      "source": "Hacker News",
+      "source_score": 71,
+      "comments_count": 37,
+      "comments_url": "https://news.ycombinator.com/item?id=49441781",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T22:53:11Z",
+      "fetched_at": "2026-08-26T08:33:57.239012Z"
+    },
+    {
+      "id": "a266fa7d9e10",
+      "title": "Riverdiff brings the visual side-by-side diff of GNOME Meld to the browser",
+      "url": "https://riverdiff.pages.dev/",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49440646",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T21:07:40Z",
+      "fetched_at": "2026-08-26T08:33:57.990866Z"
+    },
+    {
+      "id": "45e02d2c369e",
+      "title": "Big Tech's Frantic Race to Quell the Growing Backlash to AI",
+      "url": "https://www.wsj.com/tech/inside-big-techs-frantic-race-to-quell-the-growing-backlash-to-ai-2a717339",
+      "source": "Hacker News",
+      "source_score": 21,
+      "comments_count": 13,
+      "comments_url": "https://news.ycombinator.com/item?id=49443338",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T02:10:22Z",
+      "fetched_at": "2026-08-26T08:33:58.410185Z"
+    },
+    {
+      "id": "502a95c4151a",
+      "title": "Letter from Dolly Parton to Eminem",
+      "url": "https://twitter.com/Eminem/status/2092367272891310482",
+      "source": "Hacker News",
+      "source_score": 75,
+      "comments_count": 8,
+      "comments_url": "https://news.ycombinator.com/item?id=49443331",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T02:09:12Z",
+      "fetched_at": "2026-08-26T08:33:58.520752Z"
+    },
+    {
+      "id": "fedec0946cc8",
+      "title": "Two unvaccinated people in Pennsylvania are first measles-related 2026 US deaths",
+      "url": "https://www.cnn.com/2026/08/25/health/measles-deaths-pennsylvania",
+      "source": "Hacker News",
+      "source_score": 9,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49444674",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T06:08:34Z",
+      "fetched_at": "2026-08-26T08:33:58.681894Z"
+    },
+    {
+      "id": "d82dcd73abb2",
+      "title": "Running out of money': Kraft, McDonald's, Whirlpool CEOs flag consumer concern",
+      "url": "https://finance.yahoo.com/economy/articles/running-money-kraft-mcdonald-whirlpool-114500035.html",
+      "source": "Hacker News",
+      "source_score": 16,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=49444266",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-26T05:14:01Z",
+      "fetched_at": "2026-08-26T08:33:58.928041Z"
+    },
+    {
+      "id": "48499dd6d75d",
+      "title": "Software is now user-generated content",
+      "url": "https://valentinewatkins.com/software-is-now-user-generated-content/",
+      "source": "Hacker News",
+      "source_score": 10,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49441800",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T22:55:42Z",
+      "fetched_at": "2026-08-26T08:33:59.603326Z"
+    },
+    {
+      "id": "34266e0a3f3b",
+      "title": "Glyphnosis, ASCII-inspired demo won 2nd place at Evoke 2026",
+      "url": "https://demozoo.org/productions/396656/",
+      "source": "Hacker News",
+      "source_score": 5,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49441664",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-08-25T22:39:58Z",
+      "fetched_at": "2026-08-26T08:33:59.958278Z"
     }
   ]
 }
