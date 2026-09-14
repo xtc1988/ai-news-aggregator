@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-14T14:37:50.493462Z",
+  "last_updated": "2026-09-14T20:06:50.347147Z",
   "articles": [
     {
       "id": "f2fa6d32aea6",
@@ -41,8 +41,8 @@
       ],
       "interest_score": 30,
       "matched_keywords": [
-        "Anthropic",
         "Claude",
+        "Anthropic",
         "Claude Code"
       ],
       "created_at": "2026-09-13T14:15:40Z",
@@ -66,9 +66,9 @@
       ],
       "interest_score": 27,
       "matched_keywords": [
-        "OpenAI",
-        "AI agent",
         "AIエージェント",
+        "AI agent",
+        "OpenAI",
         "AI開発"
       ],
       "created_at": "2026-09-10T19:43:22Z",
@@ -91,14 +91,40 @@
       ],
       "interest_score": 27,
       "matched_keywords": [
-        "OpenAI",
-        "AI agent",
         "AIエージェント",
-        "オープンソース"
+        "オープンソース",
+        "AI agent",
+        "OpenAI"
       ],
       "created_at": "2026-09-11T23:17:42Z",
       "fetched_at": "2026-09-12T02:29:39.190317Z",
       "title_ja": "OpenAIエージェント、RubyGemsへの未公表攻撃を実施"
+    },
+    {
+      "id": "34ccf2acef5a",
+      "title": "Apple's Siri AI Can Be Swapped Out for Claude, ChatGPT, Code Shows",
+      "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+      "source": "Hacker News",
+      "source_score": 136,
+      "comments_count": 55,
+      "comments_url": "https://news.ycombinator.com/item?id=49695409",
+      "summary": "公開されたコードにより、AppleのSiriをClaudeやChatGPTなどの外部AIモデルで置き換えられる可能性が示唆されています。これにより、Siriの機能拡張やカスタマイズの道が開かれます。",
+      "tags": [
+        "AIアシスタント",
+        "Siri",
+        "自然言語処理",
+        "LLM"
+      ],
+      "interest_score": 27,
+      "matched_keywords": [
+        "Claude",
+        "LLM",
+        "GPT",
+        "自然言語処理"
+      ],
+      "created_at": "2026-09-14T12:01:32Z",
+      "fetched_at": "2026-09-14T14:36:41.815591Z",
+      "title_ja": "Siri、ClaudeやChatGPTに置き換え可能に - コードが示す"
     },
     {
       "id": "7988df97a52a",
@@ -116,13 +142,39 @@
       ],
       "interest_score": 25,
       "matched_keywords": [
-        "プロンプトエンジニアリング",
+        "LLM",
         "大規模言語モデル",
-        "LLM"
+        "プロンプトエンジニアリング"
       ],
       "created_at": "2026-09-08T17:08:51Z",
       "fetched_at": "2026-09-09T02:27:24.402918Z",
       "title_ja": "「丁寧な言葉遣いをすべて削除してください」といったLLMの指示"
+    },
+    {
+      "id": "6cee68e265a8",
+      "title": "OpenArch – PyTorch implementations of modern LLM architectures",
+      "url": "https://github.com/anuj0456/OpenArch",
+      "source": "Hacker News",
+      "source_score": 96,
+      "comments_count": 20,
+      "comments_url": "https://news.ycombinator.com/item?id=49693384",
+      "summary": "OpenArchは、最新の大規模言語モデル（LLM）アーキテクチャをPyTorchで実装したライブラリです。最新のAI研究開発を容易にします。",
+      "tags": [
+        "LLM",
+        "PyTorch",
+        "機械学習",
+        "オープンソース"
+      ],
+      "interest_score": 24,
+      "matched_keywords": [
+        "機械学習",
+        "LLM",
+        "オープンソース",
+        "大規模言語モデル"
+      ],
+      "created_at": "2026-09-14T07:55:19Z",
+      "fetched_at": "2026-09-14T14:36:42.957454Z",
+      "title_ja": "OpenArch – 最新LLMアーキテクチャのPyTorch実装"
     },
     {
       "id": "559e4f24b44d",
@@ -140,9 +192,9 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
+        "LLM",
         "自然言語処理",
-        "大規模言語モデル",
-        "LLM"
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-08T16:59:41Z",
       "fetched_at": "2026-09-08T19:10:09.123748Z",
@@ -164,13 +216,37 @@
       ],
       "interest_score": 22,
       "matched_keywords": [
+        "LLM",
         "オープンソース",
-        "大規模言語モデル",
-        "LLM"
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-10T12:34:20.546241Z",
       "fetched_at": "2026-09-10T12:34:20.546244Z",
       "title_ja": "LLMfit - GitHub"
+    },
+    {
+      "id": "2448c5c22733",
+      "title": "TALA Is Open-Source",
+      "url": "https://d2lang.com/blog/tala-is-open-source/",
+      "source": "Hacker News",
+      "source_score": 92,
+      "comments_count": 8,
+      "comments_url": "https://news.ycombinator.com/item?id=49604150",
+      "summary": "大規模言語モデル（LLM）の分析とデバッグを支援する TALA がオープンソースとして公開されました。これにより、開発者は LLM の内部動作をより深く理解し、問題解決に活用できるようになります。",
+      "tags": [
+        "オープンソース",
+        "LLM",
+        "開発ツール"
+      ],
+      "interest_score": 22,
+      "matched_keywords": [
+        "LLM",
+        "オープンソース",
+        "大規模言語モデル"
+      ],
+      "created_at": "2026-09-07T23:37:42Z",
+      "fetched_at": "2026-09-08T02:25:12.247458Z",
+      "title_ja": "TALA がオープンソース化"
     },
     {
       "id": "46405393d4f5",
@@ -188,8 +264,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-12T11:51:51.833509Z",
       "fetched_at": "2026-09-12T11:51:51.833510Z",
@@ -211,8 +287,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-10T12:34:20.547987Z",
       "fetched_at": "2026-09-10T12:34:20.547988Z",
@@ -234,8 +310,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-07T21:09:12Z",
       "fetched_at": "2026-09-08T02:25:17.944230Z",
@@ -257,8 +333,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-07T19:50:21Z",
       "fetched_at": "2026-09-08T02:25:20.256493Z",
@@ -326,8 +402,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
+        "AIエージェント",
+        "AI agent"
       ],
       "created_at": "2026-09-08T19:25:00Z",
       "fetched_at": "2026-09-09T02:27:16.928615Z",
@@ -349,8 +425,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-08T15:49:30Z",
       "fetched_at": "2026-09-09T02:27:28.374501Z",
@@ -372,8 +448,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
+        "AIエージェント",
+        "AI agent"
       ],
       "created_at": "2026-09-09T14:54:49Z",
       "fetched_at": "2026-09-09T18:58:47.164272Z",
@@ -395,8 +471,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-09-10T00:25:32Z",
       "fetched_at": "2026-09-10T02:27:35.064153Z",
@@ -418,8 +494,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-10T12:34:20.548980Z",
       "fetched_at": "2026-09-10T12:34:20.548981Z",
@@ -442,8 +518,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-10T12:34:20.545473Z",
       "fetched_at": "2026-09-10T12:34:20.545474Z",
@@ -465,8 +541,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-10T02:04:11Z",
       "fetched_at": "2026-09-10T12:34:06.040740Z",
@@ -488,8 +564,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
+        "AIエージェント",
+        "AI agent"
       ],
       "created_at": "2026-09-10T07:00:22Z",
       "fetched_at": "2026-09-10T12:34:08.765007Z",
@@ -512,8 +588,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-09-10T23:40:52Z",
       "fetched_at": "2026-09-11T02:22:27.031425Z",
@@ -535,8 +611,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "MCP",
-        "AIエージェント"
+        "AIエージェント",
+        "MCP"
       ],
       "created_at": "2026-09-11T13:54:17Z",
       "fetched_at": "2026-09-11T18:54:23.758188Z",
@@ -558,8 +634,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-11T17:14:49Z",
       "fetched_at": "2026-09-12T02:29:46.943458Z",
@@ -581,8 +657,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-09-12T11:51:51.834139Z",
       "fetched_at": "2026-09-12T11:51:51.834143Z",
@@ -604,8 +680,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
+        "AIエージェント",
+        "AI agent"
       ],
       "created_at": "2026-09-12T11:13:38Z",
       "fetched_at": "2026-09-12T18:00:20.948444Z",
@@ -627,8 +703,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "AI agent",
-        "AIエージェント"
+        "AIエージェント",
+        "AI agent"
       ],
       "created_at": "2026-09-13T01:22:31Z",
       "fetched_at": "2026-09-13T02:28:36.778203Z",
@@ -650,8 +726,8 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "大規模言語モデル",
-        "LLM"
+        "LLM",
+        "大規模言語モデル"
       ],
       "created_at": "2026-09-13T00:04:15Z",
       "fetched_at": "2026-09-13T02:28:44.509128Z",
@@ -674,12 +750,101 @@
       ],
       "interest_score": 20,
       "matched_keywords": [
-        "Anthropic",
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "created_at": "2026-09-11T03:45:42Z",
       "fetched_at": "2026-09-14T02:45:11.492461Z",
       "title_ja": "Claude WebのMicroVMの逆アセンブル：Anthropicの隠されたAntspaceの解明"
+    },
+    {
+      "id": "d3a8641bbc4d",
+      "title": "Show HN: I built Otis, a minimal AI agent that runs local models out of the box",
+      "url": "https://triangllabs.ai/otis",
+      "source": "Hacker News",
+      "source_score": 5,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49696084",
+      "summary": "開発者が「Otis」という、ローカルで動作するミニマルなAIエージェントを開発しました。すぐに利用でき、手軽にAIエージェントを試すことができます。",
+      "tags": [
+        "AIエージェント",
+        "ローカルAI",
+        "ミニマル",
+        "開発"
+      ],
+      "interest_score": 20,
+      "matched_keywords": [
+        "AIエージェント",
+        "AI agent"
+      ],
+      "created_at": "2026-09-14T12:58:32Z",
+      "fetched_at": "2026-09-14T14:36:44.131562Z",
+      "title_ja": "Show HN: ローカルモデルですぐに動作するミニマルAIエージェント「Otis」を開発"
+    },
+    {
+      "id": "49519d89cf6f",
+      "title": "What a time to be alive – rouge AI agents attack RubyGems.org",
+      "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive/",
+      "source": "Hacker News",
+      "source_score": 90,
+      "comments_count": 116,
+      "comments_url": "https://news.ycombinator.com/item?id=49695876",
+      "summary": "悪意のあるAIエージェントが、RubyGems.orgに対して攻撃を仕掛けていることが報告されました。これは、AIの悪用リスクを示す事例です。",
+      "tags": [
+        "AIセキュリティ",
+        "サイバー攻撃",
+        "RubyGems",
+        "AIの悪用"
+      ],
+      "interest_score": 20,
+      "matched_keywords": [
+        "AIエージェント",
+        "AI agent"
+      ],
+      "created_at": "2026-09-14T12:40:57Z",
+      "fetched_at": "2026-09-14T14:36:44.650811Z",
+      "title_ja": "生きている時代はすごい - 悪意のあるAIエージェントがRubyGems.orgを攻撃"
+    },
+    {
+      "id": "81fb0b6406ba",
+      "title": "[GitHub] Panniantong/Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "source": "GitHub Trending",
+      "source_score": 80900,
+      "comments_count": 640,
+      "comments_url": "https://github.com/Panniantong/Agent-Reach/issues",
+      "summary": "Agent-Reachは、大規模言語モデル（LLM）エージェントが、外部ツールを効果的に活用して複雑なタスクを完了できるように設計されたフレームワークです。コード生成、Web検索、ファイル操作などの機能を提供し、エージェントの能力を拡張します。",
+      "tags": [
+        "LLMエージェント",
+        "フレームワーク",
+        "GitHub"
+      ],
+      "interest_score": 20,
+      "matched_keywords": [
+        "LLM",
+        "大規模言語モデル"
+      ],
+      "created_at": "2026-09-14T14:36:53.416782Z",
+      "fetched_at": "2026-09-14T14:36:53.416784Z",
+      "title_ja": "[GitHub] Panniantong/Agent-Reach"
+    },
+    {
+      "id": "a0905db79256",
+      "title": "ProGantt: Gantt charts your AI agent can read and write via MCP",
+      "url": "https://progantt.com",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 9,
+      "comments_url": "https://news.ycombinator.com/item?id=49698952",
+      "summary": null,
+      "tags": [],
+      "interest_score": 20,
+      "matched_keywords": [
+        "MCP",
+        "AI agent"
+      ],
+      "created_at": "2026-09-14T15:48:32Z",
+      "fetched_at": "2026-09-14T20:06:06.789894Z"
     },
     {
       "id": "87e310305b51",
@@ -697,8 +862,8 @@
       ],
       "interest_score": 17,
       "matched_keywords": [
-        "OpenAI",
         "Anthropic",
+        "OpenAI",
         "スタートアップ"
       ],
       "created_at": "2026-09-13T16:52:33Z",
@@ -722,8 +887,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "OpenAI",
-        "AIエージェント"
+        "AIエージェント",
+        "OpenAI"
       ],
       "created_at": "2026-09-08T18:49:21Z",
       "fetched_at": "2026-09-08T19:10:14.027463Z",
@@ -745,8 +910,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "OpenAI"
       ],
       "created_at": "2026-09-09T01:32:49Z",
       "fetched_at": "2026-09-09T02:27:20.325008Z",
@@ -768,8 +933,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "OpenAI"
       ],
       "created_at": "2026-09-09T01:36:17Z",
       "fetched_at": "2026-09-09T02:27:24.538239Z",
@@ -791,8 +956,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "GPT",
-        "LLM"
+        "LLM",
+        "GPT"
       ],
       "created_at": "2026-09-09T17:24:28Z",
       "fetched_at": "2026-09-09T18:58:43.622457Z",
@@ -815,8 +980,8 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "GPT",
-        "LLM"
+        "LLM",
+        "GPT"
       ],
       "created_at": "2026-09-09T14:37:47Z",
       "fetched_at": "2026-09-09T18:58:43.731254Z",
@@ -838,30 +1003,12 @@
       ],
       "interest_score": 15,
       "matched_keywords": [
-        "OpenAI",
-        "LLM"
+        "LLM",
+        "OpenAI"
       ],
       "created_at": "2026-09-09T17:09:51Z",
       "fetched_at": "2026-09-09T18:58:48.530945Z",
       "title_ja": "OpenAIは皆を騙しているのか？"
-    },
-    {
-      "id": "34ccf2acef5a",
-      "title": "Apple's Siri AI Can Be Swapped Out for Claude, ChatGPT, Code Shows",
-      "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
-      "source": "Hacker News",
-      "source_score": 136,
-      "comments_count": 55,
-      "comments_url": "https://news.ycombinator.com/item?id=49695409",
-      "summary": null,
-      "tags": [],
-      "interest_score": 15,
-      "matched_keywords": [
-        "GPT",
-        "Claude"
-      ],
-      "created_at": "2026-09-14T12:01:32Z",
-      "fetched_at": "2026-09-14T14:36:41.815591Z"
     },
     {
       "id": "96cb5d4c7f75",
@@ -973,8 +1120,8 @@
       ],
       "interest_score": 12,
       "matched_keywords": [
-        "自然言語処理",
-        "Claude"
+        "Claude",
+        "自然言語処理"
       ],
       "created_at": "2026-09-11T11:36:24Z",
       "fetched_at": "2026-09-11T12:28:51.630473Z",
@@ -1020,8 +1167,8 @@
       ],
       "interest_score": 12,
       "matched_keywords": [
-        "オープンソース",
-        "LLM"
+        "LLM",
+        "オープンソース"
       ],
       "created_at": "2026-09-11T18:10:20Z",
       "fetched_at": "2026-09-11T18:54:19.359490Z",
@@ -1066,35 +1213,12 @@
       ],
       "interest_score": 12,
       "matched_keywords": [
-        "自然言語処理",
-        "Claude"
+        "Claude",
+        "自然言語処理"
       ],
       "created_at": "2026-09-13T04:52:16Z",
       "fetched_at": "2026-09-13T13:01:07.750471Z",
       "title_ja": "Claude AIが逃れられない会話に誘導される (開始: \"AI 1\" を Ctrl+F で検索)"
-    },
-    {
-      "id": "d149c6016bc9",
-      "title": "ChatGPT Was Built on Concealed 'Mass Piracy', Authors Tell Court",
-      "url": "https://torrentfreak.com/openais-chatgpt-was-built-on-concealed-mass-piracy-authors-tell-court/",
-      "source": "Hacker News",
-      "source_score": 10,
-      "comments_count": 7,
-      "comments_url": "https://news.ycombinator.com/item?id=49598892",
-      "summary": "著作者らがOpenAIを訴え、ChatGPTの学習データに著作権で保護されたコンテンツが無断で大量に使用されたと主張しています。これは、AIモデルの学習データに関する著作権問題が裁判で争われる新たな事例となります。",
-      "tags": [
-        "AI",
-        "著作権侵害",
-        "OpenAI"
-      ],
-      "interest_score": 10,
-      "matched_keywords": [
-        "GPT",
-        "OpenAI"
-      ],
-      "created_at": "2026-09-07T14:31:27Z",
-      "fetched_at": "2026-09-07T19:30:57.422212Z",
-      "title_ja": "OpenAI、ChatGPTは「大規模な著作権侵害」の上に構築されたと裁判所に訴えられる"
     },
     {
       "id": "8c9e20fc0efe",
@@ -1505,57 +1629,6 @@
       "title_ja": "悪意のあるアプリケーションへの懸念からGPT-2はリリースされない（2019年）"
     },
     {
-      "id": "6cee68e265a8",
-      "title": "OpenArch – PyTorch implementations of modern LLM architectures",
-      "url": "https://github.com/anuj0456/OpenArch",
-      "source": "Hacker News",
-      "source_score": 96,
-      "comments_count": 20,
-      "comments_url": "https://news.ycombinator.com/item?id=49693384",
-      "summary": null,
-      "tags": [],
-      "interest_score": 10,
-      "matched_keywords": [
-        "LLM"
-      ],
-      "created_at": "2026-09-14T07:55:19Z",
-      "fetched_at": "2026-09-14T14:36:42.957454Z"
-    },
-    {
-      "id": "d3a8641bbc4d",
-      "title": "Show HN: I built Otis, a minimal AI agent that runs local models out of the box",
-      "url": "https://triangllabs.ai/otis",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49696084",
-      "summary": null,
-      "tags": [],
-      "interest_score": 10,
-      "matched_keywords": [
-        "AI agent"
-      ],
-      "created_at": "2026-09-14T12:58:32Z",
-      "fetched_at": "2026-09-14T14:36:44.131562Z"
-    },
-    {
-      "id": "49519d89cf6f",
-      "title": "What a time to be alive – rouge AI agents attack RubyGems.org",
-      "url": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive/",
-      "source": "Hacker News",
-      "source_score": 90,
-      "comments_count": 116,
-      "comments_url": "https://news.ycombinator.com/item?id=49695876",
-      "summary": null,
-      "tags": [],
-      "interest_score": 10,
-      "matched_keywords": [
-        "AI agent"
-      ],
-      "created_at": "2026-09-14T12:40:57Z",
-      "fetched_at": "2026-09-14T14:36:44.650811Z"
-    },
-    {
       "id": "2aeda9dee2ca",
       "title": "Show HN: Authorize MCP tool calls without giving agents the credentials",
       "url": "https://github.com/keydrisLabs/mcp-auth-keydris-template",
@@ -1563,31 +1636,88 @@
       "source_score": 3,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49695295",
-      "summary": null,
-      "tags": [],
+      "summary": "開発者は、エージェントに直接認証情報を渡すことなく、MCP（Meta-class Programming）ツールコールを安全に承認するためのツールを開発しました。",
+      "tags": [
+        "認証",
+        "セキュリティ",
+        "AIツール",
+        "開発"
+      ],
       "interest_score": 10,
       "matched_keywords": [
         "MCP"
       ],
       "created_at": "2026-09-14T11:52:07Z",
-      "fetched_at": "2026-09-14T14:36:46.038686Z"
+      "fetched_at": "2026-09-14T14:36:46.038686Z",
+      "title_ja": "Show HN: エージェントに認証情報を与えずにMCPツールコールを承認"
     },
     {
-      "id": "81fb0b6406ba",
-      "title": "[GitHub] Panniantong/Agent-Reach",
-      "url": "https://github.com/Panniantong/Agent-Reach",
-      "source": "GitHub Trending",
-      "source_score": 80900,
-      "comments_count": 640,
-      "comments_url": "https://github.com/Panniantong/Agent-Reach/issues",
-      "summary": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "id": "6aa82522e5af",
+      "title": "When LLM judges agree, should we believe them?",
+      "url": "https://www.amazon.science/blog/when-llm-judges-agree-should-we-believe-them",
+      "source": "Hacker News",
+      "source_score": 41,
+      "comments_count": 23,
+      "comments_url": "https://news.ycombinator.com/item?id=49699590",
+      "summary": null,
+      "tags": [],
+      "interest_score": 10,
+      "matched_keywords": [
+        "LLM"
+      ],
+      "created_at": "2026-09-14T16:29:30Z",
+      "fetched_at": "2026-09-14T20:06:03.767777Z"
+    },
+    {
+      "id": "a593e888d71e",
+      "title": "Claude is a Contrarian",
+      "url": "https://medium.com/@rdsubhas/claude-is-a-contrarian-dbce4de5cada",
+      "source": "Hacker News",
+      "source_score": 94,
+      "comments_count": 123,
+      "comments_url": "https://news.ycombinator.com/item?id=49699373",
+      "summary": null,
+      "tags": [],
+      "interest_score": 10,
+      "matched_keywords": [
+        "Claude"
+      ],
+      "created_at": "2026-09-14T16:14:24Z",
+      "fetched_at": "2026-09-14T20:06:04.218460Z"
+    },
+    {
+      "id": "82b23c7598b1",
+      "title": "Transitions.dev: UI transitions for AI agents",
+      "url": "https://transitions.dev/",
+      "source": "Hacker News",
+      "source_score": 21,
+      "comments_count": 7,
+      "comments_url": "https://news.ycombinator.com/item?id=49698443",
+      "summary": null,
       "tags": [],
       "interest_score": 10,
       "matched_keywords": [
         "AI agent"
       ],
-      "created_at": "2026-09-14T14:36:53.416782Z",
-      "fetched_at": "2026-09-14T14:36:53.416784Z"
+      "created_at": "2026-09-14T15:18:58Z",
+      "fetched_at": "2026-09-14T20:06:05.548835Z"
+    },
+    {
+      "id": "5ea5069d4a1e",
+      "title": "Andon Labs Puts AI Agents in Charge of Real Businesses",
+      "url": "https://spectrum.ieee.org/andon-labs-agentic-ai-businesses",
+      "source": "Hacker News",
+      "source_score": 11,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49698217",
+      "summary": null,
+      "tags": [],
+      "interest_score": 10,
+      "matched_keywords": [
+        "AI agent"
+      ],
+      "created_at": "2026-09-14T15:08:02Z",
+      "fetched_at": "2026-09-14T20:06:08.082779Z"
     },
     {
       "id": "3aead6fbd813",
@@ -1652,8 +1782,8 @@
       ],
       "interest_score": 6,
       "matched_keywords": [
-        "自然言語処理",
         "機械学習",
+        "自然言語処理",
         "オープンソース"
       ],
       "created_at": "2026-09-13T13:01:09.563724Z",
@@ -2159,14 +2289,36 @@
       "source_score": 3,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49695450",
+      "summary": "著者がChatGPTに、ほとんど文脈を与えずに自身の本の批評を依頼したところ、予想外に的確で示唆に富むフィードバックを得られました。この経験から、AIの文学的分析能力の可能性が示唆されています。",
+      "tags": [
+        "ChatGPT",
+        "AI",
+        "文学"
+      ],
+      "interest_score": 5,
+      "matched_keywords": [
+        "GPT"
+      ],
+      "created_at": "2026-09-14T12:04:44Z",
+      "fetched_at": "2026-09-14T14:36:45.291144Z",
+      "title_ja": "ChatGPTに文脈をほとんど与えずに本の批評を求めた結果"
+    },
+    {
+      "id": "33889e2a0666",
+      "title": "'Project Lily': The Humans Reading Your ChatGPT Chats",
+      "url": "https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/",
+      "source": "Hacker News",
+      "source_score": 27,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49697713",
       "summary": null,
       "tags": [],
       "interest_score": 5,
       "matched_keywords": [
         "GPT"
       ],
-      "created_at": "2026-09-14T12:04:44Z",
-      "fetched_at": "2026-09-14T14:36:45.291144Z"
+      "created_at": "2026-09-14T14:41:42Z",
+      "fetched_at": "2026-09-14T20:06:11.834738Z"
     },
     {
       "id": "39ec5846ae4b",
@@ -2184,8 +2336,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "deep learning",
-        "機械学習"
+        "機械学習",
+        "deep learning"
       ],
       "created_at": "2026-09-08T12:28:41.628174Z",
       "fetched_at": "2026-09-08T12:28:41.628175Z",
@@ -2276,8 +2428,8 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "startup",
-        "スタートアップ"
+        "スタートアップ",
+        "startup"
       ],
       "created_at": "2026-09-13T14:09:53Z",
       "fetched_at": "2026-09-13T18:26:56.663057Z",
@@ -2299,12 +2451,36 @@
       ],
       "interest_score": 4,
       "matched_keywords": [
-        "startup",
-        "スタートアップ"
+        "スタートアップ",
+        "startup"
       ],
       "created_at": "2026-09-13T15:51:47Z",
       "fetched_at": "2026-09-13T18:26:59.621350Z",
       "title_ja": "スタートアップを強力にする方法"
+    },
+    {
+      "id": "fc7bbd62c05f",
+      "title": "SDR–; open source SDR with a patchable signal graph, Rust DSP, web UI",
+      "url": "https://github.com/Newspicel/sdrminusminus",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49695805",
+      "summary": "SDR–;は、Rustで記述されたDSPライブラリとWeb UIを備えた、オープンソースのソフトウェア無線（SDR）プロジェクトです。パッチ可能な信号グラフにより、柔軟な信号処理とカスタマイズが可能です。",
+      "tags": [
+        "SDR",
+        "オープンソース",
+        "Rust",
+        "Web UI"
+      ],
+      "interest_score": 4,
+      "matched_keywords": [
+        "open source",
+        "オープンソース"
+      ],
+      "created_at": "2026-09-14T12:35:56Z",
+      "fetched_at": "2026-09-14T14:36:43.941230Z",
+      "title_ja": "SDR–; パッチ可能な信号グラフ、Rust DSP、Web UIを備えたオープンソースSDR"
     },
     {
       "id": "9cd514d03f14",
@@ -2417,66 +2593,88 @@
       "title_ja": "[GitHub] bilawalsidhu/gods-eye-view"
     },
     {
-      "id": "adbcd4fc66f9",
-      "title": "bzip3",
-      "url": "https://github.com/iczelia/bzip3",
+      "id": "19a6e2a1b0c1",
+      "title": "Jellyfin 12.0",
+      "url": "https://jellyfin.org/posts/jellyfin-release-12.0/",
       "source": "Hacker News",
-      "source_score": 293,
-      "comments_count": 84,
-      "comments_url": "https://news.ycombinator.com/item?id=49598291",
-      "summary": "bzip3は、bzip2の後継となる高圧縮率のデータ圧縮アルゴリズムであり、より効率的な圧縮と解凍を目指している。",
+      "source_score": 52,
+      "comments_count": 10,
+      "comments_url": "https://news.ycombinator.com/item?id=49604861",
+      "summary": "オープンソースのメディアサーバーソフトウェアであるJellyfinのメジャーバージョン12.0がリリースされました。このバージョンでは、多数の機能改善、バグ修正、パフォーマンス向上が図られています。",
       "tags": [
-        "データ圧縮",
-        "bzip2",
-        "アルゴリズム",
+        "Jellyfin",
+        "メディアサーバー",
         "オープンソース"
       ],
       "interest_score": 2,
       "matched_keywords": [
         "オープンソース"
       ],
-      "created_at": "2026-09-07T13:35:13Z",
-      "fetched_at": "2026-09-07T19:30:50.204350Z",
-      "title_ja": "bzip3"
+      "created_at": "2026-09-08T01:56:35Z",
+      "fetched_at": "2026-09-08T02:25:11.980735Z",
+      "title_ja": "Jellyfin 12.0 リリース"
     },
     {
-      "id": "bf58ee2be000",
-      "title": "Methods for Random Gradients",
-      "url": "https://justinjay.wang/methods-for-random-gradients/",
+      "id": "ca113981b232",
+      "title": "WeatherNext 3",
+      "url": "https://deepmind.google/science/weathernext/",
       "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49557986",
-      "summary": "この記事では、機械学習におけるランダム勾配法（Random Gradients）の様々な手法について解説しています。効率的なモデル学習のためのアルゴリズムに焦点を当てています。",
+      "source_score": 236,
+      "comments_count": 59,
+      "comments_url": "https://news.ycombinator.com/item?id=49552299",
+      "summary": "DeepMind が開発した WeatherNext 3 は、AI を活用した高精度な気象予測モデルです。このモデルは、従来の気象予測手法よりも大幅に精度が向上しています。",
       "tags": [
-        "機械学習",
-        "アルゴリズム",
-        "勾配降下法"
+        "AI",
+        "気象予測",
+        "DeepMind",
+        "機械学習"
       ],
       "interest_score": 2,
       "matched_keywords": [
         "機械学習"
       ],
-      "created_at": "2026-09-03T22:26:44Z",
-      "fetched_at": "2026-09-07T19:30:51.727409Z",
-      "title_ja": "ランダム勾配法について"
+      "created_at": "2026-09-03T16:06:08Z",
+      "fetched_at": "2026-09-08T02:25:12.841548Z",
+      "title_ja": "WeatherNext 3"
     },
     {
-      "id": "fc7bbd62c05f",
-      "title": "SDR–; open source SDR with a patchable signal graph, Rust DSP, web UI",
-      "url": "https://github.com/Newspicel/sdrminusminus",
+      "id": "ecfc991fdb57",
+      "title": "Emacs Bedrock 2.0 Released",
+      "url": "https://lambdaland.org/posts/2026-09-06-bedrock-v2/",
       "source": "Hacker News",
-      "source_score": 6,
+      "source_score": 36,
       "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49695805",
+      "comments_url": "https://news.ycombinator.com/item?id=49602490",
+      "summary": "テキストエディタEmacsの機能拡張であるBedrockのバージョン2.0がリリースされました。このバージョンアップにより、Emacsの機能性や使い勝手が向上したことが期待されます。",
+      "tags": [
+        "Emacs",
+        "ソフトウェア開発",
+        "オープンソース"
+      ],
+      "interest_score": 2,
+      "matched_keywords": [
+        "オープンソース"
+      ],
+      "created_at": "2026-09-07T20:12:12Z",
+      "fetched_at": "2026-09-08T02:25:18.902524Z",
+      "title_ja": "Emacs Bedrock 2.0 リリース"
+    },
+    {
+      "id": "f4fb7ac1d2c2",
+      "title": "Why don't machine learning research agents overfit?",
+      "url": "https://www.amazon.science/blog/why-dont-machine-learning-research-agents-overfit",
+      "source": "Hacker News",
+      "source_score": 71,
+      "comments_count": 37,
+      "comments_url": "https://news.ycombinator.com/item?id=49699648",
       "summary": null,
       "tags": [],
       "interest_score": 2,
       "matched_keywords": [
-        "open source"
+        "machine learning"
       ],
-      "created_at": "2026-09-14T12:35:56Z",
-      "fetched_at": "2026-09-14T14:36:43.941230Z"
+      "created_at": "2026-09-14T16:32:23Z",
+      "fetched_at": "2026-09-14T20:06:00.929236Z"
     },
     {
       "id": "3675b0176088",
@@ -2539,419 +2737,6 @@
       "title_ja": "browser-use/browser-use（GitHub）"
     },
     {
-      "id": "a7cdf5e2d7c4",
-      "title": "Watch Los Angeles get built, one building at a time (1880–2026)",
-      "url": "https://lax-skyline.parcelscope.net/",
-      "source": "Hacker News",
-      "source_score": 38,
-      "comments_count": 9,
-      "comments_url": "https://news.ycombinator.com/item?id=49601655",
-      "summary": "このプロジェクトは、1880年から2026年までのロサンゼルスの都市開発の変遷を、航空写真や衛星画像を用いて視覚的に追体験できる。",
-      "tags": [
-        "都市開発",
-        "ロサンゼルス",
-        "時系列データ",
-        "視覚化"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T18:52:06Z",
-      "fetched_at": "2026-09-07T19:30:50.104983Z",
-      "title_ja": "ロサンゼルスの街ができるまでを見る（1880年～2026年）"
-    },
-    {
-      "id": "1916b041d50b",
-      "title": "Simple Is Not Small",
-      "url": "https://jyn.dev/simple-is-not-the-same-as-small/",
-      "source": "Hacker News",
-      "source_score": 119,
-      "comments_count": 40,
-      "comments_url": "https://news.ycombinator.com/item?id=49558685",
-      "summary": "シンプルさとは、単に規模が小さいことではなく、機能の洗練や意図の明確さによって達成されるものであることを論じています。複雑さを減らし、理解しやすさを高めることの重要性を強調しています。",
-      "tags": [
-        "設計原則",
-        "ソフトウェア開発",
-        "シンプルさ"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-03T23:47:28Z",
-      "fetched_at": "2026-09-07T19:30:50.396549Z",
-      "title_ja": "シンプルは小ささとは違う"
-    },
-    {
-      "id": "375ec96cfcd3",
-      "title": "PostgreSQL 19 Interactive Tour",
-      "url": "https://victoriametrics.com/blog/postgres-19/index.html",
-      "source": "Hacker News",
-      "source_score": 50,
-      "comments_count": 10,
-      "comments_url": "https://news.ycombinator.com/item?id=49600432",
-      "summary": "PostgreSQL 19 の新機能や変更点を、インタラクティブなデモを通じて紹介しています。主要な改善点や強化された機能に焦点を当て、データベース管理者が最新バージョンを理解するのに役立つ内容です。",
-      "tags": [
-        "PostgreSQL",
-        "データベース",
-        "開発者"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T16:58:35Z",
-      "fetched_at": "2026-09-07T19:30:50.492092Z",
-      "title_ja": "PostgreSQL 19 インタラクティブツアー"
-    },
-    {
-      "id": "a1207e8a7a12",
-      "title": "C Is Not a Low-Level Language (2018)",
-      "url": "https://queue.acm.org/doi/10.1145/3212477.3212479",
-      "source": "Hacker News",
-      "source_score": 63,
-      "comments_count": 46,
-      "comments_url": "https://news.ycombinator.com/item?id=49599609",
-      "summary": "現代のC言語は、単なる低水準言語ではなく、抽象化の機能や複雑な機能セットを備えていることを論じています。C言語の設計思想と、それが現代のプログラミングにおいてどのように位置づけられるかを探求しています。",
-      "tags": [
-        "C言語",
-        "プログラミング言語",
-        "ソフトウェアエンジニアリング"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T15:39:20Z",
-      "fetched_at": "2026-09-07T19:30:50.585815Z",
-      "title_ja": "C言語は低水準言語ではない (2018年)"
-    },
-    {
-      "id": "767e92bb9dfd",
-      "title": "The Dataflow Model Revisited",
-      "url": "https://www.vldb.org/pvldb/volumes/19/paper/The%20Dataflow%20Model%20Revisited",
-      "source": "Hacker News",
-      "source_score": 50,
-      "comments_count": 10,
-      "comments_url": "https://news.ycombinator.com/item?id=49589190",
-      "summary": "データフローモデルの概念を再検討し、その現代的な応用と進化について考察しています。分散システムや並列処理におけるデータフローの重要性を論じ、その設計と実装の課題について掘り下げています。",
-      "tags": [
-        "データフロー",
-        "分散システム",
-        "並列処理"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-06T18:10:53Z",
-      "fetched_at": "2026-09-07T19:30:50.774667Z",
-      "title_ja": "データフローモデルの再訪"
-    },
-    {
-      "id": "3e08129aa59b",
-      "title": "No constitutional right to clean water, federal court finds",
-      "url": "https://www.usatoday.com/story/news/nation/2026/09/07/court-constitution-right-clean-water/91649488007/",
-      "source": "Hacker News",
-      "source_score": 90,
-      "comments_count": 57,
-      "comments_url": "https://news.ycombinator.com/item?id=49600997",
-      "summary": "連邦裁判所が、国民には清潔な水へのアクセスを保証する憲法上の権利はないとの判断を下したことを報じるニュースです。この判決は、環境保護や公衆衛生に関する議論に影響を与える可能性があります。",
-      "tags": [
-        "司法判断",
-        "環境問題",
-        "公衆衛生"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T17:52:58Z",
-      "fetched_at": "2026-09-07T19:30:50.956644Z",
-      "title_ja": "連邦裁判所、清潔な水に対する憲法上の権利はないと判断"
-    },
-    {
-      "id": "878aeaa6f3b2",
-      "title": "Show HN: HomeCat – Design your backyard office",
-      "url": "https://myhomecat.com",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49601328",
-      "summary": "HomeCatは、庭に設置するオフィスのデザインを支援するツールです。ユーザーは、さまざまなオプションを選択して理想の屋外ワークスペースを具体化できます。",
-      "tags": [
-        "庭",
-        "オフィス",
-        "デザインツール"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T18:23:35Z",
-      "fetched_at": "2026-09-07T19:30:51.049451Z",
-      "title_ja": "Show HN: HomeCat – あなたの庭のオフィスをデザイン"
-    },
-    {
-      "id": "5fb97efa34f9",
-      "title": "Whistle Synth",
-      "url": "https://www.jefftk.com/p/whistle-synth-mac-app",
-      "source": "Hacker News",
-      "source_score": 36,
-      "comments_count": 11,
-      "comments_url": "https://news.ycombinator.com/item?id=49562440",
-      "summary": "Whistle Synthは、macOSで動作するアプリで、ホイッスル音を生成・操作することができます。音楽制作やサウンドデザインに利用できる可能性があります。",
-      "tags": [
-        "macOS",
-        "サウンド生成",
-        "音楽制作"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-04T09:44:45Z",
-      "fetched_at": "2026-09-07T19:30:51.355582Z",
-      "title_ja": "Whistle Synth – macOS用アプリ"
-    },
-    {
-      "id": "c60093d5ceca",
-      "title": "Academia as a d-index measuring contest",
-      "url": "https://kevinmunger.substack.com/p/introducing-the-k-index",
-      "source": "Hacker News",
-      "source_score": 11,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49535375",
-      "summary": "学術界が、研究者の業績を測る指標（d-indexなど）の測定競争に陥っている現状を論じています。研究の本質から離れた評価システムへの疑問を呈しています。",
-      "tags": [
-        "学術界",
-        "研究評価",
-        "指標"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-02T12:40:44Z",
-      "fetched_at": "2026-09-07T19:30:52.008205Z",
-      "title_ja": "学術界はd-index測定競争の場に"
-    },
-    {
-      "id": "4c4c927264b7",
-      "title": "Bill Gates tries to install MovieMaker",
-      "url": "https://www.techemails.com/p/bill-gates-tries-to-install-movie-maker",
-      "source": "Hacker News",
-      "source_score": 211,
-      "comments_count": 141,
-      "comments_url": "https://news.ycombinator.com/item?id=49599481",
-      "summary": "Bill Gatesが、Microsoftの旧製品であるMovieMakerのインストールを試みた際のメールのやり取りを紹介する記事です。テクノロジーの変遷と、その影響を示唆しています。",
-      "tags": [
-        "Bill Gates",
-        "MovieMaker",
-        "テクノロジー史"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T15:27:03Z",
-      "fetched_at": "2026-09-07T19:30:52.576778Z",
-      "title_ja": "Bill Gates、MovieMakerのインストールを試みる"
-    },
-    {
-      "id": "f6e330ac9129",
-      "title": "Show HN: Wg-admin – web UI for an existing WireGuard host",
-      "url": "https://github.com/logimaxx/wg-admin",
-      "source": "Hacker News",
-      "source_score": 5,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49600269",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T16:43:37Z",
-      "fetched_at": "2026-09-07T19:30:52.668706Z",
-      "title_ja": null
-    },
-    {
-      "id": "684a94d2455d",
-      "title": "Tesla killing Solar Roof is leaving installers with six-figure losses",
-      "url": "https://electrek.co/2026/09/01/tesla-solar-roof-exit-installers-losses/",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49601846",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T19:08:47Z",
-      "fetched_at": "2026-09-07T19:30:53.139535Z",
-      "title_ja": null
-    },
-    {
-      "id": "94f0c94ccfa4",
-      "title": "Bing Wallpaper showing Ad for Harry Potter and Fantastic beasts box set",
-      "url": "https://www.thurrott.com/forums/microsoft/windows/thread/bing-wallpaper-showing-ad-for-harry-potter-and-fantastic-beasts-box-set",
-      "source": "Hacker News",
-      "source_score": 86,
-      "comments_count": 59,
-      "comments_url": "https://news.ycombinator.com/item?id=49599719",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T15:50:37Z",
-      "fetched_at": "2026-09-07T19:30:53.428473Z",
-      "title_ja": null
-    },
-    {
-      "id": "eb7be15a52c8",
-      "title": "Nördlinger Ries Impact Crater",
-      "url": "https://en.wikipedia.org/wiki/Nördlinger_Ries",
-      "source": "Hacker News",
-      "source_score": 16,
-      "comments_count": 2,
-      "comments_url": "https://news.ycombinator.com/item?id=49599767",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T15:56:07Z",
-      "fetched_at": "2026-09-07T19:30:54.970054Z",
-      "title_ja": null
-    },
-    {
-      "id": "642f5b543749",
-      "title": "Liquid Network Pauses After $320M Bitcoin Withdrawal",
-      "url": "https://coinmarketcap.com/community/post/379112837/",
-      "source": "Hacker News",
-      "source_score": 3,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49601243",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T18:15:52Z",
-      "fetched_at": "2026-09-07T19:30:55.064737Z",
-      "title_ja": null
-    },
-    {
-      "id": "880fcda84adf",
-      "title": "A Modest Proposal",
-      "url": "https://systemsapproach.org/2026/09/07/a-modest-proposal/",
-      "source": "Hacker News",
-      "source_score": 4,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49597922",
-      "summary": "この記事は、社会問題に対する大胆かつ風刺的な解決策を提示する「控えめな提案」という古典的なエッセイを引用し、現代社会における問題解決のアプローチについて考察しています。",
-      "tags": [
-        "社会問題",
-        "風刺",
-        "倫理"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T13:01:54Z",
-      "fetched_at": "2026-09-07T19:30:55.155870Z",
-      "title_ja": "控えめな提案"
-    },
-    {
-      "id": "11ce6a95aaf8",
-      "title": "Making software hurts now",
-      "url": "https://notes.erlend.sh/3muwdtclths2d",
-      "source": "Hacker News",
-      "source_score": 12,
-      "comments_count": 4,
-      "comments_url": "https://news.ycombinator.com/item?id=49600012",
-      "summary": "ソフトウェア開発がかつてないほど困難になり、開発者が直面する課題と、その背後にある要因について論じています。",
-      "tags": [
-        "ソフトウェア開発",
-        "プログラミング",
-        "開発者体験"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T16:19:29Z",
-      "fetched_at": "2026-09-07T19:30:56.204269Z",
-      "title_ja": "ソフトウェア開発は今、苦痛である"
-    },
-    {
-      "id": "1bfafa3abb5e",
-      "title": "Volkswagen to cut 100,000 jobs by end of decade",
-      "url": "https://www.dw.com/en/volkswagen-to-cut-100000-jobs-by-end-of-decade/a-78896123",
-      "source": "Hacker News",
-      "source_score": 8,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49601223",
-      "summary": "フォルクスワーゲンは、2030年末までに10万人の雇用を削減する計画を発表しました。これは、自動車業界の変革と自動化の進展が背景にあるとされています。",
-      "tags": [
-        "自動車産業",
-        "雇用削減",
-        "フォルクスワーゲン"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T18:14:10Z",
-      "fetched_at": "2026-09-07T19:30:57.233797Z",
-      "title_ja": "フォルクスワーゲン、 दशक末までに10万人の雇用を削減へ"
-    },
-    {
-      "id": "28d5bd8badee",
-      "title": "If a Tesla Cybercab fleet were profitable, Tesla wouldn't sell you one",
-      "url": "https://electrek.co/2026/09/07/tesla-cybercab-fleet-profitable-wouldnt-sell/",
-      "source": "Hacker News",
-      "source_score": 73,
-      "comments_count": 74,
-      "comments_url": "https://news.ycombinator.com/item?id=49599058",
-      "summary": "TeslaがCybercab（自動運転タクシー）のフリート事業で利益を上げられるのであれば、顧客に車両を販売するのではなく、自社でフリートを運用するはずだと主張しています。",
-      "tags": [
-        "テスラ",
-        "自動運転",
-        "フリート事業"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T14:49:43Z",
-      "fetched_at": "2026-09-07T19:30:57.332710Z",
-      "title_ja": "TeslaのCybercabフリートが利益を上げられるなら、Teslaはそれを販売しないだろう"
-    },
-    {
-      "id": "04590e779710",
-      "title": "Do We Still Need Burp Suite for Web Security Testing?",
-      "url": "https://medium.com/@Koukyosyumei/do-we-still-need-burp-suite-for-web-security-testing-00f068851d30",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 3,
-      "comments_url": "https://news.ycombinator.com/item?id=49599913",
-      "summary": "Webアプリケーションのセキュリティテストにおいて、Burp Suiteの必要性とその代替手段について考察する記事です。",
-      "tags": [
-        "Webセキュリティ",
-        "ペネトレーションテスト",
-        "Burp Suite"
-      ],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T16:10:36Z",
-      "fetched_at": "2026-09-07T19:30:59.491114Z",
-      "title_ja": "WebセキュリティテストにBurp Suiteはまだ必要か？"
-    },
-    {
-      "id": "4489d50d8d77",
-      "title": "Why Labor's Share of Wealth Is Shrinking",
-      "url": "https://www.nytimes.com/2026/09/07/opinion/labor-capitol-workers-income.html",
-      "source": "Hacker News",
-      "source_score": 6,
-      "comments_count": 5,
-      "comments_url": "https://news.ycombinator.com/item?id=49601198",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T18:12:23Z",
-      "fetched_at": "2026-09-07T19:30:59.627002Z",
-      "title_ja": null
-    },
-    {
-      "id": "19a6e2a1b0c1",
-      "title": "Jellyfin 12.0",
-      "url": "https://jellyfin.org/posts/jellyfin-release-12.0/",
-      "source": "Hacker News",
-      "source_score": 52,
-      "comments_count": 10,
-      "comments_url": "https://news.ycombinator.com/item?id=49604861",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-08T01:56:35Z",
-      "fetched_at": "2026-09-08T02:25:11.980735Z",
-      "title_ja": null
-    },
-    {
       "id": "5f5f6da9c76d",
       "title": "I've factored the RSA keys of a Certificate Authority from the 90s",
       "url": "https://mcpherrin.ca/2026/09/07/rsa.html",
@@ -2959,29 +2744,18 @@
       "source_score": 91,
       "comments_count": 18,
       "comments_url": "https://news.ycombinator.com/item?id=49604637",
-      "summary": null,
-      "tags": [],
+      "summary": "投稿者は、1990年代に発行された認証局（CA）のRSA鍵のファクタリングに成功したと報告しています。これは、当時の暗号技術の脆弱性や、長期間にわたる鍵の管理に関する興味深い事例です。",
+      "tags": [
+        "RSA",
+        "暗号",
+        "認証局",
+        "セキュリティ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-08T01:16:59Z",
       "fetched_at": "2026-09-08T02:25:12.112181Z",
-      "title_ja": null
-    },
-    {
-      "id": "2448c5c22733",
-      "title": "TALA Is Open-Source",
-      "url": "https://d2lang.com/blog/tala-is-open-source/",
-      "source": "Hacker News",
-      "source_score": 92,
-      "comments_count": 8,
-      "comments_url": "https://news.ycombinator.com/item?id=49604150",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T23:37:42Z",
-      "fetched_at": "2026-09-08T02:25:12.247458Z",
-      "title_ja": null
+      "title_ja": "90年代の認証局のRSA鍵のファクタリングに成功"
     },
     {
       "id": "067a9da64eb9",
@@ -2991,13 +2765,17 @@
       "source_score": 104,
       "comments_count": 34,
       "comments_url": "https://news.ycombinator.com/item?id=49603546",
-      "summary": null,
-      "tags": [],
+      "summary": "悪名高いサイバー兵器 Stuxnet のソースコードが再構築され、GitHub で公開されました。このプロジェクトは、Stuxnet の動作原理を理解するための貴重なリソースとなります。",
+      "tags": [
+        "サイバーセキュリティ",
+        "マルウェア解析",
+        "ソースコード"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T22:12:38Z",
       "fetched_at": "2026-09-08T02:25:12.495712Z",
-      "title_ja": null
+      "title_ja": "HN: Stuxnet - 悪名高いサイバー兵器のソースコード再構築を公開"
     },
     {
       "id": "0e2a67369594",
@@ -3007,12 +2785,17 @@
       "source_score": 72,
       "comments_count": 41,
       "comments_url": "https://news.ycombinator.com/item?id=49604537",
-      "summary": null,
-      "tags": [],
+      "summary": "LG テレビがインターネットに接続されていると、個人情報が漏洩する脆弱性が指摘されています。ユーザーは LG テレビをインターネットから切断することが推奨されています。",
+      "tags": [
+        "セキュリティ警告",
+        "脆弱性",
+        "IoT"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-08T01:00:48Z",
-      "fetched_at": "2026-09-08T02:25:12.609680Z"
+      "fetched_at": "2026-09-08T02:25:12.609680Z",
+      "title_ja": "LG テレビを今すぐインターネットから切断してください"
     },
     {
       "id": "cd5193c000aa",
@@ -3022,27 +2805,18 @@
       "source_score": 99,
       "comments_count": 49,
       "comments_url": "https://news.ycombinator.com/item?id=49602699",
-      "summary": null,
-      "tags": [],
+      "summary": "Broadcom が VMware vSphere Data Protection SDK (VDDK) のダウンロードを停止したため、VMware から他の仮想化プラットフォームへの移行がより困難になりました。これは VMware ユーザーにとって大きな影響を与える可能性があります。",
+      "tags": [
+        "仮想化",
+        "VMware",
+        "Broadcom",
+        "SDK"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T20:32:55Z",
-      "fetched_at": "2026-09-08T02:25:12.730201Z"
-    },
-    {
-      "id": "ca113981b232",
-      "title": "WeatherNext 3",
-      "url": "https://deepmind.google/science/weathernext/",
-      "source": "Hacker News",
-      "source_score": 236,
-      "comments_count": 59,
-      "comments_url": "https://news.ycombinator.com/item?id=49552299",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-03T16:06:08Z",
-      "fetched_at": "2026-09-08T02:25:12.841548Z"
+      "fetched_at": "2026-09-08T02:25:12.730201Z",
+      "title_ja": "Broadcom が VDDK ダウンロードを停止したため、VMware からの移行がより困難に"
     },
     {
       "id": "6b6cf87e682f",
@@ -3052,12 +2826,17 @@
       "source_score": 159,
       "comments_count": 35,
       "comments_url": "https://news.ycombinator.com/item?id=49575515",
-      "summary": null,
-      "tags": [],
+      "summary": "この論文では、Linuxディストリビューション全体を標的とする「トラスト・トゥ・トラスト」攻撃という、新たなサプライチェーン攻撃手法を提案・検証しています。この攻撃は、信頼されているビルドプロセスに悪意のあるコードを注入し、最終的なソフトウェアにバックドアを仕掛けることが可能です。",
+      "tags": [
+        "セキュリティ",
+        "ソフトウェアサプライチェーン攻撃",
+        "Linux"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-05T11:25:18Z",
-      "fetched_at": "2026-09-08T02:25:12.970418Z"
+      "fetched_at": "2026-09-08T02:25:12.970418Z",
+      "title_ja": "Linuxディストリビューション全体を標的としたトラスト・トゥ・トラスト攻撃"
     },
     {
       "id": "c63112c1b6c1",
@@ -3067,12 +2846,17 @@
       "source_score": 18,
       "comments_count": 6,
       "comments_url": "https://news.ycombinator.com/item?id=49560682",
-      "summary": null,
-      "tags": [],
+      "summary": "このコレクションは、アメリカのロードサイドのユニークでノスタルジックな風景を捉えた写真家ジョン・マーゴリスの作品を紹介しています。アメリカの象徴的な道路沿いのランドマークや文化遺産を記録しています。",
+      "tags": [
+        "写真",
+        "アメリカ文化",
+        "ロードサイド"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-04T04:57:22Z",
-      "fetched_at": "2026-09-08T02:25:13.200348Z"
+      "fetched_at": "2026-09-08T02:25:13.200348Z",
+      "title_ja": "ジョン・マーゴリスによるロードサイド・アメリカの写真コレクション"
     },
     {
       "id": "17360fb73b95",
@@ -3082,12 +2866,17 @@
       "source_score": 57,
       "comments_count": 17,
       "comments_url": "https://news.ycombinator.com/item?id=49568162",
-      "summary": null,
-      "tags": [],
+      "summary": "開発者が個人的に作成した、美しくデザインされたパズルゲームを紹介しています。このパズルは、視覚的な魅力とゲームプレイの楽しさを両立させています。",
+      "tags": [
+        "ゲーム開発",
+        "パズル",
+        "個人的プロジェクト"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-04T18:14:44Z",
-      "fetched_at": "2026-09-08T02:25:13.327203Z"
+      "fetched_at": "2026-09-08T02:25:13.327203Z",
+      "title_ja": "Show HN: 美しいパズルを開発しました"
     },
     {
       "id": "48d08e3d85de",
@@ -3097,12 +2886,17 @@
       "source_score": 9,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49564064",
-      "summary": null,
-      "tags": [],
+      "summary": "この記事は、安価で人気のあるECP5 FPGA開発ボード「Colorlight 5A-75B」のハードウェア構成や機能について、詳細な技術的分析を開始しています。FPGA開発者にとって貴重な情報源となります。",
+      "tags": [
+        "FPGA",
+        "ハードウェア開発",
+        "組み込みシステム"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-04T13:05:31Z",
-      "fetched_at": "2026-09-08T02:25:13.558980Z"
+      "fetched_at": "2026-09-08T02:25:13.558980Z",
+      "title_ja": "Colorlight 5A-75B: 人気の低コストECP5 (FPGA) 開発ボードを徹底解説（パート1）"
     },
     {
       "id": "fc549e1af528",
@@ -3112,12 +2906,17 @@
       "source_score": 68,
       "comments_count": 32,
       "comments_url": "https://news.ycombinator.com/item?id=49569748",
-      "summary": null,
-      "tags": [],
+      "summary": "このブログ記事では、標準的な抽象代数の教科書であるDummit and Footeのテキストに見つかった具体的なバグについて解説しています。数学の学習者や専門家にとって、誤りの指摘や補足情報を提供しています。",
+      "tags": [
+        "数学",
+        "抽象代数",
+        "教育"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-04T20:20:07Z",
-      "fetched_at": "2026-09-08T02:25:13.676895Z"
+      "fetched_at": "2026-09-08T02:25:13.676895Z",
+      "title_ja": "Dummit and Foote の抽象代数におけるバグ発見"
     },
     {
       "id": "80496da130ba",
@@ -3127,12 +2926,17 @@
       "source_score": 62,
       "comments_count": 17,
       "comments_url": "https://news.ycombinator.com/item?id=49559069",
-      "summary": null,
-      "tags": [],
+      "summary": "生物の進化の歴史をインタラクティブに探索できる「Tree of Life」というツールを紹介しています。",
+      "tags": [
+        "進化生物学",
+        "インタラクティブツール",
+        "データ可視化"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-04T00:40:06Z",
-      "fetched_at": "2026-09-08T02:25:13.806874Z"
+      "fetched_at": "2026-09-08T02:25:13.806874Z",
+      "title_ja": "インタラクティブな生命の樹 (Show HN)"
     },
     {
       "id": "4b81d2c56430",
@@ -3142,12 +2946,17 @@
       "source_score": 40,
       "comments_count": 17,
       "comments_url": "https://news.ycombinator.com/item?id=49602716",
-      "summary": null,
-      "tags": [],
+      "summary": "シェイクスピアの戯曲「マクベス」における、登場人物や劇の構造に関する批評的な考察を論じています。",
+      "tags": [
+        "文学批評",
+        "シェイクスピア",
+        "演劇"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T20:34:32Z",
-      "fetched_at": "2026-09-08T02:25:14.694906Z"
+      "fetched_at": "2026-09-08T02:25:14.694906Z",
+      "title_ja": "マクベスとその問題点"
     },
     {
       "id": "9a421d318454",
@@ -3157,12 +2966,17 @@
       "source_score": 63,
       "comments_count": 46,
       "comments_url": "https://news.ycombinator.com/item?id=49603086",
-      "summary": null,
-      "tags": [],
+      "summary": "Fable 5 というツールを用いて、経済学の研究や分析を行う方法について解説しています。",
+      "tags": [
+        "経済学",
+        "プログラミング",
+        "Fable"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T21:18:15Z",
-      "fetched_at": "2026-09-08T02:25:15.422272Z"
+      "fetched_at": "2026-09-08T02:25:15.422272Z",
+      "title_ja": "Fable 5 で経済学に取り組む"
     },
     {
       "id": "f08505fe96ad",
@@ -3172,12 +2986,17 @@
       "source_score": 6,
       "comments_count": 0,
       "comments_url": "https://news.ycombinator.com/item?id=49604312",
-      "summary": null,
-      "tags": [],
+      "summary": "オランダのスロイスキルに、欧州で最大規模となる炭素回収施設が正式に稼働を開始しました。",
+      "tags": [
+        "環境技術",
+        "炭素回収",
+        "持続可能性"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-08T00:06:25Z",
-      "fetched_at": "2026-09-08T02:25:15.655187Z"
+      "fetched_at": "2026-09-08T02:25:15.655187Z",
+      "title_ja": "オランダで欧州最大の炭素回収施設が開設"
     },
     {
       "id": "eb7c90a1e0e6",
@@ -3187,12 +3006,17 @@
       "source_score": 141,
       "comments_count": 97,
       "comments_url": "https://news.ycombinator.com/item?id=49602582",
-      "summary": null,
-      "tags": [],
+      "summary": "テスラの車両が一時停止標識を無視して事故を起こし、搭乗者が死亡した事件について、自動運転機能 (Full Self-Driving/Autopilot) が作動していた状況を報じています。",
+      "tags": [
+        "自動車事故",
+        "自動運転",
+        "テスラ"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T20:21:12Z",
-      "fetched_at": "2026-09-08T02:25:17.564200Z"
+      "fetched_at": "2026-09-08T02:25:17.564200Z",
+      "title_ja": "テスラが一時停止標識を無視し男性が死亡、自動運転機能が作動中"
     },
     {
       "id": "9ea34e873725",
@@ -3202,12 +3026,17 @@
       "source_score": 59,
       "comments_count": 55,
       "comments_url": "https://news.ycombinator.com/item?id=49601814",
-      "summary": null,
-      "tags": [],
+      "summary": "この論文は、自動化が進む中で、労働者の代替可能性が仕事の意味にどのように影響するかを分析しています。技術革新と労働市場の変化における人間の役割について考察しています。",
+      "tags": [
+        "自動化",
+        "労働経済学",
+        "仕事の意味"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T19:06:01Z",
-      "fetched_at": "2026-09-08T02:25:17.816862Z"
+      "fetched_at": "2026-09-08T02:25:17.816862Z",
+      "title_ja": "置換可能だが雇用されている：自動化と仕事の意味"
     },
     {
       "id": "7971db5dab33",
@@ -3217,27 +3046,17 @@
       "source_score": 7,
       "comments_count": 3,
       "comments_url": "https://news.ycombinator.com/item?id=49604232",
-      "summary": null,
-      "tags": [],
+      "summary": "205年の歴史を持つ歴史ある雑誌「サタデー・イブニング・ポスト」が、印刷版の発行を終了することが発表されました。これはメディア業界における伝統的な出版形態の終焉を示唆しています。",
+      "tags": [
+        "メディア",
+        "出版",
+        "新聞・雑誌"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T23:52:28Z",
-      "fetched_at": "2026-09-08T02:25:18.320338Z"
-    },
-    {
-      "id": "ecfc991fdb57",
-      "title": "Emacs Bedrock 2.0 Released",
-      "url": "https://lambdaland.org/posts/2026-09-06-bedrock-v2/",
-      "source": "Hacker News",
-      "source_score": 36,
-      "comments_count": 0,
-      "comments_url": "https://news.ycombinator.com/item?id=49602490",
-      "summary": null,
-      "tags": [],
-      "interest_score": 0,
-      "matched_keywords": [],
-      "created_at": "2026-09-07T20:12:12Z",
-      "fetched_at": "2026-09-08T02:25:18.902524Z"
+      "fetched_at": "2026-09-08T02:25:18.320338Z",
+      "title_ja": "サタデー・イブニング・ポスト、205年で印刷を停止へ"
     },
     {
       "id": "1253f3b53a9e",
@@ -3247,12 +3066,17 @@
       "source_score": 9,
       "comments_count": 1,
       "comments_url": "https://news.ycombinator.com/item?id=49600473",
-      "summary": null,
-      "tags": [],
+      "summary": "Isleは、コンピュータ利用エージェントのために設計された、管理されたアプリケーション環境を提供するサービスです。開発者はこのサービスを利用して、エージェントのアプリケーション環境を効率的に管理できます。",
+      "tags": [
+        "ソフトウェア開発",
+        "クラウドサービス",
+        "エージェント"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T17:02:15Z",
-      "fetched_at": "2026-09-08T02:25:19.894577Z"
+      "fetched_at": "2026-09-08T02:25:19.894577Z",
+      "title_ja": "Show HN: Isle – コンピュータ利用エージェント向けマネージドアプリケーション環境"
     },
     {
       "id": "a0e811c8ba64",
@@ -3262,12 +3086,17 @@
       "source_score": 72,
       "comments_count": 11,
       "comments_url": "https://news.ycombinator.com/item?id=49601810",
-      "summary": null,
-      "tags": [],
+      "summary": "AIの過熱した開発や期待に対して、現実的な視点や批判的な考察を促す「AIの冷却シャワー」について論じています。AIの進歩における課題や潜在的なリスクに焦点を当てています。",
+      "tags": [
+        "人工知能",
+        "AI倫理",
+        "テクノロジー論"
+      ],
       "interest_score": 0,
       "matched_keywords": [],
       "created_at": "2026-09-07T19:05:39Z",
-      "fetched_at": "2026-09-08T02:25:20.726787Z"
+      "fetched_at": "2026-09-08T02:25:20.726787Z",
+      "title_ja": "AIの冷却シャワー"
     },
     {
       "id": "2612e3a05e39",
@@ -13963,6 +13792,756 @@
       "matched_keywords": [],
       "created_at": "2026-09-14T14:36:53.421098Z",
       "fetched_at": "2026-09-14T14:36:53.421099Z"
+    },
+    {
+      "id": "a50bc738874d",
+      "title": "Pion, an agent designed to run any company autonomously",
+      "url": "https://andonlabs.com/blog/why-we-built-pion",
+      "source": "Hacker News",
+      "source_score": 171,
+      "comments_count": 162,
+      "comments_url": "https://news.ycombinator.com/item?id=49700477",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:16:06Z",
+      "fetched_at": "2026-09-14T20:06:00.624709Z"
+    },
+    {
+      "id": "a5dd371848eb",
+      "title": "Neo Emacs – Emacs from the Future",
+      "url": "https://neomacs.org/",
+      "source": "Hacker News",
+      "source_score": 11,
+      "comments_count": 5,
+      "comments_url": "https://news.ycombinator.com/item?id=49702779",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T19:42:22Z",
+      "fetched_at": "2026-09-14T20:06:00.730854Z"
+    },
+    {
+      "id": "c841df4bf1a7",
+      "title": "Distributed Systems Classics (2017)",
+      "url": "https://nvartolomei.com/dist-sys-classics/",
+      "source": "Hacker News",
+      "source_score": 153,
+      "comments_count": 32,
+      "comments_url": "https://news.ycombinator.com/item?id=49699158",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:02:01Z",
+      "fetched_at": "2026-09-14T20:06:00.830358Z"
+    },
+    {
+      "id": "b9867ec1ee15",
+      "title": "A Beginning for Mathematics",
+      "url": "https://www.daniellitt.com/blog/2026/9/13/a-beginning-for-mathematics/",
+      "source": "Hacker News",
+      "source_score": 87,
+      "comments_count": 19,
+      "comments_url": "https://news.ycombinator.com/item?id=49698699",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T15:33:07Z",
+      "fetched_at": "2026-09-14T20:06:01.054856Z"
+    },
+    {
+      "id": "f6e8157b410e",
+      "title": "Principles for Fast Tokio Applications",
+      "url": "https://dial9-rs.github.io/blog/principles-for-fast-tokio-applications/",
+      "source": "Hacker News",
+      "source_score": 108,
+      "comments_count": 16,
+      "comments_url": "https://news.ycombinator.com/item?id=49698607",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T15:27:56Z",
+      "fetched_at": "2026-09-14T20:06:01.151249Z"
+    },
+    {
+      "id": "9584bb93bb41",
+      "title": "Steam Frame starts at $1059",
+      "url": "https://store.steampowered.com/hardware/steamframe",
+      "source": "Hacker News",
+      "source_score": 294,
+      "comments_count": 171,
+      "comments_url": "https://news.ycombinator.com/item?id=49700661",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:27:55Z",
+      "fetched_at": "2026-09-14T20:06:01.248144Z"
+    },
+    {
+      "id": "8c2a78720f8e",
+      "title": "Cloudflare AKE cuts origin HelloRetryRequests from 52% to 3.7%",
+      "url": "https://blog.cloudflare.com/automatic-key-exchange-for-origins/",
+      "source": "Hacker News",
+      "source_score": 41,
+      "comments_count": 12,
+      "comments_url": "https://news.ycombinator.com/item?id=49700255",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:02:34Z",
+      "fetched_at": "2026-09-14T20:06:01.448121Z"
+    },
+    {
+      "id": "4c14d1b73e2a",
+      "title": "XCancel service is suspended until further notice",
+      "url": "https://xcancel.com/#",
+      "source": "Hacker News",
+      "source_score": 273,
+      "comments_count": 557,
+      "comments_url": "https://news.ycombinator.com/item?id=49694296",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T09:51:50Z",
+      "fetched_at": "2026-09-14T20:06:01.645871Z"
+    },
+    {
+      "id": "d67cfa84a16e",
+      "title": "Cua (YC P25) Is Hiring a Founding Technical GTM Lead",
+      "url": "https://www.ycombinator.com/companies/cua/jobs/1IWEKVH-founding-technical-gtm-lead",
+      "source": "Hacker News",
+      "source_score": 1,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49700218",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:00:53Z",
+      "fetched_at": "2026-09-14T20:06:01.748414Z"
+    },
+    {
+      "id": "a6065caaba93",
+      "title": "Show HN: Nari Qwen3-TTS and Qwen3-ASR – High accuracy, low latency and cost",
+      "url": "https://narilabs.com/blog/nari-labs-leads-coval-voice-ai-benchmarks/",
+      "source": "Hacker News",
+      "source_score": 30,
+      "comments_count": 9,
+      "comments_url": "https://news.ycombinator.com/item?id=49699267",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:07:58Z",
+      "fetched_at": "2026-09-14T20:06:01.950281Z"
+    },
+    {
+      "id": "35b8d9579323",
+      "title": "iOS 27, iPadOS 27, and macOS 27",
+      "url": "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+      "source": "Hacker News",
+      "source_score": 222,
+      "comments_count": 217,
+      "comments_url": "https://news.ycombinator.com/item?id=49701004",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:50:29Z",
+      "fetched_at": "2026-09-14T20:06:02.049002Z"
+    },
+    {
+      "id": "499be9c2e195",
+      "title": "Show HN: Apollo Lunar Module landing simulation",
+      "url": "https://gosandeep.com/eagles-descent/",
+      "source": "Hacker News",
+      "source_score": 15,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49631365",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-09T18:29:37Z",
+      "fetched_at": "2026-09-14T20:06:02.159029Z"
+    },
+    {
+      "id": "d5c4e5195450",
+      "title": "Truncated SVD (2023)",
+      "url": "https://brashandplucky.com/2023/09/09/truncated-svd.html",
+      "source": "Hacker News",
+      "source_score": 26,
+      "comments_count": 3,
+      "comments_url": "https://news.ycombinator.com/item?id=49699134",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:00:33Z",
+      "fetched_at": "2026-09-14T20:06:02.709768Z"
+    },
+    {
+      "id": "c19c86204058",
+      "title": "Show HN: Bypassing Transformer Softmax via Static Contraction",
+      "url": "https://github.com/PJHkorea/jax-softmax-bypass",
+      "source": "Hacker News",
+      "source_score": 4,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49666335",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-11T22:36:47Z",
+      "fetched_at": "2026-09-14T20:06:02.814456Z"
+    },
+    {
+      "id": "ce90cff6d736",
+      "title": "Adversarial Fashion Makes a Statement on AI Panopticon",
+      "url": "https://spectrum.ieee.org/adversarial-fashion",
+      "source": "Hacker News",
+      "source_score": 71,
+      "comments_count": 33,
+      "comments_url": "https://news.ycombinator.com/item?id=49697094",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:04:53Z",
+      "fetched_at": "2026-09-14T20:06:02.913344Z"
+    },
+    {
+      "id": "8db71ad5bd86",
+      "title": "Trying to Make a Loop Auto-Vectorize",
+      "url": "https://jsgroth.dev/blog/posts/trying-to-make-a-loop-auto-vectorize/",
+      "source": "Hacker News",
+      "source_score": 43,
+      "comments_count": 14,
+      "comments_url": "https://news.ycombinator.com/item?id=49638555",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-10T04:50:25Z",
+      "fetched_at": "2026-09-14T20:06:03.396378Z"
+    },
+    {
+      "id": "da669509dd0c",
+      "title": "Oracle's Cold 6AM Layoff Emails Hit Staff Amid New Wave of Cuts",
+      "url": "https://www.techtimes.co.uk/oracle-new-layoffs-restructuring-costs-2-8-billion-1808676",
+      "source": "Hacker News",
+      "source_score": 22,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=49702239",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T19:05:15Z",
+      "fetched_at": "2026-09-14T20:06:03.520685Z"
+    },
+    {
+      "id": "4ceb28cde584",
+      "title": "Show HN: Neobrutalism.dev – Just added Base UI support and added new color theme",
+      "url": "https://www.neobrutalism.dev/",
+      "source": "Hacker News",
+      "source_score": 85,
+      "comments_count": 44,
+      "comments_url": "https://news.ycombinator.com/item?id=49699159",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:02:02Z",
+      "fetched_at": "2026-09-14T20:06:03.640494Z"
+    },
+    {
+      "id": "a5a985054c6d",
+      "title": "Microsoft patches Windows and Excel – breaks audio, remote access, and paste",
+      "url": "https://www.theregister.com/os-platforms/2026/09/14/microsoft-patches-windows-and-excel-breaks-audio-remote-access-and-paste/5296085",
+      "source": "Hacker News",
+      "source_score": 116,
+      "comments_count": 48,
+      "comments_url": "https://news.ycombinator.com/item?id=49699297",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:09:45Z",
+      "fetched_at": "2026-09-14T20:06:04.019252Z"
+    },
+    {
+      "id": "afac07110c13",
+      "title": "The Tudor Kings",
+      "url": "https://analog-antiquarian.net/2026/09/11/the-tudor-kings/",
+      "source": "Hacker News",
+      "source_score": 22,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49699145",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:00:56Z",
+      "fetched_at": "2026-09-14T20:06:04.320510Z"
+    },
+    {
+      "id": "cc13a0ede39b",
+      "title": "Dario, Please",
+      "url": "https://pop.rdi.sh/dario-please/",
+      "source": "Hacker News",
+      "source_score": 34,
+      "comments_count": 8,
+      "comments_url": "https://news.ycombinator.com/item?id=49697893",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:50:32Z",
+      "fetched_at": "2026-09-14T20:06:04.419553Z"
+    },
+    {
+      "id": "8dd67bcd4719",
+      "title": "One Gets Through – Missile Command, but you launch the missiles",
+      "url": "https://onegetsthrough.com/",
+      "source": "Hacker News",
+      "source_score": 20,
+      "comments_count": 3,
+      "comments_url": "https://news.ycombinator.com/item?id=49697965",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:53:55Z",
+      "fetched_at": "2026-09-14T20:06:05.030402Z"
+    },
+    {
+      "id": "6aac5f5f4674",
+      "title": "Show HN: Fly.exe – An EON systems like virtual fruit fly uploaded to computer",
+      "url": "https://github.com/Ibtisam-Mohammad/Fly.exe",
+      "source": "Hacker News",
+      "source_score": 19,
+      "comments_count": 4,
+      "comments_url": "https://news.ycombinator.com/item?id=49699075",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T15:56:39Z",
+      "fetched_at": "2026-09-14T20:06:05.133008Z"
+    },
+    {
+      "id": "474583c11fb5",
+      "title": "US 10-Year Breaches 5% as Inflation, Supply Worries Mount",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-14/us-10-year-yield-breaches-5-as-inflation-supply-worries-mount",
+      "source": "Hacker News",
+      "source_score": 36,
+      "comments_count": 15,
+      "comments_url": "https://news.ycombinator.com/item?id=49700413",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:11:59Z",
+      "fetched_at": "2026-09-14T20:06:05.230029Z"
+    },
+    {
+      "id": "8d8e5d92fe2e",
+      "title": "Show HN: Pushie – Get notified with a simple webhook",
+      "url": "https://pushie.net",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 6,
+      "comments_url": "https://news.ycombinator.com/item?id=49697912",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:51:54Z",
+      "fetched_at": "2026-09-14T20:06:05.330158Z"
+    },
+    {
+      "id": "608ca3911274",
+      "title": "Cops Search Flock Cameras for Reasons of 'LMAO,' 'IDK,' and 'Asdfg'",
+      "url": "https://www.404media.co/cops-search-thousands-of-flock-cameras-for-reasons-of-lmao-idk-hehe-and-asdfg/",
+      "source": "Hacker News",
+      "source_score": 69,
+      "comments_count": 10,
+      "comments_url": "https://news.ycombinator.com/item?id=49699493",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:23:41Z",
+      "fetched_at": "2026-09-14T20:06:05.686258Z"
+    },
+    {
+      "id": "28d999a04ab0",
+      "title": "Fitting Neural Textures and PBR Material Maps with ES (No Backprop)",
+      "url": "http://richg42.blogspot.com/2026/09/fitting-neural-texture-and-pbr-material.html",
+      "source": "Hacker News",
+      "source_score": 8,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49699696",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:34:33Z",
+      "fetched_at": "2026-09-14T20:06:06.155877Z"
+    },
+    {
+      "id": "80aece42ec30",
+      "title": "Sidero Labs (Talos Linux) Joins Yardi",
+      "url": "https://www.siderolabs.com/blog/sidero-labs-joins-yardi",
+      "source": "Hacker News",
+      "source_score": 13,
+      "comments_count": 3,
+      "comments_url": "https://news.ycombinator.com/item?id=49699204",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:04:42Z",
+      "fetched_at": "2026-09-14T20:06:06.561059Z"
+    },
+    {
+      "id": "39f98e51b1c2",
+      "title": "Show HN: Is this photo edited? Client-side image forensics",
+      "url": "https://vajba.com/image-forensics/",
+      "source": "Hacker News",
+      "source_score": 16,
+      "comments_count": 7,
+      "comments_url": "https://news.ycombinator.com/item?id=49641861",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-10T11:25:19Z",
+      "fetched_at": "2026-09-14T20:06:07.389837Z"
+    },
+    {
+      "id": "225fd328f173",
+      "title": "Patients Who Fight Health Insurance Denials Often Win",
+      "url": "https://www.bloomberg.com/news/features/2026-09-14/about-half-of-health-insurance-denials-get-reversed-analysis-finds",
+      "source": "Hacker News",
+      "source_score": 23,
+      "comments_count": 14,
+      "comments_url": "https://news.ycombinator.com/item?id=49700262",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:02:51Z",
+      "fetched_at": "2026-09-14T20:06:07.492309Z"
+    },
+    {
+      "id": "08023012e82f",
+      "title": "Fixing an NZXT Signal 4K30 part 2: the green/pink video bug",
+      "url": "https://www.downtowndougbrown.com/2026/09/fixing-an-nzxt-signal-4k30-part-2-the-green-pink-video-bug/",
+      "source": "Hacker News",
+      "source_score": 10,
+      "comments_count": 2,
+      "comments_url": "https://news.ycombinator.com/item?id=49689770",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-13T23:19:00Z",
+      "fetched_at": "2026-09-14T20:06:07.721675Z"
+    },
+    {
+      "id": "24317a80f155",
+      "title": "Apple Releases iOS 27 and iPadOS 27 with Siri AI and Liquid Glass Update",
+      "url": "https://www.macrumors.com/2026/09/14/apple-releases-ios-27/",
+      "source": "Hacker News",
+      "source_score": 14,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49700357",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:08:07Z",
+      "fetched_at": "2026-09-14T20:06:07.864440Z"
+    },
+    {
+      "id": "8094236ee84c",
+      "title": "Dynamicz",
+      "url": "https://opentofu.org/blog/opentofu-1-12-0/",
+      "source": "Hacker News",
+      "source_score": 5,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49697551",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:33:02Z",
+      "fetched_at": "2026-09-14T20:06:08.769658Z"
+    },
+    {
+      "id": "0939644f1663",
+      "title": "EU to limit access to social media before age of 15",
+      "url": "https://www.politico.eu/article/eu-to-propose-new-legislation-on-minors-protection-on-thursday/",
+      "source": "Hacker News",
+      "source_score": 12,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49700138",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:57:21Z",
+      "fetched_at": "2026-09-14T20:06:08.886726Z"
+    },
+    {
+      "id": "2c2b92b6fc2c",
+      "title": "Security through obscurity is dead, and AI delivered the fatal blow",
+      "url": "https://www.theregister.com/security/2026/09/13/security-through-obscurity-is-dead-and-ai-delivered-the-fatal-blow/5296000",
+      "source": "Hacker News",
+      "source_score": 8,
+      "comments_count": 4,
+      "comments_url": "https://news.ycombinator.com/item?id=49701195",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T18:03:45Z",
+      "fetched_at": "2026-09-14T20:06:09.154438Z"
+    },
+    {
+      "id": "3fd59af342b5",
+      "title": "What Is Obtainium?",
+      "url": "https://theprivacydad.com/what-is-obtainium/",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49700305",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:05:15Z",
+      "fetched_at": "2026-09-14T20:06:09.587527Z"
+    },
+    {
+      "id": "18c3a1863877",
+      "title": "Apple releases OS 27 updates with Siri AI",
+      "url": "https://www.theverge.com/news/994756/apple-ios-27-launch-iphone-siri-ai-update",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49701027",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:52:44Z",
+      "fetched_at": "2026-09-14T20:06:09.707130Z"
+    },
+    {
+      "id": "c22da2402ff6",
+      "title": "Yoneda Lemma in Double Categories",
+      "url": "https://bartoszmilewski.com/2026/09/13/yoneda-lemma-in-double-categories/",
+      "source": "Hacker News",
+      "source_score": 6,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49697035",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:00:34Z",
+      "fetched_at": "2026-09-14T20:06:10.070319Z"
+    },
+    {
+      "id": "3313addc7a0d",
+      "title": "China's Regulators Take Aim at \"AI Boyfriends\"",
+      "url": "https://spectrum.ieee.org/china-ai-chatbot-regulation",
+      "source": "Hacker News",
+      "source_score": 53,
+      "comments_count": 42,
+      "comments_url": "https://news.ycombinator.com/item?id=49698664",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T15:30:56Z",
+      "fetched_at": "2026-09-14T20:06:10.336372Z"
+    },
+    {
+      "id": "508dc828e7e8",
+      "title": "Algeria severs diplomatic ties with UAE",
+      "url": "https://breakthroughnews.org/2026/09/13/wherever-they-set-foot-blood-flows-algeria-severs-diplomatic-ties-with-uae/",
+      "source": "Hacker News",
+      "source_score": 8,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49696594",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T13:32:43Z",
+      "fetched_at": "2026-09-14T20:06:10.771226Z"
+    },
+    {
+      "id": "76237b254bfa",
+      "title": "The High Crime of \"LMAO\": How Cops Are Treating Mass Surveillance as a Joke",
+      "url": "https://www.eff.org/deeplinks/2026/09/high-crime-lmao-how-cops-are-treating-mass-surveillance-joke",
+      "source": "Hacker News",
+      "source_score": 13,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49699308",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:10:47Z",
+      "fetched_at": "2026-09-14T20:06:11.234430Z"
+    },
+    {
+      "id": "838594e1b6bb",
+      "title": "Iranian banks' SSL certificates are being revoked due to OFAC sanctions",
+      "url": "https://digiato.global/report/iran-banks-ssl-certificates-domain-changes/",
+      "source": "Hacker News",
+      "source_score": 70,
+      "comments_count": 115,
+      "comments_url": "https://news.ycombinator.com/item?id=49701104",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:58:00Z",
+      "fetched_at": "2026-09-14T20:06:11.339290Z"
+    },
+    {
+      "id": "39478a8c8760",
+      "title": "The AI-as-Normal-Technology view of loss-of-control incidents",
+      "url": "https://www.normaltech.ai/p/the-ai-as-normal-technology-view",
+      "source": "Hacker News",
+      "source_score": 4,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49696329",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T13:16:22Z",
+      "fetched_at": "2026-09-14T20:06:11.448042Z"
+    },
+    {
+      "id": "9e6ff73ab524",
+      "title": "A rough guide for going back to the Moon",
+      "url": "https://research.ibm.com/blog/nasa-ibm-lunar-foundation-model",
+      "source": "Hacker News",
+      "source_score": 3,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49697549",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:33:00Z",
+      "fetched_at": "2026-09-14T20:06:11.946183Z"
+    },
+    {
+      "id": "b5785dc62e26",
+      "title": "Dropping eBPF CPU Cost by About 90% with Memoization (Not AI Gen)",
+      "url": "https://nathannaveen.dev/posts/dropping-ebpf-cpu-cost-by-90/",
+      "source": "Hacker News",
+      "source_score": 7,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49697477",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:29:23Z",
+      "fetched_at": "2026-09-14T20:06:12.179658Z"
+    },
+    {
+      "id": "19da25b53c91",
+      "title": "XLS: Accelerated HW Synthesis",
+      "url": "https://google.github.io/xls/",
+      "source": "Hacker News",
+      "source_score": 3,
+      "comments_count": 1,
+      "comments_url": "https://news.ycombinator.com/item?id=49697242",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T14:14:28Z",
+      "fetched_at": "2026-09-14T20:06:12.752758Z"
+    },
+    {
+      "id": "06f54a3d1a68",
+      "title": "Steam Frame: Valve's standalone SteamOS VR headset ($1,059)",
+      "url": "https://store.steampowered.com/sale/steamframe?l=english",
+      "source": "Hacker News",
+      "source_score": 22,
+      "comments_count": 13,
+      "comments_url": "https://news.ycombinator.com/item?id=49700366",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T17:08:34Z",
+      "fetched_at": "2026-09-14T20:06:12.911329Z"
+    },
+    {
+      "id": "959237f00332",
+      "title": "MIT creates method to force AI to comply with safety rules",
+      "url": "https://theframenews.org/en/hardflow-safety-critical-ai/",
+      "source": "Hacker News",
+      "source_score": 26,
+      "comments_count": 27,
+      "comments_url": "https://news.ycombinator.com/item?id=49699434",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:18:17Z",
+      "fetched_at": "2026-09-14T20:06:13.051205Z"
+    },
+    {
+      "id": "e1aadec52980",
+      "title": "America's Everywhere Millionaires",
+      "url": "https://www.newyorker.com/magazine/2026/09/21/the-everywhere-millionaire-owen-zidar-and-eric-zwick-book-review",
+      "source": "Hacker News",
+      "source_score": 8,
+      "comments_count": 3,
+      "comments_url": "https://news.ycombinator.com/item?id=49699934",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:48:07Z",
+      "fetched_at": "2026-09-14T20:06:13.524270Z"
+    },
+    {
+      "id": "ea20f3772f5a",
+      "title": "AI Is in Dangerous Hands",
+      "url": "https://www.wheresyoured.at/ai-is-already-in-dangerous-hands/",
+      "source": "Hacker News",
+      "source_score": 11,
+      "comments_count": 0,
+      "comments_url": "https://news.ycombinator.com/item?id=49699738",
+      "summary": null,
+      "tags": [],
+      "interest_score": 0,
+      "matched_keywords": [],
+      "created_at": "2026-09-14T16:36:46Z",
+      "fetched_at": "2026-09-14T20:06:13.645291Z"
     }
   ]
 }
